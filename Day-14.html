@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 14 — Review & Formula Sheet</title>
+<style>
+  :root{
+    --bg:#f5f3fb; --card:#ffffff; --ink:#211c33; --muted:#6f6886;
+    --brand:#6b4ef0; --brand-d:#5238c4; --brand-soft:#ece7fd;
+    --good:#1f9d63; --good-soft:#e4f6ec; --bad:#d2453f; --bad-soft:#fae5e4; --line:#e7e3f2;
+  }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); margin:0; line-height:1.5;}
+  .wrap{max-width:760px; margin:0 auto; padding:26px 22px 60px;}
+  .back{display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:var(--brand); font-weight:600; font-size:14px; margin-bottom:18px;}
+  .back:hover{text-decoration:underline;}
+  .crumb{color:var(--brand); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.05em;}
+  h1{font-size:28px; margin:8px 0 4px; letter-spacing:-.02em;}
+  .lede{color:var(--muted); margin:0 0 22px; font-size:16px;}
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(40,20,90,.04);}
+  .panel h3{margin:0 0 4px; font-size:17px; display:flex; align-items:center; gap:8px;}
+  .panel .note{color:var(--muted); font-size:14px; margin:0 0 14px;}
+  .scorechip{margin-left:auto; font-size:13px; color:var(--muted); font-weight:600;}
+  audio{width:100%; margin-top:6px;}
+  .takeaway{font-size:14.5px; background:#fbfaff; border:1px dashed var(--line); border-radius:11px; padding:13px 16px; margin-top:14px;}
+  .takeaway b{color:var(--brand);}
+  .qblock{padding:16px 0; border-top:1px solid var(--line);}
+  .qblock:first-of-type{border-top:none; padding-top:4px;}
+  .qnum{color:var(--brand); font-weight:700; font-size:12px; letter-spacing:.04em; text-transform:uppercase;}
+  .qtext{font-weight:600; margin:6px 0 12px; font-size:16px;}
+  .opt{display:block; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line);
+    border-radius:11px; padding:11px 14px; margin:7px 0; font-size:15px; cursor:pointer; transition:.14s; color:var(--ink);}
+  .opt:hover{border-color:var(--brand); background:var(--brand-soft);}
+  .opt.correct{border-color:var(--good); background:var(--good-soft);}
+  .opt.wrong{border-color:var(--bad); background:var(--bad-soft);}
+  .opt:disabled{cursor:default;}
+  .opt .mark{float:right; font-weight:700;}
+  .exp{margin-top:11px; padding:13px 15px; border-radius:11px; background:#faf9fe; border:1px dashed var(--line); font-size:14px; display:none;}
+  .exp.show{display:block;} .exp b{color:var(--brand);}
+  .formula{background:#fbfaff; border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:14px; margin:16px 0;}
+  .formula code{background:var(--brand-soft); color:var(--brand-d); padding:1px 6px; border-radius:5px; font-size:13px;}
+  .timer{background:var(--brand); color:#fff; border-radius:12px; padding:10px 16px; font-weight:700; font-size:16px; display:inline-flex; align-items:center; gap:10px;}
+  .timer button{background:rgba(255,255,255,.2); border:none; color:#fff; border-radius:8px; padding:4px 10px; cursor:pointer; font-weight:600;}
+  .navrow{display:flex; justify-content:space-between; margin-top:22px; gap:10px;}
+  .navbtn{text-decoration:none; font-weight:600; font-size:14px; padding:10px 16px; border-radius:11px; border:1px solid var(--line); color:var(--ink); background:#fff;}
+  .navbtn.dim{color:var(--muted); pointer-events:none; opacity:.45;}
+  .navbtn.primary{background:var(--brand); color:#fff; border-color:var(--brand);}
+  .navbtn:hover{border-color:var(--brand);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="Economics-Exam-Prep.html">&larr; All days</a>
+  <div class="crumb">Day 14 of 14 &middot; Review</div>
+  <h1>Review & Formula Sheet</h1>
+  <p class="lede">Lock in the formulas and the two traps, then a quick mixed check.</p>
+
+  
+  
+  <div class="formula">
+  <b>Formula sheet (given on the exam):</b><br>
+  GDP = <code>C + I + G + NX</code> &middot; Real GDP per capita = <code>Real GDP / population</code><br>
+  CPI = <code>(basket this year / basket base year) &times; 100</code> &middot; Inflation = <code>(CPI2 - CPI1) / CPI1 &times; 100</code><br>
+  Elasticity = <code>%&Delta;Q / %&Delta;P</code> &middot; %&Delta;Q = <code>elasticity &times; %&Delta;P</code><br>
+  Labor force = <code>employed + unemployed</code> &middot; Participation = <code>LF / working-age &times; 100</code> &middot; Unemployment = <code>unemployed / LF &times; 100</code><br>
+  Profit = <code>TR - TC = P&middot;Q - TC</code> &middot; TC = <code>FC + VC</code> &middot; ATC = <code>TC/Q</code> &middot; AVC = <code>VC/Q</code><br>
+  Shutdown (short run): produce if <code>P &ge; AVC</code> &middot; Exit (long run): stay if <code>P &ge; ATC</code>
+</div>
+
+  <div class="panel">
+    <h3>📝 Final mixed check <span class="scorechip" id="scoreChip">0 / 5</span></h3>
+    <p class="note">A short mixed set across the whole course. If any feel shaky, revisit that day's podcast.</p>
+    <div id="quizBody"></div>
+  </div>
+
+  
+
+  <div class="navrow">
+    <a class="navbtn" href="Day-13.html">&larr; Day 13</a>
+    <a class="navbtn primary" href="Economics-Exam-Prep.html">Finish &rarr;</a>
+  </div>
+</div>
+
+<script>
+const QUIZ = [{"q": "Which pair of tests should you NEVER confuse?", "opts": ["Shutdown (P vs AVC) and profit (TR vs TC).", "Nominal and real GDP.", "CPI and inflation.", "Demand and supply."], "correct": 0, "exp": "Shutdown asks 'operate now?' (P vs AVC); profit asks 'making money?' (TR vs TC). A firm can lose money yet still produce in the short run."}, {"q": "When BOTH curves shift in opposite directions, the exam answer is often:", "opts": ["'It cannot be known' for one of price or quantity.", "Always 'price and quantity both rise'.", "Always 'no change'.", "Always 'cannot be known' for both."], "correct": 0, "exp": "One variable's direction is pinned down; the other depends on the sizes of the shifts → <b>cannot be known</b>."}, {"q": "Real GDP per capita is:", "opts": ["Real GDP divided by population.", "Nominal GDP times population.", "CPI divided by 100.", "Exports minus imports."], "correct": 0, "exp": "Real GDP ÷ population — the standard-of-living measure."}, {"q": "Unemployment rate equals:", "opts": ["Unemployed ÷ labor force × 100.", "Unemployed ÷ total population × 100.", "Labor force ÷ working-age × 100.", "Employed ÷ labor force × 100."], "correct": 0, "exp": "Unemployment = unemployed ÷ <b>labor force</b> (employed + unemployed). Don't divide by total population."}, {"q": "In long-run competitive equilibrium, price equals:", "opts": ["Minimum average total cost (P = ATC), with zero economic profit.", "Average variable cost.", "Marginal revenue only.", "Fixed cost."], "correct": 0, "exp": "Free entry/exit → P = minimum ATC, economic profit zero."}];
+const body=document.getElementById('quizBody');
+let score=0;
+QUIZ.forEach((item,qi)=>{
+  const block=document.createElement('div'); block.className='qblock';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const exp=document.createElement('div'); exp.className='exp'; exp.innerHTML=item.exp;
+  item.opts.forEach((opt,oi)=>{
+    const btn=document.createElement('button'); btn.className='opt';
+    btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
+    btn.onclick=()=>{
+      if(block.dataset.done) return;
+      block.dataset.done="1";
+      const btns=block.querySelectorAll('.opt'); btns.forEach(x=>x.disabled=true);
+      btns[item.correct].classList.add('correct'); btns[item.correct].querySelector('.mark').textContent='✓';
+      if(oi===item.correct){score++;} else {btn.classList.add('wrong'); btn.querySelector('.mark').textContent='✗';}
+      document.getElementById('scoreChip').textContent=`${score} / ${QUIZ.length}`;
+      exp.classList.add('show');
+    };
+    block.appendChild(btn);
+  });
+  block.appendChild(exp); body.appendChild(block);
+});
+
+</script>
+</body>
+</html>

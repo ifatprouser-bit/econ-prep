@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 11 — Calculation Drill Day</title>
+<style>
+  :root{
+    --bg:#f5f3fb; --card:#ffffff; --ink:#211c33; --muted:#6f6886;
+    --brand:#6b4ef0; --brand-d:#5238c4; --brand-soft:#ece7fd;
+    --good:#1f9d63; --good-soft:#e4f6ec; --bad:#d2453f; --bad-soft:#fae5e4; --line:#e7e3f2;
+  }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); margin:0; line-height:1.5;}
+  .wrap{max-width:760px; margin:0 auto; padding:26px 22px 60px;}
+  .back{display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:var(--brand); font-weight:600; font-size:14px; margin-bottom:18px;}
+  .back:hover{text-decoration:underline;}
+  .crumb{color:var(--brand); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.05em;}
+  h1{font-size:28px; margin:8px 0 4px; letter-spacing:-.02em;}
+  .lede{color:var(--muted); margin:0 0 22px; font-size:16px;}
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(40,20,90,.04);}
+  .panel h3{margin:0 0 4px; font-size:17px; display:flex; align-items:center; gap:8px;}
+  .panel .note{color:var(--muted); font-size:14px; margin:0 0 14px;}
+  .scorechip{margin-left:auto; font-size:13px; color:var(--muted); font-weight:600;}
+  audio{width:100%; margin-top:6px;}
+  .takeaway{font-size:14.5px; background:#fbfaff; border:1px dashed var(--line); border-radius:11px; padding:13px 16px; margin-top:14px;}
+  .takeaway b{color:var(--brand);}
+  .qblock{padding:16px 0; border-top:1px solid var(--line);}
+  .qblock:first-of-type{border-top:none; padding-top:4px;}
+  .qnum{color:var(--brand); font-weight:700; font-size:12px; letter-spacing:.04em; text-transform:uppercase;}
+  .qtext{font-weight:600; margin:6px 0 12px; font-size:16px;}
+  .opt{display:block; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line);
+    border-radius:11px; padding:11px 14px; margin:7px 0; font-size:15px; cursor:pointer; transition:.14s; color:var(--ink);}
+  .opt:hover{border-color:var(--brand); background:var(--brand-soft);}
+  .opt.correct{border-color:var(--good); background:var(--good-soft);}
+  .opt.wrong{border-color:var(--bad); background:var(--bad-soft);}
+  .opt:disabled{cursor:default;}
+  .opt .mark{float:right; font-weight:700;}
+  .exp{margin-top:11px; padding:13px 15px; border-radius:11px; background:#faf9fe; border:1px dashed var(--line); font-size:14px; display:none;}
+  .exp.show{display:block;} .exp b{color:var(--brand);}
+  .formula{background:#fbfaff; border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:14px; margin:16px 0;}
+  .formula code{background:var(--brand-soft); color:var(--brand-d); padding:1px 6px; border-radius:5px; font-size:13px;}
+  .timer{background:var(--brand); color:#fff; border-radius:12px; padding:10px 16px; font-weight:700; font-size:16px; display:inline-flex; align-items:center; gap:10px;}
+  .timer button{background:rgba(255,255,255,.2); border:none; color:#fff; border-radius:8px; padding:4px 10px; cursor:pointer; font-weight:600;}
+  .navrow{display:flex; justify-content:space-between; margin-top:22px; gap:10px;}
+  .navbtn{text-decoration:none; font-weight:600; font-size:14px; padding:10px 16px; border-radius:11px; border:1px solid var(--line); color:var(--ink); background:#fff;}
+  .navbtn.dim{color:var(--muted); pointer-events:none; opacity:.45;}
+  .navbtn.primary{background:var(--brand); color:#fff; border-color:var(--brand);}
+  .navbtn:hover{border-color:var(--brand);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="Economics-Exam-Prep.html">&larr; All days</a>
+  <div class="crumb">Day 11 of 14 &middot; Practice</div>
+  <h1>Calculation Drill Day</h1>
+  <p class="lede">Every formula type in one place. Work each with the formula sheet, then check.</p>
+
+  
+  
+  <div class="formula">
+  <b>Formula sheet (given on the exam):</b><br>
+  GDP = <code>C + I + G + NX</code> &middot; Real GDP per capita = <code>Real GDP / population</code><br>
+  CPI = <code>(basket this year / basket base year) &times; 100</code> &middot; Inflation = <code>(CPI2 - CPI1) / CPI1 &times; 100</code><br>
+  Elasticity = <code>%&Delta;Q / %&Delta;P</code> &middot; %&Delta;Q = <code>elasticity &times; %&Delta;P</code><br>
+  Labor force = <code>employed + unemployed</code> &middot; Participation = <code>LF / working-age &times; 100</code> &middot; Unemployment = <code>unemployed / LF &times; 100</code><br>
+  Profit = <code>TR - TC = P&middot;Q - TC</code> &middot; TC = <code>FC + VC</code> &middot; ATC = <code>TC/Q</code> &middot; AVC = <code>VC/Q</code><br>
+  Shutdown (short run): produce if <code>P &ge; AVC</code> &middot; Exit (long run): stay if <code>P &ge; ATC</code>
+</div>
+
+  <div class="panel">
+    <h3>📝 Calculation set <span class="scorechip" id="scoreChip">0 / 7</span></h3>
+    <p class="note">Pure calculations — do them on paper first, then tap your answer to check the steps.</p>
+    <div id="quizBody"></div>
+  </div>
+
+  
+
+  <div class="navrow">
+    <a class="navbtn" href="Day-10.html">&larr; Day 10</a>
+    <a class="navbtn primary" href="Day-12.html">Day 12 &rarr;</a>
+  </div>
+</div>
+
+<script>
+const QUIZ = [{"q": "Nominal GDP for 2027: tyres 190×110, brakes 245×205, batteries 102×315. What is 2027 nominal GDP?", "opts": ["103,255", "102,625", "90,000", "103,230"], "correct": 0, "exp": "20,900 + 50,225 + 32,130 = <b>103,255</b> (current prices × current quantities)."}, {"q": "Base year 2026. Real GDP of 2027 = 185×110 + 240×205 + 105×315. What is it?", "opts": ["102,625", "103,255", "120,905", "102,550"], "correct": 0, "exp": "20,350 + 49,200 + 33,075 = <b>102,625</b>. Use base-year (2026) prices with 2027 quantities."}, {"q": "Real GDP fell from 103,230 to 102,625. The percentage change is closest to:", "opts": ["Between 0% and -1%", "Between -1% and -2%", "Between 1% and 2%", "Between 0% and 1%"], "correct": 0, "exp": "(102,625 - 103,230)/103,230 × 100 = -0.59% → <b>between 0% and -1%</b>."}, {"q": "Elasticity is -2.5. Price rises from 10 to 12. A seller of 20 units will now sell:", "opts": ["10 units", "16 units", "15 units", "5 units"], "correct": 0, "exp": "+20% price × -2.5 = -50% quantity → 20 × 0.5 = <b>10 units</b>."}, {"q": "Working-age 10, employed 6, unemployed (looking) 2. Unemployment rate?", "opts": ["25%", "20%", "33%", "12.5%"], "correct": 0, "exp": "Labor force = 6 + 2 = 8. Unemployment = 2/8 = <b>25%</b>."}, {"q": "Price = 75, quantity = 4, total cost = 320. What is profit?", "opts": ["-20", "20", "-40", "300"], "correct": 0, "exp": "Profit = TR - TC = (75×4) - 320 = 300 - 320 = <b>-20</b> (a loss). With P ≥ AVC the firm still produces short run."}, {"q": "Basket costs: base year 820, next year 845. CPI next year (base = 820)?", "opts": ["About 103", "About 97", "About 100", "About 110"], "correct": 0, "exp": "845/820 × 100 = <b>about 103</b> → prices rose about 3%."}];
+const body=document.getElementById('quizBody');
+let score=0;
+QUIZ.forEach((item,qi)=>{
+  const block=document.createElement('div'); block.className='qblock';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const exp=document.createElement('div'); exp.className='exp'; exp.innerHTML=item.exp;
+  item.opts.forEach((opt,oi)=>{
+    const btn=document.createElement('button'); btn.className='opt';
+    btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
+    btn.onclick=()=>{
+      if(block.dataset.done) return;
+      block.dataset.done="1";
+      const btns=block.querySelectorAll('.opt'); btns.forEach(x=>x.disabled=true);
+      btns[item.correct].classList.add('correct'); btns[item.correct].querySelector('.mark').textContent='✓';
+      if(oi===item.correct){score++;} else {btn.classList.add('wrong'); btn.querySelector('.mark').textContent='✗';}
+      document.getElementById('scoreChip').textContent=`${score} / ${QUIZ.length}`;
+      exp.classList.add('show');
+    };
+    block.appendChild(btn);
+  });
+  block.appendChild(exp); body.appendChild(block);
+});
+
+</script>
+</body>
+</html>

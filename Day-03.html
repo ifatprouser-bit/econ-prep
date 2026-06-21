@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Ceilings &amp; Floors</title>
+<style>
+:root{--bg:#f5f3fb;--card:#fff;--ink:#211c33;--muted:#6f6886;--brand:#6b4ef0;--brand-d:#5238c4;
+--brand-soft:#ece7fd;--good:#1f9d63;--good-soft:#e4f6ec;--bad:#d2453f;--bad-soft:#fae5e4;--line:#e7e3f2;
+--amber:#b6791f;--amber-soft:#fcf3e3;}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);margin:0;line-height:1.55;}
+.wrap{max-width:760px;margin:0 auto;padding:26px 22px 60px;}
+.crumb{color:var(--brand);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em;}
+h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
+.lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
+.panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
+.preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
+.preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+.preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
+audio{width:100%;margin-top:6px;}
+.takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
+.takeaway b{color:var(--brand);}
+.takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
+.takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
+.question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
+.rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
+.step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);} .step:first-of-type{border-top:none;}
+.stepn{flex:0 0 28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px;}
+.stepbody .lab{font-weight:600;}
+.math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
+.ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
+.tryq .q{font-weight:600;margin-bottom:8px;}
+.reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
+.reveal{display:none;margin-top:10px;padding:11px 14px;border-radius:9px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;}
+.reveal.show{display:block;}
+.qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
+.qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
+.opt:hover{border-color:var(--brand);background:var(--brand-soft);}
+.opt.correct{border-color:var(--good);background:var(--good-soft);} .opt.wrong{border-color:var(--bad);background:var(--bad-soft);}
+.opt .mark{float:right;font-weight:700;}
+.exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
+.exp.show{display:block;} .exp b{color:var(--brand);}
+.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
+.navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
+.navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+</style></head><body><div class="wrap">
+<div class="crumb">Day 3 of 14 · Learn</div>
+<h1>Price Ceilings &amp; Floors</h1>
+<p class="lede">What happens when the government freezes a price — and who gains, who loses.</p>
+<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A city rules that no store may sell Bamba above a very low price — lower than the normal price. What happens to the Bamba on the shelves?</p><p class="do">Take 20 seconds. Picture the shelf. Guess — then press play.</p></div>
+<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-03.mp3"></audio><div class="takeaway"><ul><li><b>Shortage</b> - buyers want more than is supplied. Caused by a price ceiling set BELOW the normal price (empty shelves).</li><li><b>Surplus</b> - more is supplied than buyers want. Caused by a price floor set ABOVE the normal price (overflowing shelves).</li></ul><p class="tk-gen">The amount actually traded is always the short side — the side that gives way — because the market balances itself there.</p></div></div>
+<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">In town T the market for chocolate cake is competitive. There are 20 sellers. The mayor sets a maximum price (a ceiling) of 50 shekels per cake — below the normal market price. At a price of 50, each seller is willing to supply 96 cakes, while buyers want far more. How many cakes are actually sold?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">When a ceiling is below the normal price there is a shortage, so the amount sold is the short side = the quantity supplied at the capped price.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Per-seller supply at the capped price.</div>Each seller supplies 96 cakes.</div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Count the sellers.</div>There are 20 sellers.</div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Multiply.</div><span class="math">96 × 20 = 1,920 cakes</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">That is the answer, because sellers are the short side.</div>Buyers want more, but only what sellers make can be sold.</div></div><div class="ans">&#10003; Answer: 1,920 cakes are sold.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">A market has 15 sellers. Under a binding ceiling each seller supplies 40 units, and buyers want far more. How many units are sold?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">600 units. Short side = 40 × 15 = 600.</div></div><div class="tryq"><div class="q">The mayor sets a ceiling ABOVE the normal price. Before the rule, 500 units sold. How many sell now?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">500 — no change. A ceiling above the normal price is not binding.</div></div></div></div>
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+<div class="navrow"><a class="navbtn" href="Day-02.html">&larr; Back</a><a class="navbtn primary" href="Day-04.html">Next &rarr;</a></div>
+</div>
+<script>
+const QUIZ = [{"q": "A ceiling set BELOW the normal price causes:", "opts": ["A shortage.", "A surplus.", "No change.", "Price above normal."], "correct": 0, "exp": "Buyers want more, sellers make less → empty shelves."}, {"q": "Under that ceiling, who gains and loses?", "opts": ["Some consumers gain (lucky early buyers); all sellers lose.", "All consumers gain; all sellers lose.", "All sellers gain.", "No one is affected."], "correct": 0, "exp": "Some, not all: late buyers find empty shelves; sellers earn less."}, {"q": "A floor set ABOVE the normal price causes:", "opts": ["A surplus.", "A shortage.", "No change.", "More units sold."], "correct": 0, "exp": "Sellers make lots, buyers want little → overflow."}, {"q": "20 sellers, each supplies 96 under a binding ceiling. Cakes sold?", "opts": ["1,920", "96", "3,360", "480"], "correct": 0, "exp": "Short side = 96 × 20 = 1,920."}];
+const body=document.getElementById('quizBody');
+if(body){
+let score=0;
+QUIZ.forEach((item,qi)=>{
+  const block=document.createElement('div');block.className='qblock';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
+  item.opts.forEach((opt,oi)=>{
+    const btn=document.createElement('button');btn.className='opt';
+    btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
+    btn.onclick=()=>{
+      if(block.dataset.done)return; block.dataset.done="1";
+      const btns=block.querySelectorAll('.opt');btns.forEach(x=>x.disabled=true);
+      btns[item.correct].classList.add('correct');btns[item.correct].querySelector('.mark').textContent='✓';
+      if(oi===item.correct){score++;}else{btn.classList.add('wrong');btn.querySelector('.mark').textContent='✗';}
+      document.getElementById('scoreChip').textContent=`${score} / ${QUIZ.length}`;
+      exp.classList.add('show');
+    };
+    block.appendChild(btn);
+  });
+  block.appendChild(exp);body.appendChild(block);
+});
+}
+</script></body></html>

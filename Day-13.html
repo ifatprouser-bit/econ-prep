@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 13 — Full Timed Mock Exam</title>
+<style>
+  :root{
+    --bg:#f5f3fb; --card:#ffffff; --ink:#211c33; --muted:#6f6886;
+    --brand:#6b4ef0; --brand-d:#5238c4; --brand-soft:#ece7fd;
+    --good:#1f9d63; --good-soft:#e4f6ec; --bad:#d2453f; --bad-soft:#fae5e4; --line:#e7e3f2;
+  }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); margin:0; line-height:1.5;}
+  .wrap{max-width:760px; margin:0 auto; padding:26px 22px 60px;}
+  .back{display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:var(--brand); font-weight:600; font-size:14px; margin-bottom:18px;}
+  .back:hover{text-decoration:underline;}
+  .crumb{color:var(--brand); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.05em;}
+  h1{font-size:28px; margin:8px 0 4px; letter-spacing:-.02em;}
+  .lede{color:var(--muted); margin:0 0 22px; font-size:16px;}
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(40,20,90,.04);}
+  .panel h3{margin:0 0 4px; font-size:17px; display:flex; align-items:center; gap:8px;}
+  .panel .note{color:var(--muted); font-size:14px; margin:0 0 14px;}
+  .scorechip{margin-left:auto; font-size:13px; color:var(--muted); font-weight:600;}
+  audio{width:100%; margin-top:6px;}
+  .takeaway{font-size:14.5px; background:#fbfaff; border:1px dashed var(--line); border-radius:11px; padding:13px 16px; margin-top:14px;}
+  .takeaway b{color:var(--brand);}
+  .qblock{padding:16px 0; border-top:1px solid var(--line);}
+  .qblock:first-of-type{border-top:none; padding-top:4px;}
+  .qnum{color:var(--brand); font-weight:700; font-size:12px; letter-spacing:.04em; text-transform:uppercase;}
+  .qtext{font-weight:600; margin:6px 0 12px; font-size:16px;}
+  .opt{display:block; width:100%; text-align:left; background:#fff; border:1.5px solid var(--line);
+    border-radius:11px; padding:11px 14px; margin:7px 0; font-size:15px; cursor:pointer; transition:.14s; color:var(--ink);}
+  .opt:hover{border-color:var(--brand); background:var(--brand-soft);}
+  .opt.correct{border-color:var(--good); background:var(--good-soft);}
+  .opt.wrong{border-color:var(--bad); background:var(--bad-soft);}
+  .opt:disabled{cursor:default;}
+  .opt .mark{float:right; font-weight:700;}
+  .exp{margin-top:11px; padding:13px 15px; border-radius:11px; background:#faf9fe; border:1px dashed var(--line); font-size:14px; display:none;}
+  .exp.show{display:block;} .exp b{color:var(--brand);}
+  .formula{background:#fbfaff; border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:14px; margin:16px 0;}
+  .formula code{background:var(--brand-soft); color:var(--brand-d); padding:1px 6px; border-radius:5px; font-size:13px;}
+  .timer{background:var(--brand); color:#fff; border-radius:12px; padding:10px 16px; font-weight:700; font-size:16px; display:inline-flex; align-items:center; gap:10px;}
+  .timer button{background:rgba(255,255,255,.2); border:none; color:#fff; border-radius:8px; padding:4px 10px; cursor:pointer; font-weight:600;}
+  .navrow{display:flex; justify-content:space-between; margin-top:22px; gap:10px;}
+  .navbtn{text-decoration:none; font-weight:600; font-size:14px; padding:10px 16px; border-radius:11px; border:1px solid var(--line); color:var(--ink); background:#fff;}
+  .navbtn.dim{color:var(--muted); pointer-events:none; opacity:.45;}
+  .navbtn.primary{background:var(--brand); color:#fff; border-color:var(--brand);}
+  .navbtn:hover{border-color:var(--brand);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="Economics-Exam-Prep.html">&larr; All days</a>
+  <div class="crumb">Day 13 of 14 &middot; Practice</div>
+  <h1>Full Timed Mock Exam</h1>
+  <p class="lede">25 questions, two hours, exam format. Start the clock and treat it like the real thing.</p>
+
+  
+  <div class="panel"><span class="timer">&#9201; <span id="clock">120:00</span> <button onclick="startTimer()">Start</button><button onclick="pauseTimer()">Pause</button></span>
+<p class="note" style="margin-top:10px">Real exam conditions: 25 questions, 2 hours. Start the clock and try to finish in time.</p></div>
+  <div class="formula">
+  <b>Formula sheet (given on the exam):</b><br>
+  GDP = <code>C + I + G + NX</code> &middot; Real GDP per capita = <code>Real GDP / population</code><br>
+  CPI = <code>(basket this year / basket base year) &times; 100</code> &middot; Inflation = <code>(CPI2 - CPI1) / CPI1 &times; 100</code><br>
+  Elasticity = <code>%&Delta;Q / %&Delta;P</code> &middot; %&Delta;Q = <code>elasticity &times; %&Delta;P</code><br>
+  Labor force = <code>employed + unemployed</code> &middot; Participation = <code>LF / working-age &times; 100</code> &middot; Unemployment = <code>unemployed / LF &times; 100</code><br>
+  Profit = <code>TR - TC = P&middot;Q - TC</code> &middot; TC = <code>FC + VC</code> &middot; ATC = <code>TC/Q</code> &middot; AVC = <code>VC/Q</code><br>
+  Shutdown (short run): produce if <code>P &ge; AVC</code> &middot; Exit (long run): stay if <code>P &ge; ATC</code>
+</div>
+
+  <div class="panel">
+    <h3>📝 Mock exam (25 Q) <span class="scorechip" id="scoreChip">0 / 25</span></h3>
+    <p class="note">Answer all 25. Each is worth 4 points (100 total). Tap to reveal the worked answer only after you commit.</p>
+    <div id="quizBody"></div>
+  </div>
+
+  
+
+  <div class="navrow">
+    <a class="navbtn" href="Day-12.html">&larr; Day 12</a>
+    <a class="navbtn primary" href="Day-14.html">Day 14 &rarr;</a>
+  </div>
+</div>
+
+<script>
+const QUIZ = [{"q": "Q1. Ms. M enjoys the library and movies. The opportunity cost of going to a movie when the library is open is:", "opts": ["The cost of the movie ticket.", "The enjoyment she gives up from the library.", "Zero, she can do both.", "Zero, she prefers movies."], "correct": 1, "exp": "Next best thing given up = the library's enjoyment. Not the ticket price, not zero (they overlap in time)."}, {"q": "Q2. Market supply at price 100 is 3,840; group B demands 1,600 and group A demands 2,240. The equilibrium price is:", "opts": ["100", "125", "150", "75"], "correct": 0, "exp": "At 100, Qd = 1,600 + 2,240 = 3,840 = Qs. Market clears → equilibrium price <b>100</b>."}, {"q": "Q3. A max price of 50 is set; each of 20 sellers supplies 96 at that price. Cakes sold:", "opts": ["3,360", "480", "1,920", "96"], "correct": 2, "exp": "Binding ceiling → sold = quantity supplied = 96 × 20 = <b>1,920</b>."}, {"q": "Q4. Who gains and loses under that maximum price?", "opts": ["Some consumers benefit and all sellers lose.", "All consumers benefit and all sellers lose.", "Some sellers benefit.", "No one is affected."], "correct": 0, "exp": "Some consumers buy cheaper (gain); supply shrinks so others can't buy; sellers get less → <b>some consumers gain, all sellers lose</b>."}, {"q": "Q5. The price of cocoa (an input) rises. Price and quantity of cake:", "opts": ["Price up, quantity down.", "Price down, quantity down.", "Price up, quantity up.", "Cannot be known."], "correct": 0, "exp": "Supply shifts left → price <b>up</b>, quantity <b>down</b>."}, {"q": "Q6. A rule forces some people to eat two cakes (demand rises). Price and quantity:", "opts": ["Price up, quantity up.", "Price up, quantity down.", "Price down, quantity down.", "Cannot be known."], "correct": 0, "exp": "Demand shifts right → price <b>up</b>, quantity <b>up</b>."}, {"q": "Q7. Sellers must disclose sugar content, lowering demand. Price and quantity:", "opts": ["Price down, quantity down.", "Price up, quantity down.", "Price down, quantity up.", "Cannot be known."], "correct": 0, "exp": "Demand shifts left → price <b>down</b>, quantity <b>down</b>."}, {"q": "Q8. A minimum price of 200, above equilibrium, is imposed. Quantity sold:", "opts": ["Decreases.", "Increases.", "Unchanged.", "All sellers are happy."], "correct": 0, "exp": "Binding floor → surplus; quantity sold falls to quantity demanded → <b>decreases</b>."}, {"q": "Q9. Tea: P = 75, best-output AVC = 60, ATC = 80. The firm should:", "opts": ["Make tea in the short run, none in the long run.", "Make tea in both runs.", "Make none in either run.", "Only in the long run."], "correct": 0, "exp": "P ≥ AVC → produce short run; P < ATC → losing money → <b>exit long run</b>."}, {"q": "Q10. Now tea sells for 85 (AVC 60, ATC 80). The firm should:", "opts": ["Make tea in both the short and long run.", "Make tea short run, none long run.", "Make none in either run.", "Shut down now."], "correct": 0, "exp": "P (85) ≥ ATC (80) → covers all costs and profits → <b>produce in both runs</b>."}, {"q": "Q11. AI makes used-car quality easy to verify (market starts in long-run equilibrium). Then:", "opts": ["Price rises short run; long-run profit falls back relative to the short run.", "Price rises short run; long-run profit stays higher.", "Price falls short run; profit rises long run.", "Nothing changes."], "correct": 0, "exp": "Demand rises → short-run price and profit up; entry competes profit back to zero → long-run profit <b>falls back</b>."}, {"q": "Q12. The 'invisible hand' means:", "opts": ["Self-interested firms reach an efficient market outcome.", "Government plans the efficient point.", "Owners act selflessly to reach short-run equilibrium.", "Markets never reach equilibrium."], "correct": 0, "exp": "Self-interest + prices → efficient outcome with no planner."}, {"q": "Q13. Price 10, sells 20, elasticity -2.5. Raise price to 12. New quantity:", "opts": ["16", "30", "10", "24"], "correct": 2, "exp": "+20% × -2.5 = -50% → 20 × 0.5 = <b>10</b>."}, {"q": "Q14. After that price rise, revenue and profit:", "opts": ["Revenue falls; profit change unknown without costs.", "Both rise.", "Both fall for certain.", "Revenue rises; profit unknown."], "correct": 0, "exp": "Elastic demand → revenue (P×Q) falls; without cost info, the profit change is <b>unknown</b>."}, {"q": "Q15. Demand is inelastic. Which is TRUE?", "opts": ["Raising price raises revenue, since quantity falls by less than price rises.", "A 10% price rise cuts quantity by more than 10%.", "She should run a sale.", "Lowering price raises revenue."], "correct": 0, "exp": "Inelastic → quantity barely moves → raising price <b>raises revenue</b>."}, {"q": "Q16. Nominal GDP 2026: tires 185×120, brakes 240×202, batteries 105×310. Equals:", "opts": ["103,230", "90,000", "102,200", "103,255"], "correct": 0, "exp": "22,200 + 48,480 + 32,550 = <b>103,230</b>."}, {"q": "Q17. Base year 2026. Real GDP 2027 = 185×110 + 240×205 + 105×315 =", "opts": ["102,625", "103,255", "120,905", "102,550"], "correct": 0, "exp": "20,350 + 49,200 + 33,075 = <b>102,625</b>."}, {"q": "Q18. Real GDP went 103,230 → 102,625. The % change is:", "opts": ["Between 0% and -1%", "Between 1% and 2%", "Between -1% and -2%", "Between 0% and 1%"], "correct": 0, "exp": "-0.59% → <b>between 0% and -1%</b>."}, {"q": "Q19. Real GDP per capita: 2025 = 98,000/10, 2026 = 103,230/11, 2027 = 102,625/9. Highest standard of living:", "opts": ["2027", "2025", "2026", "Not enough data."], "correct": 0, "exp": "2025 = 9,800; 2026 = 9,385; 2027 = 11,403 → highest in <b>2027</b>."}, {"q": "Q20. With population falling, did the economy grow in 2027?", "opts": ["No by real GDP, yes by real GDP per capita.", "Yes by both.", "No by both.", "Yes by real GDP, no by per capita."], "correct": 0, "exp": "Real GDP slipped (no growth) but with a smaller population, output per person rose → <b>per-capita yes, total no</b>."}, {"q": "Q21. The country re-exports 1,000 USED engines at 10,000 each. Effect on GDP:", "opts": ["No impact — used goods aren't current production.", "GDP rises 10,000,000.", "GDP falls 10,000,000.", "GDP rises by less than 10,000,000."], "correct": 0, "exp": "Used goods were counted when first made → <b>no impact</b> now."}, {"q": "Q22. Basket = 4 tires + 1 battery. Values: 2025 = 820, 2026 = 845, 2027 = 862 (base 2026). Inflation in 2027:", "opts": ["Between 2% and 4%, inflation", "Between 4% and 6%, deflation", "Between 0% and 2%, inflation", "Between -2% and 0%, deflation"], "correct": 0, "exp": "CPI 2027 = 862/845×100 = 102.01; inflation = 2.01% → <b>between 2% and 4%, inflation</b>."}, {"q": "Q23. Working-age 8, employed 5, unemployed (looking) 1. Participation and unemployment:", "opts": ["Participation 70–80%, unemployment 15–20%.", "Participation 70–80%, unemployment 10–15%.", "Participation 60–70%, unemployment 15–20%.", "Participation 60–70%, unemployment 10–15%."], "correct": 0, "exp": "LF = 6; participation 6/8 = 75% (70–80%); unemployment 1/6 = 16.7% (15–20%)."}, {"q": "Q24. The goal of contractionary monetary policy is to:", "opts": ["Reduce aggregate demand to reduce inflation.", "Reduce aggregate demand to reduce GDP.", "Increase aggregate demand to increase GDP.", "Increase aggregate demand to reduce inflation."], "correct": 0, "exp": "Contractionary = cool demand to fight <b>inflation</b>."}, {"q": "Q25. In a recession, the government and central bank should run:", "opts": ["Expansionary fiscal and expansionary monetary policy.", "Contractionary fiscal and contractionary monetary.", "Contractionary fiscal and expansionary monetary.", "Expansionary fiscal and contractionary monetary."], "correct": 0, "exp": "Both tools push demand up in a recession → <b>expansionary + expansionary</b>."}];
+const body=document.getElementById('quizBody');
+let score=0;
+QUIZ.forEach((item,qi)=>{
+  const block=document.createElement('div'); block.className='qblock';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const exp=document.createElement('div'); exp.className='exp'; exp.innerHTML=item.exp;
+  item.opts.forEach((opt,oi)=>{
+    const btn=document.createElement('button'); btn.className='opt';
+    btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
+    btn.onclick=()=>{
+      if(block.dataset.done) return;
+      block.dataset.done="1";
+      const btns=block.querySelectorAll('.opt'); btns.forEach(x=>x.disabled=true);
+      btns[item.correct].classList.add('correct'); btns[item.correct].querySelector('.mark').textContent='✓';
+      if(oi===item.correct){score++;} else {btn.classList.add('wrong'); btn.querySelector('.mark').textContent='✗';}
+      document.getElementById('scoreChip').textContent=`${score} / ${QUIZ.length}`;
+      exp.classList.add('show');
+    };
+    block.appendChild(btn);
+  });
+  block.appendChild(exp); body.appendChild(block);
+});
+
+let tLeft=120*60, tId=null;
+function fmt(s){let m=Math.floor(s/60),x=s%60;return (m<10?'0':'')+m+':'+(x<10?'0':'')+x;}
+function tick(){if(tLeft<=0){clearInterval(tId);document.getElementById('clock').textContent='00:00';return;}tLeft--;document.getElementById('clock').textContent=fmt(tLeft);}
+function startTimer(){if(!tId)tId=setInterval(tick,1000);}
+function pauseTimer(){clearInterval(tId);tId=null;}
+
+</script>
+</body>
+</html>

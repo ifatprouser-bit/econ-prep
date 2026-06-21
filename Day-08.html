@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Elasticity of Demand</title>
+<style>
+:root{--bg:#f5f3fb;--card:#fff;--ink:#211c33;--muted:#6f6886;--brand:#6b4ef0;--brand-d:#5238c4;
+--brand-soft:#ece7fd;--good:#1f9d63;--good-soft:#e4f6ec;--bad:#d2453f;--bad-soft:#fae5e4;--line:#e7e3f2;
+--amber:#b6791f;--amber-soft:#fcf3e3;}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);margin:0;line-height:1.55;}
+.wrap{max-width:760px;margin:0 auto;padding:26px 22px 60px;}
+.crumb{color:var(--brand);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em;}
+h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
+.lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
+.panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
+.preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
+.preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+.preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
+audio{width:100%;margin-top:6px;}
+.takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
+.takeaway b{color:var(--brand);}
+.takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
+.takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
+.question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
+.rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
+.step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);} .step:first-of-type{border-top:none;}
+.stepn{flex:0 0 28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px;}
+.stepbody .lab{font-weight:600;}
+.math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
+.ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
+.tryq .q{font-weight:600;margin-bottom:8px;}
+.reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
+.reveal{display:none;margin-top:10px;padding:11px 14px;border-radius:9px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;}
+.reveal.show{display:block;}
+.qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
+.qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
+.opt:hover{border-color:var(--brand);background:var(--brand-soft);}
+.opt.correct{border-color:var(--good);background:var(--good-soft);} .opt.wrong{border-color:var(--bad);background:var(--bad-soft);}
+.opt .mark{float:right;font-weight:700;}
+.exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
+.exp.show{display:block;} .exp b{color:var(--brand);}
+.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
+.navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
+.navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+</style></head><body><div class="wrap">
+<div class="crumb">Day 8 of 14 · Learn</div>
+<h1>Price Elasticity of Demand</h1>
+<p class="lede">How sensitive buyers are to price — and what it does to revenue.</p>
+<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>Two shops each raise prices 10 percent. A trendy boba shop loses half its customers; the only pharmacy in town loses almost none. Which one should think hard before raising prices?</p><p class="do">Answer, then press play.</p></div>
+<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-08.mp3"></audio><div class="takeaway"><ul><li><b>Elastic (size of elasticity above 1)</b> - quantity reacts a lot (lots of substitutes). Raising price LOWERS total revenue.</li><li><b>Inelastic (size below 1)</b> - quantity barely reacts (a necessity, few substitutes). Raising price RAISES total revenue.</li></ul><p class="tk-gen">The working line: % change in quantity = elasticity × % change in price. Revenue follows from elasticity, but profit also needs costs.</p></div></div>
+<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">A seller charges 10 and sells 20 units a month. The price elasticity of demand is −2.5. She raises the price to 12. How many units will she sell, and does her revenue rise or fall?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">% change in quantity = elasticity × % change in price. Then revenue = price × quantity.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Find the % change in price.</div><span class="math">10 → 12 is +20%</span></div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Apply elasticity for the % change in quantity.</div><span class="math">−2.5 × 20% = −50%</span></div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">New quantity.</div><span class="math">20 × (1 − 0.5) = 10 units</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">Compare revenue.</div><span class="math">old 10×20 = 200 → new 12×10 = 120 (falls)</span></div></div><div class="ans">&#10003; Answer: She sells 10 units, and revenue falls from 200 to 120 (demand is elastic).</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">Demand is inelastic and a seller raises the price. What happens to revenue?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">It rises. Quantity falls by a smaller % than the price rises, so price × quantity goes up.</div></div><div class="tryq"><div class="q">Price rises 10% and quantity falls 4%. Is demand elastic or inelastic?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Inelastic. Quantity moved less than price (size of elasticity = 0.4, below 1).</div></div></div></div>
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+<div class="navrow"><a class="navbtn" href="Day-07.html">&larr; Back</a><a class="navbtn primary" href="Day-09.html">Next &rarr;</a></div>
+</div>
+<script>
+const QUIZ = [{"q": "Elasticity measures:", "opts": ["How much quantity responds to a price change.", "Total revenue.", "How much price responds to cost.", "The slope of supply."], "correct": 0, "exp": "%ΔQ ÷ %ΔP."}, {"q": "Price 10→12, elasticity −2.5, started at 20 units. New quantity:", "opts": ["10", "16", "30", "24"], "correct": 0, "exp": "+20% × −2.5 = −50% → 10."}, {"q": "For an ELASTIC good, raising the price makes revenue:", "opts": ["Fall.", "Rise.", "Stay the same.", "Double."], "correct": 0, "exp": "Quantity falls more than price rises."}, {"q": "Inelastic demand means:", "opts": ["Raising the price raises revenue.", "A 10% price rise cuts quantity by more than 10%.", "You should run a sale.", "Lowering price raises revenue."], "correct": 0, "exp": "Buyers barely react."}];
+const body=document.getElementById('quizBody');
+if(body){
+let score=0;
+QUIZ.forEach((item,qi)=>{
+  const block=document.createElement('div');block.className='qblock';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
+  item.opts.forEach((opt,oi)=>{
+    const btn=document.createElement('button');btn.className='opt';
+    btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
+    btn.onclick=()=>{
+      if(block.dataset.done)return; block.dataset.done="1";
+      const btns=block.querySelectorAll('.opt');btns.forEach(x=>x.disabled=true);
+      btns[item.correct].classList.add('correct');btns[item.correct].querySelector('.mark').textContent='✓';
+      if(oi===item.correct){score++;}else{btn.classList.add('wrong');btn.querySelector('.mark').textContent='✗';}
+      document.getElementById('scoreChip').textContent=`${score} / ${QUIZ.length}`;
+      exp.classList.add('show');
+    };
+    block.appendChild(btn);
+  });
+  block.appendChild(exp);body.appendChild(block);
+});
+}
+</script></body></html>

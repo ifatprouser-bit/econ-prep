@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demand &amp; Supply Curves</title>
+<style>
+:root{--bg:#f5f3fb;--card:#fff;--ink:#211c33;--muted:#6f6886;--brand:#6b4ef0;--brand-d:#5238c4;
+--brand-soft:#ece7fd;--good:#1f9d63;--good-soft:#e4f6ec;--bad:#d2453f;--bad-soft:#fae5e4;--line:#e7e3f2;
+--amber:#b6791f;--amber-soft:#fcf3e3;}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);margin:0;line-height:1.55;}
+.wrap{max-width:760px;margin:0 auto;padding:26px 22px 60px;}
+.crumb{color:var(--brand);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em;}
+h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
+.lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
+.panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
+.preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
+.preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+.preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
+audio{width:100%;margin-top:6px;}
+.takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
+.takeaway b{color:var(--brand);}
+.takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
+.takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
+.question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
+.rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
+.step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);} .step:first-of-type{border-top:none;}
+.stepn{flex:0 0 28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px;}
+.stepbody .lab{font-weight:600;}
+.math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
+.ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
+.tryq .q{font-weight:600;margin-bottom:8px;}
+.reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
+.reveal{display:none;margin-top:10px;padding:11px 14px;border-radius:9px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;}
+.reveal.show{display:block;}
+.qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
+.qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
+.opt:hover{border-color:var(--brand);background:var(--brand-soft);}
+.opt.correct{border-color:var(--good);background:var(--good-soft);} .opt.wrong{border-color:var(--bad);background:var(--bad-soft);}
+.opt .mark{float:right;font-weight:700;}
+.exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
+.exp.show{display:block;} .exp b{color:var(--brand);}
+.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
+.navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
+.navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+</style></head><body><div class="wrap">
+<div class="crumb">Day 2 of 14 · Learn</div>
+<h1>Demand &amp; Supply Curves</h1>
+<p class="lede">How one shopper&#x27;s demand adds up into a whole market — and what makes a curve move.</p>
+<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A coffee shop raises its price by one shekel and sells fewer cups. Did its demand curve move — or did we just slide to a new point on the same curve?</p><p class="do">Guess, then press play.</p></div>
+<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-02.mp3"></audio><div class="takeaway"><ul><li><b>Move ALONG the curve</b> - caused by the good&#x27;s OWN price changing (more expensive → people buy less).</li><li><b>SHIFT the whole curve</b> - caused by something else — income, tastes, the price of related goods, the number of buyers.</li></ul><p class="tk-gen">Market demand (or supply) = add up every buyer&#x27;s (or seller&#x27;s) quantity at each price; equilibrium is where the two meet.</p></div></div>
+<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">In town T there are two groups of buyers. Group A has 7 buyers who each want 80 cakes at a price of 175. Group B has 8 buyers who each want 50 cakes at a price of 175. What is the market quantity demanded at a price of 175?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">Market demand at a price = add up the quantity every buyer wants at that price. With identical groups, multiply each group&#x27;s individual quantity by the number of buyers, then add.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Group A total.</div><span class="math">7 buyers × 80 = 560</span></div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Group B total.</div><span class="math">8 buyers × 50 = 400</span></div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Add the groups.</div><span class="math">560 + 400 = 960 cakes</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">That is market demand at 175.</div>Repeat at every price to trace the whole market demand curve.</div></div><div class="ans">&#10003; Answer: 960 cakes are demanded at a price of 175.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">At a price of 100, each of 7 group-A buyers wants 160 and each of 8 group-B buyers wants 100. Market quantity demanded?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">1,920. Group A: 7 × 160 = 1,120. Group B: 8 × 100 = 800. Total = 1,120 + 800 = 1,920.</div></div><div class="tryq"><div class="q">Buyers&#x27; incomes rise (the good is normal). Does the demand curve shift or do we slide along it?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">It SHIFTS right — income is not the good&#x27;s own price. At every price, people now want more.</div></div></div></div>
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+<div class="navrow"><a class="navbtn" href="Day-01.html">&larr; Back</a><a class="navbtn primary" href="Day-03.html">Next &rarr;</a></div>
+</div>
+<script>
+const QUIZ = [{"q": "How do you build the market demand curve from individual buyers?", "opts": ["Add up the quantity each buyer wants at each price.", "Average the prices buyers will pay.", "Take the highest individual demand.", "Multiply price by the number of buyers."], "correct": 0, "exp": "Market demand is the horizontal sum at each price."}, {"q": "If a good's own price rises, the quantity demanded:", "opts": ["Falls — a move along the curve.", "Rises.", "Shifts the whole curve left.", "Does not change."], "correct": 0, "exp": "Own-price change = movement along, not a shift."}, {"q": "Which SHIFTS the demand curve?", "opts": ["A rise in buyers' income.", "A change in the good's own price.", "Reaching equilibrium.", "A change in quantity supplied."], "correct": 0, "exp": "Income, tastes, related prices, number of buyers shift it."}, {"q": "Equilibrium is the price where:", "opts": ["Quantity demanded equals quantity supplied.", "Demand is highest.", "Sellers make the most profit.", "The government sets the price."], "correct": 0, "exp": "Qd = Qs; the market clears."}];
+const body=document.getElementById('quizBody');
+if(body){
+let score=0;
+QUIZ.forEach((item,qi)=>{
+  const block=document.createElement('div');block.className='qblock';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
+  item.opts.forEach((opt,oi)=>{
+    const btn=document.createElement('button');btn.className='opt';
+    btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
+    btn.onclick=()=>{
+      if(block.dataset.done)return; block.dataset.done="1";
+      const btns=block.querySelectorAll('.opt');btns.forEach(x=>x.disabled=true);
+      btns[item.correct].classList.add('correct');btns[item.correct].querySelector('.mark').textContent='✓';
+      if(oi===item.correct){score++;}else{btn.classList.add('wrong');btn.querySelector('.mark').textContent='✗';}
+      document.getElementById('scoreChip').textContent=`${score} / ${QUIZ.length}`;
+      exp.classList.add('show');
+    };
+    block.appendChild(btn);
+  });
+  block.appendChild(exp);body.appendChild(block);
+});
+}
+</script></body></html>

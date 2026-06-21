@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Economics Exam Prep — 14-Day Hub</title>
+<style>
+  :root{
+    --bg:#f5f3fb; --card:#ffffff; --ink:#211c33; --muted:#6f6886;
+    --brand:#6b4ef0; --brand-d:#5238c4; --brand-soft:#ece7fd;
+    --good:#1f9d63; --good-soft:#e4f6ec; --line:#e7e3f2; --lock:#b9b2cc;
+  }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); margin:0; line-height:1.5;}
+  .wrap{max-width:980px; margin:0 auto; padding:38px 24px 60px;}
+  .crumb{color:var(--brand); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.05em;}
+  h1{font-size:32px; margin:8px 0 6px; letter-spacing:-.02em;}
+  .lede{color:var(--muted); margin:0 0 10px; font-size:16px; max-width:680px;}
+  .exam{background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 18px; font-size:14px; color:var(--muted); margin:14px 0 26px;}
+  .exam b{color:var(--ink);}
+  .sectit{font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin:26px 4px 10px;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px;}
+  .card{display:block; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line);
+    border-radius:16px; padding:18px 18px 16px; transition:.15s; position:relative; box-shadow:0 1px 3px rgba(40,20,90,.04);}
+  a.card:hover{border-color:var(--brand); transform:translateY(-2px); box-shadow:0 6px 18px rgba(80,50,200,.10);}
+  .card.locked{opacity:.62; cursor:not-allowed;}
+  .row{display:flex; align-items:center; gap:11px; margin-bottom:10px;}
+  .dnum{flex:0 0 34px; height:34px; border-radius:10px; display:grid; place-items:center;
+    background:var(--brand-soft); color:var(--brand); font-weight:800; font-size:15px;}
+  .card.locked .dnum{background:#f0eef6; color:var(--lock);}
+  .state{margin-left:auto; font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; text-transform:uppercase; letter-spacing:.03em;}
+  .state.ready{background:var(--good-soft); color:var(--good);}
+  .state.soon{background:#f0eef6; color:var(--lock);}
+  .ctitle{font-weight:700; font-size:15.5px; line-height:1.25;}
+  .ctag{color:var(--muted); font-size:13px; margin-top:3px;}
+  .meta{margin-top:12px; padding-top:11px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); display:flex; gap:12px;}
+  footer{color:var(--muted); font-size:13px; margin-top:34px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb">Bar Ilan IMBA · Dr. Andrew Schein</div>
+  <h1>Introduction to Economics — 2-Week Prep</h1>
+  <p class="lede">~30 minutes a day. Open a day to listen to its podcast and take its quiz. Days 1–10 teach; days 11–14 are practice and a full mock exam.</p>
+  <div class="exam"><b>Your exam:</b> 25 multiple-choice questions · 4 points each · 2 hours · closed book · calculator + formula sheet allowed. Half micro, half macro. Some calculations, some "what happens to the graph" reasoning.</div>
+
+  <div class="sectit">Learn — podcast + quiz</div>
+  <div class="grid" id="gridLearn"></div>
+
+  <div class="sectit">Practice &amp; mock exam</div>
+  <div class="grid" id="gridPractice"></div>
+
+  <footer>Day pages open separately. Keep this folder together — each page loads its own podcast file. ✦</footer>
+</div>
+
+<script>
+const DAYS = [
+  {n:1, sec:"learn", title:"Opportunity Cost & Scarcity", tag:"How econ is tested", ready:true},
+  {n:2, sec:"learn", title:"Demand & Supply Curves", tag:"Building the market", ready:true},
+  {n:3, sec:"learn", title:"Equilibrium + Price Ceilings & Floors", tag:"Who gains, who loses", ready:true},
+  {n:4, sec:"learn", title:"Subsidies + Shifts in Equilibrium", tag:"The 'cannot be known' trap", ready:true},
+  {n:5, sec:"learn", title:"Production & Costs — Cost Table", tag:"FC, VC, TC, MC, ATC, AVC", ready:true},
+  {n:6, sec:"learn", title:"Short-Run Supply & Shutdown", tag:"P vs AVC vs profit", ready:true},
+  {n:7, sec:"learn", title:"Competitive Markets — Long Run", tag:"Entry, exit, P=ATC", ready:true},
+  {n:8, sec:"learn", title:"Price Elasticity of Demand", tag:"Calculation & revenue", ready:true},
+  {n:9, sec:"learn", title:"Macro 1 — GDP", tag:"Nominal, real, per capita", ready:true},
+  {n:10, sec:"learn", title:"Macro 2 — Inflation, Jobs & Policy", tag:"CPI, unemployment, AD/AS", ready:true},
+  {n:11, sec:"practice", title:"Calculation Drill Day", tag:"Every formula, timed", ready:true},
+  {n:12, sec:"practice", title:"Reasoning & Graph Day", tag:"Shifts & traps", ready:true},
+  {n:13, sec:"practice", title:"Full Timed Mock Exam", tag:"25 questions · 2 hours", ready:true},
+  {n:14, sec:"practice", title:"Review & Formula Sheet", tag:"Lock it in", ready:true}
+];
+
+function pad(n){return n<10?'0'+n:''+n;}
+function card(d){
+  const href = `Day-${pad(d.n)}.html`;
+  const tag = d.ready ? 'a' : 'div';
+  const cls = 'card'+(d.ready?'':' locked');
+  const attrs = d.ready ? `href="${href}"` : '';
+  return `<${tag} class="${cls}" ${attrs}>
+    <div class="row">
+      <span class="dnum">${d.n}</span>
+      <span class="state ${d.ready?'ready':'soon'}">${d.ready?'Ready':'Soon'}</span>
+    </div>
+    <div class="ctitle">${d.title}</div>
+    <div class="ctag">${d.tag}</div>
+    <div class="meta"><span>🎧 Podcast</span><span>📝 Quiz</span></div>
+  </${tag}>`;
+}
+document.getElementById('gridLearn').innerHTML = DAYS.filter(d=>d.sec==='learn').map(card).join('');
+document.getElementById('gridPractice').innerHTML = DAYS.filter(d=>d.sec==='practice').map(card).join('');
+</script>
+</body>
+</html>
