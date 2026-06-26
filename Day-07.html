@@ -14,23 +14,30 @@ h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
 .panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel h3 .scorechip{margin-left:auto;}
 .panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
 .preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
 .preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
 .preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
 audio{width:100%;margin-top:6px;}
+.secaudio{background:var(--brand-soft);border:1px solid #d9d0fb;border-radius:12px;padding:10px 13px;margin:4px 0 14px;}
+.secaudio .salab{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin-bottom:7px;}
 .takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
 .takeaway b{color:var(--brand);}
 .takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
 .takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.sub{font-size:15px;font-weight:800;color:var(--brand-d);margin:20px 0 6px;}
+.p{font-size:15px;margin:0 0 8px;}
 .partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
 .question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
 .rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
 .step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);} .step:first-of-type{border-top:none;}
 .stepn{flex:0 0 28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px;}
 .stepbody .lab{font-weight:600;}
-.math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
 .ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.svg-wrap{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0;text-align:center;}
+.svg-wrap svg{width:100%;height:auto;max-width:560px;}
+.cap{color:var(--muted);font-size:13px;margin-top:8px;}
 .tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
 .tryq .q{font-weight:600;margin-bottom:8px;}
 .reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
@@ -38,6 +45,7 @@ audio{width:100%;margin-top:6px;}
 .reveal.show{display:block;}
 .qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
 .qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.examtag{display:inline-block;background:var(--good-soft);color:var(--good);border:1px solid #bfe6cf;border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle;}
 .qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
 .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
 .opt:hover{border-color:var(--brand);background:var(--brand-soft);}
@@ -45,28 +53,109 @@ audio{width:100%;margin-top:6px;}
 .opt .mark{float:right;font-weight:700;}
 .exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
 .exp.show{display:block;} .exp b{color:var(--brand);}
-.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.scorechip{font-size:13px;color:var(--muted);font-weight:600;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
 </style></head><body><div class="wrap">
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 7 of 14 · Learn</div>
 <h1>Competitive Markets in the Long Run</h1>
 <p class="lede">Entry, exit, zero economic profit, and the invisible hand.</p>
-<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A new bubble-tea shop opens and makes great profits. What do you expect to happen on that street over the next year?</p><p class="do">Picture the street, then press play.</p></div>
-<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-07.mp3"></audio><div class="takeaway"><ul><li><b>Free entry &amp; exit</b> - profits attract new firms (supply rises, price falls); losses push firms out (supply falls, price rises). Both drive economic profit to zero.</li><li><b>Zero economic profit</b> - is a fine, stable place: a normal return for the owner is already counted inside cost. It just means no extra profit luring competitors.</li></ul><p class="tk-gen">In long-run equilibrium price = minimum average total cost. A demand jump fades as firms enter; a permanent cost rise leaves price permanently higher.</p></div></div>
-<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">A competitive market is currently earning positive economic profits. Walk through what happens in the long run, and where price ends up.</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">In a competitive market, firms freely enter when there are profits and exit when there are losses, until economic profit is zero — which means price equals average total cost.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Profits attract entry.</div>New firms join the market.</div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Supply shifts right.</div>More sellers means the supply curve moves out.</div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Price falls.</div>As supply grows, the market price drops, shrinking the profits.</div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">Stops at zero profit.</div>Entry continues until price = minimum average total cost and economic profit is zero.</div></div><div class="ans">&#10003; Answer: Firms enter until price falls to minimum average total cost and economic profit is zero.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">Instead, firms are losing money. What happens long run?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Some exit → supply falls → price rises → losses shrink, until economic profit returns to zero.</div></div><div class="tryq"><div class="q">A permanent rise in an input&#x27;s cost hits the market. Where does long-run price settle?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Permanently higher. Every firm&#x27;s average total cost rose, and long-run price equals that — unlike a temporary demand shock, which fades.</div></div></div></div>
-<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+
+<div class="preq"><span class="tag">&#9208; Before you listen — guess first</span><p>A new bubble-tea shop opens and makes great profits. What do you expect to happen on that street over the next year?</p><p class="do">Picture the street, then press play.</p></div>
+
+<div class="panel"><h3>&#127911; Start here — today's plan <span class="scorechip">~1 min</span></h3><p class="note">A quick map of what you'll learn today. Each section below also has its own short audio you can listen to while you read.</p><audio controls preload="none" src="Day-07-intro.mp3"></audio><div class="takeaway"><ul><li><b>Free entry &amp; exit</b> — profits attract new firms (supply rises, price falls); losses push firms out (supply falls, price rises). Both drive economic profit to zero.</li><li><b>Zero economic profit</b> — is a stable, fine place: a normal return for the owner is already counted inside cost, so no one is lured in or pushed out.</li></ul><p class="tk-gen">In long-run equilibrium, price = minimum average total cost. A demand jump fades as firms enter; a permanent cost rise leaves price permanently higher.</p></div></div>
+
+<div class="panel"><h3>&#9851;&#65039; The entry-and-exit engine</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-07-engine.mp3"></audio></div>
+<p class="p">In a competitive market firms can freely enter and leave. That single fact is an engine that always pushes economic profit back to zero. Watch it run when demand jumps:</p>
+<div class="svg-wrap">
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Step 1: demand shifts right and price rises above normal, giving firms profit. Step 2: profit attracts entry, supply shifts right, and price falls back to its original level.">
+<text x="165" y="20" font-size="13" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Step 1 · demand rises → price up</text>
+<line x1="55" y1="40" x2="55" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="55" y1="215" x2="290" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="70" y1="205" x2="265" y2="60" stroke="#1f9d63" stroke-width="2.4"/>
+<text x="266" y="60" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold">S</text>
+<line x1="70" y1="70" x2="255" y2="205" stroke="#6b4ef0" stroke-width="2.4"/>
+<text x="256" y="208" font-size="11.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">D0</text>
+<line x1="115" y1="70" x2="290" y2="200" stroke="#6b4ef0" stroke-width="2.4" stroke-dasharray="6 4"/>
+<text x="284" y="196" font-size="11.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">D1</text>
+<circle cx="159" cy="135" r="4" fill="#888"/><circle cx="190" cy="112" r="4.5" fill="#d2453f"/>
+<line x1="55" y1="135" x2="159" y2="135" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="55" y1="112" x2="190" y2="112" stroke="#d2453f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="30" y="139" font-size="10" fill="#888" font-family="Arial">P0</text>
+<text x="28" y="110" font-size="10" fill="#d2453f" font-family="Arial" font-weight="bold">P1</text>
+<text x="120" y="240" font-size="10.5" fill="#1f9d63" font-family="Arial">profit appears</text>
+
+<text x="465" y="20" font-size="13" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Step 2 · entry → price falls back</text>
+<line x1="355" y1="40" x2="355" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="355" y1="215" x2="590" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="370" y1="205" x2="565" y2="60" stroke="#1f9d63" stroke-width="2.4"/>
+<text x="566" y="60" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold">S0</text>
+<line x1="410" y1="205" x2="590" y2="68" stroke="#1f9d63" stroke-width="2.4" stroke-dasharray="6 4"/>
+<text x="584" y="64" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold">S1</text>
+<line x1="415" y1="70" x2="590" y2="200" stroke="#6b4ef0" stroke-width="2.4"/>
+<text x="584" y="196" font-size="11.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">D1</text>
+<circle cx="490" cy="112" r="4.5" fill="#d2453f"/><circle cx="512" cy="135" r="4.5" fill="#1f9d63"/>
+<line x1="355" y1="112" x2="490" y2="112" stroke="#d2453f" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="355" y1="135" x2="512" y2="135" stroke="#1f9d63" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="330" y="110" font-size="10" fill="#d2453f" font-family="Arial" font-weight="bold">P1</text>
+<text x="326" y="139" font-size="10" fill="#1f9d63" font-family="Arial" font-weight="bold">P0</text>
+<path d="M495 120 L508 130" stroke="#211c33" stroke-width="1.6" marker-end="url(#a7)"/>
+<defs><marker id="a7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#211c33"/></marker></defs>
+</svg>
+<div class="cap">Demand rises, so price climbs to P1 and firms earn profit (left). That profit lures new firms in; supply slides right and price drops back to P0 — zero economic profit again (right). Only the quantity is permanently higher. Losses run the same engine in reverse: firms exit, supply falls, price recovers.</div>
+</div>
+</div>
+
+<div class="panel"><h3>&#9889; Two shocks, two endings</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-07-shocks.mp3"></audio></div>
+<p class="p">The exam keeps testing the same contrast: a <b>demand</b> shock versus a <b>permanent cost</b> shock. They end in different places.</p>
+<ul style="font-size:15px;margin:2px 0 0;padding-left:20px;">
+<li style="margin:6px 0;"><b>Demand shock (temporary effect on price).</b> Demand rises → short-run profit → entry → price returns to its original min-ATC level. The lasting change is only more firms and more quantity, not a higher price.</li>
+<li style="margin:6px 0;"><b>Permanent input-cost rise (lasting effect on price).</b> Every firm's average total cost is now higher, so long-run price settles permanently higher — because long-run price always equals minimum average total cost, and that floor itself moved up.</li>
+</ul>
+<div class="rule">Watch what is being asked. After a one-time demand jump, long-run economic profit goes back to zero — so profit "decreases" relative to the elevated short-run level. The market's better technology or trust lifts quantity, not lasting profit.</div>
+<p class="partlab" style="margin-top:14px;">Worked example · from a past final</p>
+<div class="question">A used-car market starts in long-run equilibrium. Then AI makes it far easier for buyers to verify a used car's quality. What happens to the price short run, and to firms' profits in the long run compared with the short run?</div>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Easier to trust quality → demand rises.</div>Short run, price increases and firms earn positive economic profit.</div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Profit attracts entry.</div>New firms enter; market supply shifts right.</div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Long run, profit returns to zero.</div>So compared with the elevated short-run profit, long-run profit <b>decreases</b> back to normal.</div></div>
+<div class="ans">&#10003; Answer: price rises in the short run; long-run profit decreases relative to the short run (back to zero economic profit).</div>
+<div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try — reveal only after you work it out</h3>
+<div class="tryq"><div class="q">A permanent rise in an input's cost hits a competitive market. Where does the long-run price settle?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Permanently higher. Every firm's average total cost rose, and long-run price equals minimum ATC — that floor moved up, so price stays up.</div></div>
+<div class="tryq"><div class="q">Firms in a competitive market are currently losing money. What happens long run?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Some exit → supply shifts left → price rises → losses shrink, until economic profit is back to zero.</div></div></div>
+</div>
+
+<div class="panel"><h3>&#129309; One more term — the &ldquo;invisible hand&rdquo;</h3>
+<p class="p">Notice what the entry-and-exit engine just did: nobody planned it. Each firm chased its own profit, yet the market landed exactly where output is made at the lowest possible average cost — the most efficient point. That &ldquo;self-interest leads to an efficient outcome&rdquo; idea is what Adam Smith called the <b>invisible hand</b>.</p>
+<div class="rule">Invisible hand: firms and buyers each act in their own self-interest, and market prices guide the market to an efficient outcome — firms end up producing at the most efficient point — with no central planner directing it.</div>
+<p class="p" style="color:var(--muted);font-size:13.5px;">Exam trap: the correct version says owners act on their <i>selfish</i> interests and the market reaches the <i>most efficient</i> point — not that they act selflessly, and not merely &ldquo;a short-run equilibrium.&rdquo;</p>
+</div>
+
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 6</span></h3><p class="note">Fresh exam-style questions — run the entry/exit engine. (The used-car past-final version is in the Day 13 mock.)</p><div id="quizBody"></div></div>
+
 <div class="navrow"><a class="navbtn" href="Day-06.html">&larr; Back</a><a class="navbtn primary" href="Day-08.html">Next &rarr;</a></div>
 </div>
 <script>
-const QUIZ = [{"q": "In long-run competitive equilibrium, price equals:", "opts": ["Minimum average total cost.", "Average variable cost.", "Marginal revenue only.", "Fixed cost."], "correct": 0, "exp": "Entry/exit drive P = min ATC."}, {"q": "Positive economic profits lead, long run, to:", "opts": ["Entry, higher supply, lower price.", "Exit and higher price.", "Nothing.", "Government action."], "correct": 0, "exp": "Profit attracts entry."}, {"q": "Zero economic profit is stable because:", "opts": ["A normal owner's return is already inside cost.", "Firms enjoy losing money.", "The government guarantees profit.", "Prices keep rising."], "correct": 0, "exp": "Zero economic profit = a normal living."}, {"q": "The 'invisible hand' means:", "opts": ["Self-interested firms reach an efficient outcome.", "Government plans the efficient point.", "Owners act selflessly.", "Markets never clear."], "correct": 0, "exp": "Self-interest + prices → efficiency."}];
+const QUIZ = [
+{"q":"A competitive umbrella market starts in long-run equilibrium. A viral trend suddenly makes umbrellas popular. Which is true?","opts":["Price rises in the short run, and long-run profit decreases relative to the short run.","Price rises in the short run, and long-run profit increases relative to the short run.","Price falls in the short run, and long-run profit increases relative to the short run.","Price rises in the short run, and long-run profit is unchanged relative to the short run."],"correct":0,"exp":"More popularity raises demand → short-run price up and positive profit. That profit attracts entry, pushing profit back to zero in the long run — so versus the elevated short-run profit, long-run profit decreases."},
+{"q":"In long-run competitive equilibrium, the market price equals:","opts":["Minimum average total cost.","Average variable cost.","Marginal revenue only.","Fixed cost."],"correct":0,"exp":"Free entry and exit push price to the bottom of the ATC curve, where economic profit is exactly zero."},
+{"q":"Zero economic profit is a stable long-run resting point because:","opts":["A normal return for the owner is already counted inside cost, so no firm enters or exits.","Firms enjoy losing money.","The government guarantees it.","Prices keep rising forever."],"correct":0,"exp":"\"Zero economic profit\" still means a normal living — there's just no extra profit to lure new entrants or losses to drive firms out."},
+{"q":"A permanent increase in an input's cost hits a competitive market. The long-run price:","opts":["Settles permanently higher.","Returns to its original level.","Falls below the original level.","Cannot change at all."],"correct":0,"exp":"Long-run price = minimum ATC. A permanent cost rise lifts every firm's ATC, so the price floor — and the long-run price — stay higher. (Unlike a demand shock, which fades.)"},
+{"q":"A competitive industry is suffering losses. The long-run adjustment is:","opts":["Some firms exit, supply falls, price rises until profit is zero.","More firms enter, supply rises, price falls.","Nothing changes.","The government sets a higher price."],"correct":0,"exp":"Losses push firms out → supply shifts left → price rises → losses shrink, ending at zero economic profit."},
+{"q":"The term \"invisible hand\" describes a situation where:","opts":["Self-interested firms, guided by prices, reach an outcome where production is at its most efficient point.","A central planner directs firms to the most efficient point.","Owners act selflessly to help society and reach a short-run equilibrium.","Markets never settle at an efficient outcome."],"correct":0,"exp":"Adam Smith's idea: each firm pursues its own profit, yet market prices steer the whole market to an efficient outcome — the most efficient production point — with no planner. (The trap answers swap in 'selfless' or 'a planner'.)"}
+];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 if(body){
 let score=0;
 QUIZ.forEach((item,qi)=>{
   const block=document.createElement('div');block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const tag=item.src?`<span class="examtag">${item.src}</span>`:'';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}${tag}</div><div class="qtext">${item.q}</div>`;
   const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
   item.opts.forEach((opt,oi)=>{
     const btn=document.createElement('button');btn.className='opt';

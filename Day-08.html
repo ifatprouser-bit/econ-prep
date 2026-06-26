@@ -14,15 +14,20 @@ h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
 .panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel h3 .scorechip{margin-left:auto;}
 .panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
 .preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
 .preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
 .preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
 audio{width:100%;margin-top:6px;}
+.secaudio{background:var(--brand-soft);border:1px solid #d9d0fb;border-radius:12px;padding:10px 13px;margin:4px 0 14px;}
+.secaudio .salab{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin-bottom:7px;}
 .takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
 .takeaway b{color:var(--brand);}
 .takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
 .takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.sub{font-size:15px;font-weight:800;color:var(--brand-d);margin:20px 0 6px;}
+.p{font-size:15px;margin:0 0 8px;}
 .partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
 .question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
 .rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
@@ -31,6 +36,9 @@ audio{width:100%;margin-top:6px;}
 .stepbody .lab{font-weight:600;}
 .math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
 .ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.svg-wrap{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0;text-align:center;}
+.svg-wrap svg{width:100%;height:auto;max-width:560px;}
+.cap{color:var(--muted);font-size:13px;margin-top:8px;}
 .tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
 .tryq .q{font-weight:600;margin-bottom:8px;}
 .reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
@@ -38,6 +46,7 @@ audio{width:100%;margin-top:6px;}
 .reveal.show{display:block;}
 .qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
 .qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.examtag{display:inline-block;background:var(--good-soft);color:var(--good);border:1px solid #bfe6cf;border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle;}
 .qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
 .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
 .opt:hover{border-color:var(--brand);background:var(--brand-soft);}
@@ -45,28 +54,107 @@ audio{width:100%;margin-top:6px;}
 .opt .mark{float:right;font-weight:700;}
 .exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
 .exp.show{display:block;} .exp b{color:var(--brand);}
-.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.scorechip{font-size:13px;color:var(--muted);font-weight:600;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
 </style></head><body><div class="wrap">
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 8 of 14 · Learn</div>
 <h1>Price Elasticity of Demand</h1>
 <p class="lede">How sensitive buyers are to price — and what it does to revenue.</p>
-<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>Two shops each raise prices 10 percent. A trendy boba shop loses half its customers; the only pharmacy in town loses almost none. Which one should think hard before raising prices?</p><p class="do">Answer, then press play.</p></div>
-<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-08.mp3"></audio><div class="takeaway"><ul><li><b>Elastic (size of elasticity above 1)</b> - quantity reacts a lot (lots of substitutes). Raising price LOWERS total revenue.</li><li><b>Inelastic (size below 1)</b> - quantity barely reacts (a necessity, few substitutes). Raising price RAISES total revenue.</li></ul><p class="tk-gen">The working line: % change in quantity = elasticity × % change in price. Revenue follows from elasticity, but profit also needs costs.</p></div></div>
-<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">A seller charges 10 and sells 20 units a month. The price elasticity of demand is −2.5. She raises the price to 12. How many units will she sell, and does her revenue rise or fall?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">% change in quantity = elasticity × % change in price. Then revenue = price × quantity.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Find the % change in price.</div><span class="math">10 → 12 is +20%</span></div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Apply elasticity for the % change in quantity.</div><span class="math">−2.5 × 20% = −50%</span></div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">New quantity.</div><span class="math">20 × (1 − 0.5) = 10 units</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">Compare revenue.</div><span class="math">old 10×20 = 200 → new 12×10 = 120 (falls)</span></div></div><div class="ans">&#10003; Answer: She sells 10 units, and revenue falls from 200 to 120 (demand is elastic).</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">Demand is inelastic and a seller raises the price. What happens to revenue?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">It rises. Quantity falls by a smaller % than the price rises, so price × quantity goes up.</div></div><div class="tryq"><div class="q">Price rises 10% and quantity falls 4%. Is demand elastic or inelastic?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Inelastic. Quantity moved less than price (size of elasticity = 0.4, below 1).</div></div></div></div>
-<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+
+<div class="preq"><span class="tag">&#9208; Before you listen — guess first</span><p>Two shops each raise prices 10 percent. A trendy boba shop loses half its customers; the only pharmacy in town loses almost none. Which one should think hard before raising prices?</p><p class="do">Answer, then press play.</p></div>
+
+<div class="panel"><h3>&#127911; Start here — today's plan <span class="scorechip">~1 min</span></h3><p class="note">A quick map of what you'll learn today. Each section below also has its own short audio you can listen to while you read.</p><audio controls preload="none" src="Day-08-intro.mp3"></audio><div class="takeaway"><ul><li><b>Elastic</b> (size of elasticity above 1) — quantity reacts a lot (many substitutes). Raising the price LOWERS total revenue.</li><li><b>Inelastic</b> (size below 1) — quantity barely reacts (a necessity, few substitutes). Raising the price RAISES total revenue.</li></ul><p class="tk-gen">The working line: % change in quantity = elasticity × % change in price. Revenue follows from elasticity — but profit also needs costs.</p></div></div>
+
+<div class="panel"><h3>&#129518; The formula, and how to use it</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-08-formula.mp3"></audio></div>
+<p class="p">Elasticity is just one ratio: how much quantity moves for a given price move.</p>
+<div class="rule">elasticity = (% change in quantity) ÷ (% change in price). Rearranged for calculations: % change in quantity = elasticity × % change in price.</div>
+<p class="partlab">Worked example · from a past final</p>
+<div class="question">Lavender sells erasers at 10 shekels and sells 20 a month. The price elasticity of her erasers is −2.5. She raises the price to 12. How many erasers will she sell?</div>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">% change in price.</div><span class="math">10 → 12 is +20%</span></div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Apply elasticity → % change in quantity.</div><span class="math">−2.5 × 20% = −50%</span></div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">New quantity.</div><span class="math">20 × (1 − 0.50) = 10 erasers</span></div></div>
+<div class="ans">&#10003; Answer: she sells 10 erasers a month.</div>
+<div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try — reveal only after you work it out</h3>
+<div class="tryq"><div class="q">Coffee is 4 dollars, 4,000 cups sold, elasticity −1.5. The price rises to 5. How many cups now?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">2,500 cups. Price 4 → 5 is +25%. −1.5 × 25% = −37.5%. 4,000 × (1 − 0.375) = 2,500.</div></div>
+<div class="tryq"><div class="q">Blankets are 200, 50 sold, elasticity −0.8. Price rises to 220. How many now?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">46 blankets. Price 200 → 220 is +10%. −0.8 × 10% = −8%. 50 × (1 − 0.08) = 46.</div></div></div>
+</div>
+
+<div class="panel"><h3>&#128207; Finding elasticity from two points — the midpoint method</h3>
+<p class="p">Sometimes the exam doesn't hand you the elasticity — it gives two prices with their quantities and asks you to <b>compute</b> it. Use the <i>average</i> of the two prices and the two quantities as the base, so you get the same answer whichever way the price moves.</p>
+<div class="rule">elasticity = (change in quantity ÷ average quantity) ÷ (change in price ÷ average price).</div>
+<p class="partlab">Worked example</p>
+<div class="question">At a price of 5, a café sells 100 coffees a day; at a price of 7, it sells 60. What is the price elasticity of demand between these two prices?</div>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">% change in quantity (over the average quantity).</div><span class="math">(60 − 100) ÷ ((100 + 60) / 2) = −40 ÷ 80 = −50%</span></div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">% change in price (over the average price).</div><span class="math">(7 − 5) ÷ ((5 + 7) / 2) = 2 ÷ 6 ≈ +33.3%</span></div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Divide.</div><span class="math">−50% ÷ 33.3% ≈ −1.5</span></div></div>
+<div class="ans">&#10003; Elasticity ≈ −1.5 — bigger than 1 in size, so demand is elastic here.</div>
+<p class="p" style="color:var(--muted);font-size:13.5px;">If the question lists two <i>groups</i> of buyers, first add their quantities at each price, then put the combined totals through this same formula.</p>
+</div>
+
+<div class="panel"><h3>&#128202; Elastic vs inelastic — and what it does to revenue</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-08-revenue.mp3"></audio></div>
+<p class="p">The size of the number tells you the shape of the curve and the fate of revenue.</p>
+<div class="svg-wrap">
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: a steep (inelastic) demand curve — the same price drop barely raises quantity. Right: a flat (elastic) demand curve — the same price drop raises quantity a lot.">
+<text x="170" y="20" font-size="13" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Inelastic (steep): |e| &lt; 1</text>
+<line x1="55" y1="40" x2="55" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="55" y1="215" x2="290" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="120" y1="60" x2="180" y2="210" stroke="#6b4ef0" stroke-width="2.8"/>
+<text x="183" y="208" font-size="11.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">D</text>
+<line x1="55" y1="95" x2="138" y2="95" stroke="#888" stroke-width="1.1" stroke-dasharray="4 3"/>
+<line x1="55" y1="160" x2="164" y2="160" stroke="#888" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="32" y="98" font-size="10" fill="#888" font-family="Arial">P↑</text>
+<text x="32" y="163" font-size="10" fill="#888" font-family="Arial">P↓</text>
+<line x1="138" y1="95" x2="138" y2="215" stroke="#1f9d63" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="164" y1="160" x2="164" y2="215" stroke="#1f9d63" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="138" y1="200" x2="164" y2="200" stroke="#1f9d63" stroke-width="1.6" marker-start="url(#a8)" marker-end="url(#a8)"/>
+<text x="151" y="235" font-size="10.5" fill="#1f9d63" font-family="Arial" font-weight="bold" text-anchor="middle">tiny ΔQ</text>
+
+<text x="465" y="20" font-size="13" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Elastic (flat): |e| &gt; 1</text>
+<line x1="355" y1="40" x2="355" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="355" y1="215" x2="590" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="370" y1="85" x2="575" y2="170" stroke="#6b4ef0" stroke-width="2.8"/>
+<text x="578" y="170" font-size="11.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">D</text>
+<line x1="355" y1="95" x2="394" y2="95" stroke="#888" stroke-width="1.1" stroke-dasharray="4 3"/>
+<line x1="355" y1="160" x2="551" y2="160" stroke="#888" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="332" y="98" font-size="10" fill="#888" font-family="Arial">P↑</text>
+<text x="332" y="163" font-size="10" fill="#888" font-family="Arial">P↓</text>
+<line x1="394" y1="95" x2="394" y2="215" stroke="#1f9d63" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="551" y1="160" x2="551" y2="215" stroke="#1f9d63" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="394" y1="200" x2="551" y2="200" stroke="#1f9d63" stroke-width="1.6" marker-start="url(#a8)" marker-end="url(#a8)"/>
+<text x="472" y="235" font-size="10.5" fill="#1f9d63" font-family="Arial" font-weight="bold" text-anchor="middle">large ΔQ</text>
+<defs><marker id="a8" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1f9d63"/></marker></defs>
+</svg>
+<div class="cap">Same price change, two very different reactions. A steep curve (inelastic, a necessity) barely budges in quantity; a flat curve (elastic, easily substituted) swings a lot. That's why a pharmacy can raise prices and a trendy café cannot.</div>
+</div>
+<div class="rule">Revenue rule. Elastic (|e| &gt; 1): price and revenue move OPPOSITE ways — raise the price, revenue falls. Inelastic (|e| &lt; 1): price and revenue move TOGETHER — raise the price, revenue rises. And revenue alone never tells you profit — you'd also need to know how costs changed.</div>
+</div>
+
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 5</span></h3><p class="note">Fresh exam-style questions — same skills as the worked example, new numbers. (The exact past-final versions are in the Day 13 mock.)</p><div id="quizBody"></div></div>
+
 <div class="navrow"><a class="navbtn" href="Day-07.html">&larr; Back</a><a class="navbtn primary" href="Day-09.html">Next &rarr;</a></div>
 </div>
 <script>
-const QUIZ = [{"q": "Elasticity measures:", "opts": ["How much quantity responds to a price change.", "Total revenue.", "How much price responds to cost.", "The slope of supply."], "correct": 0, "exp": "%ΔQ ÷ %ΔP."}, {"q": "Price 10→12, elasticity −2.5, started at 20 units. New quantity:", "opts": ["10", "16", "30", "24"], "correct": 0, "exp": "+20% × −2.5 = −50% → 10."}, {"q": "For an ELASTIC good, raising the price makes revenue:", "opts": ["Fall.", "Rise.", "Stay the same.", "Double."], "correct": 0, "exp": "Quantity falls more than price rises."}, {"q": "Inelastic demand means:", "opts": ["Raising the price raises revenue.", "A 10% price rise cuts quantity by more than 10%.", "You should run a sale.", "Lowering price raises revenue."], "correct": 0, "exp": "Buyers barely react."}];
+const QUIZ = [
+{"q":"A bookstore sells 120 notebooks a month at 15 shekels; the price elasticity is −2. It raises the price to 18. How many notebooks will it sell?","opts":["72 notebooks.","96 notebooks.","144 notebooks.","48 notebooks."],"correct":0,"exp":"Price 15 → 18 is +20%. % change in quantity = −2 × 20% = −40%. New quantity = 120 × (1 − 0.40) = 72."},
+{"q":"A gym sells 200 memberships at 100 shekels a month; elasticity is −1.5. It raises the price to 110. How many memberships will it sell?","opts":["170 memberships.","185 memberships.","150 memberships.","230 memberships."],"correct":0,"exp":"Price 100 → 110 is +10%. % change in quantity = −1.5 × 10% = −15%. New quantity = 200 × (1 − 0.15) = 170."},
+{"q":"A bakery's demand is elastic (elasticity −3) and it raises its bread price. What happens to its revenue and profit?","opts":["Revenue falls; profit can't be known without the change in costs.","Revenue and profit both rise.","Revenue and profit both fall.","Revenue rises; profit can't be known."],"correct":0,"exp":"Elastic demand (|−3| > 1) means a price rise lowers total revenue. Profit also depends on how costs change, so it can't be known from this alone."},
+{"q":"A pharmacy sells 400 units of a medicine at 25 shekels; elasticity is −0.4. It raises the price to 30. How many units will it sell?","opts":["368 units.","320 units.","384 units.","360 units."],"correct":0,"exp":"Price 25 → 30 is +20%. % change in quantity = −0.4 × 20% = −8%. New quantity = 400 × (1 − 0.08) = 368. (Inelastic — quantity barely moves.)"},
+{"q":"A good has inelastic demand. If the seller raises the price, total revenue will:","opts":["Rise.","Fall.","Stay exactly the same.","Drop to zero."],"correct":0,"exp":"Inelastic means quantity falls by a smaller percent than the price rises, so price × quantity goes up. (Elastic would be the opposite.)"}
+];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 if(body){
 let score=0;
 QUIZ.forEach((item,qi)=>{
   const block=document.createElement('div');block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const tag=item.src?`<span class="examtag">${item.src}</span>`:'';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}${tag}</div><div class="qtext">${item.q}</div>`;
   const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
   item.opts.forEach((opt,oi)=>{
     const btn=document.createElement('button');btn.className='opt';

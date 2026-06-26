@@ -14,23 +14,36 @@ h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
 .panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel h3 .scorechip{margin-left:auto;}
 .panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
 .preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
 .preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
 .preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
 audio{width:100%;margin-top:6px;}
+.secaudio{background:var(--brand-soft);border:1px solid #d9d0fb;border-radius:12px;padding:10px 13px;margin:4px 0 14px;}
+.secaudio .salab{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin-bottom:7px;}
 .takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
 .takeaway b{color:var(--brand);}
 .takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
 .takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.sub{font-size:15px;font-weight:800;color:var(--brand-d);margin:20px 0 6px;}
+.p{font-size:15px;margin:0 0 8px;}
 .partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
 .question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
 .rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
 .step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);} .step:first-of-type{border-top:none;}
 .stepn{flex:0 0 28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px;}
 .stepbody .lab{font-weight:600;}
-.math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
+.math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14px;display:inline-block;}
 .ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.svg-wrap{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0;text-align:center;}
+.svg-wrap svg{width:100%;height:auto;max-width:470px;}
+.cap{color:var(--muted);font-size:13px;margin-top:8px;}
+.pol{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+.pol th,.pol td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;}
+.pol th{background:var(--brand-soft);color:var(--brand-d);}
+.pol td.lab{font-weight:700;background:#faf9fe;}
+.pol .exp-c{color:var(--good);font-weight:700;} .pol .con-c{color:var(--bad);font-weight:700;}
 .tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
 .tryq .q{font-weight:600;margin-bottom:8px;}
 .reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
@@ -38,6 +51,7 @@ audio{width:100%;margin-top:6px;}
 .reveal.show{display:block;}
 .qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
 .qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.examtag{display:inline-block;background:var(--good-soft);color:var(--good);border:1px solid #bfe6cf;border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle;}
 .qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
 .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
 .opt:hover{border-color:var(--brand);background:var(--brand-soft);}
@@ -45,28 +59,88 @@ audio{width:100%;margin-top:6px;}
 .opt .mark{float:right;font-weight:700;}
 .exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
 .exp.show{display:block;} .exp b{color:var(--brand);}
-.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.scorechip{font-size:13px;color:var(--muted);font-weight:600;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
 </style></head><body><div class="wrap">
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 10 of 14 · Learn</div>
 <h1>Macro 2 — Inflation, Jobs &amp; Policy</h1>
 <p class="lede">CPI and inflation, unemployment and the labour force, and the two policy levers.</p>
-<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A central bank is worried prices are rising too fast. Should it make borrowing cheaper, or more expensive?</p><p class="do">Decide, then press play.</p></div>
-<div class="panel"><h3>&#127911; Listen <span class="scorechip">~6 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-10.mp3"></audio><div class="takeaway"><ul><li><b>Recession</b> - fight it with EXPANSIONARY policy — more government spending or lower taxes, and lower interest rates — to lift demand.</li><li><b>High inflation</b> - fight it with CONTRACTIONARY policy — less spending or higher taxes, and higher interest rates — to cool demand.</li></ul><p class="tk-gen">The unemployment rate divides by the labour force (employed + those looking), never by the whole population.</p></div></div>
-<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">In a country the working-age population is 8 (million). Of those, 5 are employed and 1 is unemployed but actively looking for work; the rest are not looking. What are the labour-force participation rate and the unemployment rate?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">Labour force = employed + unemployed (looking). Participation = labour force ÷ working-age population. Unemployment = unemployed ÷ labour force.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Labour force.</div><span class="math">5 + 1 = 6</span></div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Participation rate.</div><span class="math">6 ÷ 8 = 75%</span></div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Unemployment rate.</div><span class="math">1 ÷ 6 ≈ 16.7%</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">Note the trap.</div>We divided by the labour force (6), not the population (8).</div></div><div class="ans">&#10003; Answer: Participation rate 75%; unemployment rate about 16.7%.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">A basket cost 100 last year (CPI 100) and 102 this year. What is the inflation rate?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">About 2%. Inflation = (102 − 100) ÷ 100 × 100 = 2%.</div></div><div class="tryq"><div class="q">A retired person is not working and not looking for work. Are they unemployed?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">No — they are outside the labour force entirely, so they don&#x27;t count as unemployed.</div></div></div></div>
-<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+
+<div class="preq"><span class="tag">&#9208; Before you listen — guess first</span><p>A central bank is worried prices are rising too fast. Should it make borrowing cheaper, or more expensive?</p><p class="do">Decide, then press play.</p></div>
+
+<div class="panel"><h3>&#127911; Start here — today's plan <span class="scorechip">~1 min</span></h3><p class="note">A quick map of what you'll learn today. Each section below also has its own short audio you can listen to while you read.</p><audio controls preload="none" src="Day-10-intro.mp3"></audio><div class="takeaway"><ul><li><b>Recession</b> — fight it with EXPANSIONARY policy: more government spending or lower taxes, and lower interest rates, to lift demand.</li><li><b>High inflation</b> — fight it with CONTRACTIONARY policy: less spending or higher taxes, and higher interest rates, to cool demand.</li></ul><p class="tk-gen">The unemployment rate divides by the labour force (employed + those looking), never by the whole population.</p></div></div>
+
+<div class="panel"><h3>&#128722; Inflation and the CPI</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-10-cpi.mp3"></audio></div>
+<p class="p">The Consumer Price Index tracks what one fixed basket of goods costs over time, compared to a base year.</p>
+<div class="rule">CPI = (cost of the basket this year ÷ cost in the base year) × 100. The base year is always 100. Inflation = the percent change in the CPI from one year to the next.</div>
+<p class="partlab">Worked example · from a past final</p>
+<div class="question">Crunchville's CPI basket is 4 tyres + 1 battery, base year 2026. Tyre/battery prices: 2025 = 180/100, 2026 = 185/105, 2027 = 190/102. What is the inflation rate in 2027?</div>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Cost of the basket each year.</div><span class="math">2026: 4×185 + 105 = 845    2027: 4×190 + 102 = 862</span></div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">CPI (base 2026 = 100).</div><span class="math">CPI 2027 = 862 ÷ 845 × 100 ≈ 102.0</span></div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Inflation = % change in CPI.</div><span class="math">(102.0 − 100) ÷ 100 ≈ 2.0% inflation</span></div></div>
+<div class="ans">&#10003; Inflation in 2027 ≈ 2% (prices rose, so it's inflation, not deflation).</div>
+</div>
+
+<div class="panel"><h3>&#128101; The labour force &amp; unemployment</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-10-jobs.mp3"></audio></div>
+<p class="p">The single biggest trap here is the denominator. You divide by the <b>labour force</b>, not by everyone.</p>
+<div class="svg-wrap">
+<svg viewBox="0 0 470 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The working-age population of 8 splits into employed 5, unemployed 1, and not in the labour force 2. Employed plus unemployed make the labour force of 6.">
+<text x="50" y="30" font-size="12.5" fill="#211c33" font-family="Arial" font-weight="bold">Working-age population = 8</text>
+<rect x="50" y="42" width="225" height="46" fill="#e4f6ec" stroke="#bfe6cf"/>
+<rect x="275" y="42" width="45" height="46" fill="#fae5e4" stroke="#f0c9c7"/>
+<rect x="320" y="42" width="90" height="46" fill="#eee" stroke="#ddd"/>
+<text x="162" y="60" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold" text-anchor="middle">Employed</text>
+<text x="162" y="76" font-size="11.5" fill="#1f9d63" font-family="Arial" text-anchor="middle">5</text>
+<text x="297" y="60" font-size="10" fill="#d2453f" font-family="Arial" font-weight="bold" text-anchor="middle">Unemp.</text>
+<text x="297" y="76" font-size="11" fill="#d2453f" font-family="Arial" text-anchor="middle">1</text>
+<text x="365" y="60" font-size="10.5" fill="#6f6886" font-family="Arial" text-anchor="middle">Not in</text>
+<text x="365" y="74" font-size="10.5" fill="#6f6886" font-family="Arial" text-anchor="middle">labour force 2</text>
+<line x1="50" y1="100" x2="320" y2="100" stroke="#6b4ef0" stroke-width="1.6" marker-start="url(#a10)" marker-end="url(#a10)"/>
+<text x="185" y="116" font-size="11.5" fill="#6b4ef0" font-family="Arial" font-weight="bold" text-anchor="middle">Labour force = employed + unemployed = 6</text>
+<text x="50" y="150" font-size="12.5" fill="#211c33" font-family="Arial"><tspan font-weight="bold">Participation rate</tspan> = labour force ÷ population = 6 ÷ 8 = 75%</text>
+<text x="50" y="174" font-size="12.5" fill="#211c33" font-family="Arial"><tspan font-weight="bold">Unemployment rate</tspan> = unemployed ÷ labour force = 1 ÷ 6 ≈ 16.7%</text>
+<defs><marker id="a10" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6b4ef0"/></marker></defs>
+</svg>
+<div class="cap">The two people "not in the labour force" (retired, students, not looking) are counted in neither the labour force nor as unemployed. The unemployment rate is 1 ÷ 6, never 1 ÷ 8.</div>
+</div>
+</div>
+
+<div class="panel"><h3>&#127981; The two policy levers</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-10-policy.mp3"></audio></div>
+<p class="p">Government has <b>fiscal</b> policy (spending and taxes); the central bank has <b>monetary</b> policy (interest rates). Each can be expansionary (lift demand) or contractionary (cool demand).</p>
+<table class="pol"><thead><tr><th></th><th>Expansionary — for a recession</th><th>Contractionary — for high inflation</th></tr></thead><tbody>
+<tr><td class="lab">Fiscal (govt)</td><td class="exp-c">More spending, lower taxes</td><td class="con-c">Less spending, higher taxes</td></tr>
+<tr><td class="lab">Monetary (central bank)</td><td class="exp-c">Lower interest rates</td><td class="con-c">Higher interest rates</td></tr>
+</tbody></table>
+<div class="rule">Match the medicine to the illness. Recession (weak demand) → expansionary on both levers. High inflation (overheated demand) → contractionary on both. Contractionary monetary policy's goal is to reduce aggregate demand to bring inflation down.</div>
+</div>
+
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 5</span></h3><p class="note">The two calculation questions are fresh; the policy questions are real past-final ones. (Crunchville's labour & CPI numbers are drilled on Day 11 and in the Day 13 mock.)</p><div id="quizBody"></div></div>
+
 <div class="navrow"><a class="navbtn" href="Day-09.html">&larr; Back</a><a class="navbtn primary" href="Day-11.html">Next &rarr;</a></div>
 </div>
 <script>
-const QUIZ = [{"q": "The CPI in the base year equals:", "opts": ["100", "0", "50", "1000"], "correct": 0, "exp": "The basket is compared to itself."}, {"q": "Working-age 8, employed 5, unemployed-looking 1. Unemployment rate:", "opts": ["About 16.7%", "12.5%", "20%", "About 8%"], "correct": 0, "exp": "1 ÷ 6 (labour force) ≈ 16.7%."}, {"q": "Contractionary monetary policy aims to:", "opts": ["Reduce demand to lower inflation.", "Raise demand to lift GDP.", "Lower GDP for its own sake.", "Raise inflation."], "correct": 0, "exp": "Cool the economy."}, {"q": "In a recession the textbook response is:", "opts": ["Expansionary fiscal and monetary policy.", "Contractionary both.", "Contractionary fiscal, expansionary monetary.", "Do nothing."], "correct": 0, "exp": "Both push demand up."}];
+const QUIZ = [
+{"q":"A country has working-age population 25, with 18 employed and 2 unemployed but looking for work. What are the labour-force participation rate and the unemployment rate?","opts":["Participation 80% and unemployment 10%.","Participation 80% and unemployment 8%.","Participation 72% and unemployment 10%.","Participation 80% and unemployment 11%."],"correct":0,"exp":"Labour force = 18 + 2 = 20. Participation = 20 ÷ 25 = 80%. Unemployment = 2 ÷ 20 = 10% (divide by the labour force, not the whole population)."},
+{"q":"A CPI basket costs 500 in the base year and 540 the next year. What is the inflation rate?","opts":["8%, inflation.","8%, deflation.","40%, inflation.","4%, inflation."],"correct":0,"exp":"CPI next year = 540 ÷ 500 × 100 = 108 (base year = 100). Inflation = (108 − 100)/100 = 8% — positive, so inflation."},
+{"src":"From a past final","q":"What is the goal of contractionary monetary policy?","opts":["To reduce aggregate demand in order to reduce inflation.","To reduce aggregate demand in order to reduce GDP.","To increase aggregate demand in order to increase GDP.","To increase aggregate demand in order to reduce inflation."],"correct":0,"exp":"Contractionary policy raises interest rates to cool demand; the point of cooling demand is to bring inflation down."},
+{"src":"From a past final","q":"If a country is in a recession, the government and central bank should use:","opts":["Expansionary fiscal policy and expansionary monetary policy.","Contractionary fiscal and contractionary monetary policy.","Contractionary fiscal and expansionary monetary policy.","Expansionary fiscal and contractionary monetary policy."],"correct":0,"exp":"A recession is weak demand, so both levers push the same way — expansionary: more spending / lower taxes and lower interest rates."},
+{"q":"A retired person is not working and not looking for work. In the labour statistics they are:","opts":["Outside the labour force — not counted as unemployed.","Counted as unemployed.","Counted as employed.","Counted twice."],"correct":0,"exp":"Unemployed means without work AND actively looking. Someone not looking is outside the labour force, so they affect the participation rate but are never counted as unemployed."}
+];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 if(body){
 let score=0;
 QUIZ.forEach((item,qi)=>{
   const block=document.createElement('div');block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const tag=item.src?`<span class="examtag">${item.src}</span>`:'';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}${tag}</div><div class="qtext">${item.q}</div>`;
   const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
   item.opts.forEach((opt,oi)=>{
     const btn=document.createElement('button');btn.className='opt';

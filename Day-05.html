@@ -14,15 +14,20 @@ h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
 .panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel h3 .scorechip{margin-left:auto;}
 .panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
 .preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
 .preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
 .preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
 audio{width:100%;margin-top:6px;}
+.secaudio{background:var(--brand-soft);border:1px solid #d9d0fb;border-radius:12px;padding:10px 13px;margin:4px 0 14px;}
+.secaudio .salab{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin-bottom:7px;}
 .takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
 .takeaway b{color:var(--brand);}
 .takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
 .takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.sub{font-size:15px;font-weight:800;color:var(--brand-d);margin:20px 0 6px;}
+.p{font-size:15px;margin:0 0 8px;}
 .partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
 .question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
 .rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
@@ -31,6 +36,14 @@ audio{width:100%;margin-top:6px;}
 .stepbody .lab{font-weight:600;}
 .math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
 .ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.dtable{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+.dtable th,.dtable td{border:1px solid var(--line);padding:6px 8px;text-align:center;}
+.dtable th{background:var(--brand-soft);color:var(--brand-d);font-weight:700;}
+.dtable td.lab{text-align:left;font-weight:600;}
+.dtable tr.hl td{background:var(--good-soft);font-weight:700;color:var(--good);}
+.svg-wrap{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0;text-align:center;}
+.svg-wrap svg{width:100%;height:auto;max-width:460px;}
+.cap{color:var(--muted);font-size:13px;margin-top:8px;}
 .tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
 .tryq .q{font-weight:600;margin-bottom:8px;}
 .reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
@@ -38,6 +51,7 @@ audio{width:100%;margin-top:6px;}
 .reveal.show{display:block;}
 .qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
 .qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.examtag{display:inline-block;background:var(--good-soft);color:var(--good);border:1px solid #bfe6cf;border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle;}
 .qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
 .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
 .opt:hover{border-color:var(--brand);background:var(--brand-soft);}
@@ -45,28 +59,96 @@ audio{width:100%;margin-top:6px;}
 .opt .mark{float:right;font-weight:700;}
 .exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
 .exp.show{display:block;} .exp b{color:var(--brand);}
-.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.scorechip{font-size:13px;color:var(--muted);font-weight:600;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+@media (max-width:560px){.dtable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;}}
 </style></head><body><div class="wrap">
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 5 of 14 · Learn</div>
 <h1>Production &amp; Costs — the Cost Table</h1>
-<p class="lede">Fill the table without the classic add-versus-subtract slip.</p>
-<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A bakery pays fixed rent no matter what; flour and labour grow with each cake. If a table gave you the marginal cost of each cake, would you ADD them or subtract them to rebuild total cost?</p><p class="do">Decide, then press play.</p></div>
-<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-05.mp3"></audio><div class="takeaway"><ul><li><b>Total, average</b> - Total cost = fixed + variable. ATC = total cost ÷ quantity. AVC = variable cost ÷ quantity.</li><li><b>Marginal cost</b> - the extra cost of one more unit. Build variable cost by ADDING each marginal cost, row by row — never subtract.</li></ul><p class="tk-gen">Average total cost is U-shaped: it falls as fixed cost spreads, then rises; marginal cost crosses it at its lowest point.</p></div></div>
-<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">A bakery&#x27;s fixed cost is 200. The marginal cost of the 1st cake is 20, of the 2nd is 10, and of the 3rd is 30. What is the total cost of making 3 cakes, and the average total cost at 3 cakes?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">Variable cost = the marginal costs ADDED up. Total cost = fixed + variable. ATC = total cost ÷ quantity.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Add the marginal costs to get variable cost.</div><span class="math">20 + 10 + 30 = 60</span></div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Add fixed cost.</div><span class="math">200 + 60 = 260 total cost</span></div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Average total cost = total ÷ quantity.</div><span class="math">260 ÷ 3 ≈ 86.7</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">Done.</div>Notice costs climb as output rises — that is why you add, never subtract.</div></div><div class="ans">&#10003; Answer: Total cost at 3 cakes = 260; average total cost ≈ 86.7.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">Using the same table, what is the average VARIABLE cost at 3 cakes?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">20. Variable cost is 60; AVC = 60 ÷ 3 = 20 (fixed cost is left out).</div></div><div class="tryq"><div class="q">The 4th cake raises total cost from 260 to 320. What is the marginal cost of the 4th cake?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">60. Marginal cost = the change in total cost = 320 − 260 = 60.</div></div></div></div>
-<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+<p class="lede">Fill the whole table without the classic add-versus-subtract slip.</p>
+
+<div class="preq"><span class="tag">&#9208; Before you listen — guess first</span><p>A bakery pays fixed rent no matter what; flour and labour grow with each cake. If a table gave you the marginal cost of each cake, would you ADD them or subtract them to rebuild total cost?</p><p class="do">Decide, then press play.</p></div>
+
+<div class="panel"><h3>&#127911; Start here — today's plan <span class="scorechip">~1 min</span></h3><p class="note">A quick map of what you'll learn today. Each section below also has its own short audio you can listen to while you read.</p><audio controls preload="none" src="Day-05-intro.mp3"></audio><div class="takeaway"><ul><li><b>Total &amp; average</b> — Total cost = fixed + variable. ATC = total cost ÷ quantity. AVC = variable cost ÷ quantity.</li><li><b>Marginal cost</b> — the extra cost of one more unit. Rebuild variable cost by <b>ADDING</b> each marginal cost, row by row — never subtract.</li></ul><p class="tk-gen">Average total cost is U-shaped: it falls as fixed cost spreads over more units, then rises; marginal cost crosses it at its lowest point.</p></div></div>
+
+<div class="panel"><h3>&#129534; The six cost columns — and how to fill them</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-05-table.mp3"></audio></div>
+<p class="p">The exam hands you a half-empty cost table and asks you to complete it. There are only six columns, and they all come from two raw inputs: fixed cost and the marginal cost of each unit.</p>
+<div class="rule">FC — fixed cost, the same at every output. VC — variable cost, the marginal costs ADDED up. TC = FC + VC. MC = the extra cost of one more unit = the change in TC. ATC = TC ÷ Q. AVC = VC ÷ Q.</div>
+<p class="p">Here is Ms. H's tea table — the exact one the exam reuses — fully filled so you can see every column working together:</p>
+<table class="dtable"><thead><tr><th>Boxes</th><th>FC</th><th>VC</th><th>TC</th><th>MC</th><th>ATC</th><th>AVC</th></tr></thead><tbody>
+<tr><td>0</td><td>200</td><td>0</td><td>200</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>1</td><td>200</td><td>20</td><td>220</td><td>20</td><td>220</td><td>20</td></tr>
+<tr><td>2</td><td>200</td><td>30</td><td>230</td><td>10</td><td>115</td><td>15</td></tr>
+<tr><td>3</td><td>200</td><td>60</td><td>260</td><td>30</td><td>86.7</td><td>20</td></tr>
+<tr class="hl"><td>4</td><td>200</td><td>120</td><td>320</td><td>60</td><td>80</td><td>30</td></tr>
+<tr><td>5</td><td>200</td><td>210</td><td>410</td><td>90</td><td>82</td><td>42</td></tr>
+</tbody></table>
+<p class="p" style="color:var(--muted);font-size:13.5px;">Read one row to see it click. Box 3: VC = 20 + 10 + 30 = 60 (the marginal costs added). TC = 200 + 60 = 260. ATC = 260 ÷ 3 ≈ 86.7. AVC = 60 ÷ 3 = 20. The MC of box 3 is 30 — the jump in TC from 230 to 260.</p>
+<p class="p"><b>The trap:</b> to get the next VC you <b>add</b> the marginal cost to the previous VC — you never subtract. Costs only climb as you make more.</p>
+</div>
+
+<div class="panel"><h3>&#128200; What the cost curves look like</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-05-curves.mp3"></audio></div>
+<p class="p">Plot ATC, AVC, and MC against output and a clean pattern appears.</p>
+<div class="svg-wrap">
+<svg viewBox="0 0 440 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ATC and AVC are U-shaped; the marginal cost curve rises and crosses each of them at its minimum point.">
+<line x1="55" y1="35" x2="55" y2="240" stroke="#bbb" stroke-width="1.4"/>
+<line x1="55" y1="240" x2="420" y2="240" stroke="#bbb" stroke-width="1.4"/>
+<text x="20" y="44" font-size="12" fill="#6f6886" font-family="Arial">Cost</text>
+<text x="365" y="262" font-size="12" fill="#6f6886" font-family="Arial">Quantity</text>
+<path d="M75,140 Q235,250 375,150" fill="none" stroke="#1f9d63" stroke-width="2.6"/>
+<path d="M75,100 Q255,235 380,120" fill="none" stroke="#6b4ef0" stroke-width="2.6"/>
+<polyline points="105,235 215,195 250,178 360,70" fill="none" stroke="#d2453f" stroke-width="2.6"/>
+<circle cx="215" cy="195" r="4.5" fill="#211c33"/>
+<circle cx="250" cy="178" r="4.5" fill="#211c33"/>
+<text x="382" y="152" font-size="13" fill="#1f9d63" font-family="Arial" font-weight="bold">AVC</text>
+<text x="382" y="120" font-size="13" fill="#6b4ef0" font-family="Arial" font-weight="bold">ATC</text>
+<text x="360" y="62" font-size="13" fill="#d2453f" font-family="Arial" font-weight="bold">MC</text>
+<text x="150" y="210" font-size="10.5" fill="#211c33" font-family="Arial">min AVC</text>
+<text x="255" y="172" font-size="10.5" fill="#211c33" font-family="Arial">min ATC</text>
+</svg>
+<div class="cap">Both averages are U-shaped. MC rises and slices through each U exactly at its lowest point — because while MC is below an average it pulls the average down, and once MC is above, it drags the average up. The gap between ATC and AVC is fixed cost spread thin, so it narrows as output grows.</div>
+</div>
+</div>
+
+<div class="panel"><h3>&#128290; Worked example — rebuild from a partial table</h3>
+<p class="partlab">Part 1 · The question</p><div class="question">A bakery's fixed cost is 200. The marginal cost of the 1st cake is 20, the 2nd is 10, the 3rd is 30. Find the total cost of 3 cakes and the average total cost at 3 cakes.</div>
+<p class="partlab" style="margin-top:18px;">Part 2 · Solve it step by step</p>
+<div class="rule">Variable cost = the marginal costs ADDED. Total cost = fixed + variable. ATC = total ÷ quantity.</div>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Add the marginal costs → variable cost.</div><span class="math">20 + 10 + 30 = 60</span></div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Add fixed cost → total cost.</div><span class="math">200 + 60 = 260</span></div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">ATC = total ÷ quantity.</div><span class="math">260 ÷ 3 ≈ 86.7</span></div></div>
+<div class="ans">&#10003; Answer: total cost at 3 cakes = 260; average total cost ≈ 86.7.</div>
+<div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try — reveal only after you work it out</h3>
+<div class="tryq"><div class="q">Same table — what is the average VARIABLE cost at 3 cakes?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">20. Variable cost is 60; AVC = 60 ÷ 3 = 20 (fixed cost is left out).</div></div>
+<div class="tryq"><div class="q">The 4th cake raises total cost from 260 to 320. What is the marginal cost of the 4th cake?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">60. Marginal cost = the change in total cost = 320 − 260 = 60.</div></div></div>
+</div>
+
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 5</span></h3><p class="note">Fresh exam-style questions — compute each from the data in the question. (Ms. H's exact table is drilled on Day 11.)</p><div id="quizBody"></div></div>
+
 <div class="navrow"><a class="navbtn" href="Day-04.html">&larr; Back</a><a class="navbtn primary" href="Day-06.html">Next &rarr;</a></div>
 </div>
 <script>
-const QUIZ = [{"q": "Total cost equals:", "opts": ["Fixed cost + variable cost.", "Fixed cost − variable cost.", "Variable cost ÷ quantity.", "Marginal cost × quantity."], "correct": 0, "exp": "TC = FC + VC."}, {"q": "To rebuild variable cost from marginal costs you:", "opts": ["Add them row by row.", "Subtract them.", "Average them.", "Multiply them."], "correct": 0, "exp": "Each unit ADDS its marginal cost."}, {"q": "At 4 units, total cost is 320. Average total cost is:", "opts": ["80", "320", "120", "40"], "correct": 0, "exp": "ATC = 320 ÷ 4 = 80."}, {"q": "Marginal cost crosses average total cost at:", "opts": ["Its minimum.", "Its maximum.", "Zero output.", "It never crosses."], "correct": 0, "exp": "Below pulls the average down, above pulls it up — they meet at the bottom."}];
+const QUIZ = [
+{"q":"A firm's fixed cost is 300. The marginal costs of its first three units are 40, 30, and 50. What is the total cost of 3 units?","opts":["420","120","300","360"],"correct":0,"exp":"Variable cost = 40 + 30 + 50 = 120 (add the marginal costs). Total cost = fixed + variable = 300 + 120 = 420."},
+{"q":"For that same firm, what is the average total cost at 3 units?","opts":["140","40","100","420"],"correct":0,"exp":"ATC = total cost ÷ quantity = 420 ÷ 3 = 140."},
+{"q":"For that same firm, what is the average variable cost at 3 units?","opts":["40","140","60","100"],"correct":0,"exp":"AVC = variable cost ÷ quantity = 120 ÷ 3 = 40 (fixed cost is excluded)."},
+{"q":"To rebuild variable cost from a list of marginal costs you:","opts":["Add them up, row by row.","Subtract each from the last.","Average them.","Multiply them together."],"correct":0,"exp":"Each extra unit ADDS its marginal cost to the running variable cost. Subtracting is the classic slip."},
+{"q":"The marginal cost curve crosses average total cost at:","opts":["The minimum of ATC.","The maximum of ATC.","Zero output.","It never crosses ATC."],"correct":0,"exp":"While MC is below ATC it pulls the average down; once above, it pushes it up. So they meet at ATC's lowest point."}
+];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 if(body){
 let score=0;
 QUIZ.forEach((item,qi)=>{
   const block=document.createElement('div');block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const tag=item.src?`<span class="examtag">${item.src}</span>`:'';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}${tag}</div><div class="qtext">${item.q}</div>`;
   const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
   item.opts.forEach((opt,oi)=>{
     const btn=document.createElement('button');btn.className='opt';

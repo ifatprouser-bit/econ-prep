@@ -41,6 +41,9 @@
   .exp.show{display:block;} .exp b{color:var(--brand);}
   .formula{background:#fbfaff; border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:14px; margin:16px 0;}
   .formula code{background:var(--brand-soft); color:var(--brand-d); padding:1px 6px; border-radius:5px; font-size:13px;}
+  .fgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px 20px; margin-top:10px;}
+  .fcat{font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--brand-d); margin:0 0 4px;}
+  .fline{margin:3px 0; line-height:1.5;}
   .timer{background:var(--brand); color:#fff; border-radius:12px; padding:10px 16px; font-weight:700; font-size:16px; display:inline-flex; align-items:center; gap:10px;}
   .timer button{background:rgba(255,255,255,.2); border:none; color:#fff; border-radius:8px; padding:4px 10px; cursor:pointer; font-weight:600;}
   .navrow{display:flex; justify-content:space-between; margin-top:22px; gap:10px;}
@@ -52,7 +55,7 @@
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="Economics-Exam-Prep.html">&larr; All days</a>
+  <a class="back" href="index.html">&larr; All 14 days</a>
   <div class="crumb">Day 14 of 14 &middot; Review</div>
   <h1>Review & Formula Sheet</h1>
   <p class="lede">Lock in the formulas and the two traps, then a quick mixed check.</p>
@@ -60,13 +63,43 @@
   
   
   <div class="formula">
-  <b>Formula sheet (given on the exam):</b><br>
-  GDP = <code>C + I + G + NX</code> &middot; Real GDP per capita = <code>Real GDP / population</code><br>
-  CPI = <code>(basket this year / basket base year) &times; 100</code> &middot; Inflation = <code>(CPI2 - CPI1) / CPI1 &times; 100</code><br>
-  Elasticity = <code>%&Delta;Q / %&Delta;P</code> &middot; %&Delta;Q = <code>elasticity &times; %&Delta;P</code><br>
-  Labor force = <code>employed + unemployed</code> &middot; Participation = <code>LF / working-age &times; 100</code> &middot; Unemployment = <code>unemployed / LF &times; 100</code><br>
-  Profit = <code>TR - TC = P&middot;Q - TC</code> &middot; TC = <code>FC + VC</code> &middot; ATC = <code>TC/Q</code> &middot; AVC = <code>VC/Q</code><br>
-  Shutdown (short run): produce if <code>P &ge; AVC</code> &middot; Exit (long run): stay if <code>P &ge; ATC</code>
+  <b>Formula sheet (given on the exam):</b>
+  <div class="fgrid">
+    <div>
+      <div class="fcat">GDP</div>
+      <div class="fline">Nominal GDP = <code>&Sigma; (this-year price &times; qty)</code></div>
+      <div class="fline">Real GDP = <code>&Sigma; (base-year price &times; this-year qty)</code></div>
+      <div class="fline">Real GDP per capita = <code>Real GDP / population</code></div>
+    </div>
+    <div>
+      <div class="fcat">Prices</div>
+      <div class="fline">CPI = <code>(basket this year / basket base year) &times; 100</code></div>
+      <div class="fline">Inflation = <code>(CPI2 &minus; CPI1) / CPI1 &times; 100</code></div>
+    </div>
+    <div>
+      <div class="fcat">Elasticity</div>
+      <div class="fline">Elasticity = <code>%&Delta;Q / %&Delta;P</code></div>
+      <div class="fline">%&Delta;Q = <code>elasticity &times; %&Delta;P</code></div>
+    </div>
+    <div>
+      <div class="fcat">Jobs</div>
+      <div class="fline">Labour force = <code>employed + unemployed</code></div>
+      <div class="fline">Participation = <code>LF / working-age &times; 100</code></div>
+      <div class="fline">Unemployment = <code>unemployed / LF &times; 100</code></div>
+    </div>
+    <div>
+      <div class="fcat">Costs</div>
+      <div class="fline">TC = <code>FC + VC</code> &middot; MC = <code>&Delta;TC</code></div>
+      <div class="fline">ATC = <code>TC/Q</code> &middot; AVC = <code>VC/Q</code></div>
+      <div class="fline">Profit = <code>TR &minus; TC = P&middot;Q &minus; TC</code></div>
+    </div>
+    <div>
+      <div class="fcat">Firm decisions</div>
+      <div class="fline">Shutdown (short run): produce if <code>P &ge; AVC</code></div>
+      <div class="fline">Exit (long run): stay if <code>P &ge; ATC</code></div>
+      <div class="fline">Market: trade the <b>short side</b></div>
+    </div>
+  </div>
 </div>
 
   <div class="panel">
@@ -79,12 +112,14 @@
 
   <div class="navrow">
     <a class="navbtn" href="Day-13.html">&larr; Day 13</a>
-    <a class="navbtn primary" href="Economics-Exam-Prep.html">Finish &rarr;</a>
+    <a class="navbtn primary" href="index.html">Finish &rarr;</a>
   </div>
 </div>
 
 <script>
 const QUIZ = [{"q": "Which pair of tests should you NEVER confuse?", "opts": ["Shutdown (P vs AVC) and profit (TR vs TC).", "Nominal and real GDP.", "CPI and inflation.", "Demand and supply."], "correct": 0, "exp": "Shutdown asks 'operate now?' (P vs AVC); profit asks 'making money?' (TR vs TC). A firm can lose money yet still produce in the short run."}, {"q": "When BOTH curves shift in opposite directions, the exam answer is often:", "opts": ["'It cannot be known' for one of price or quantity.", "Always 'price and quantity both rise'.", "Always 'no change'.", "Always 'cannot be known' for both."], "correct": 0, "exp": "One variable's direction is pinned down; the other depends on the sizes of the shifts → <b>cannot be known</b>."}, {"q": "Real GDP per capita is:", "opts": ["Real GDP divided by population.", "Nominal GDP times population.", "CPI divided by 100.", "Exports minus imports."], "correct": 0, "exp": "Real GDP ÷ population — the standard-of-living measure."}, {"q": "Unemployment rate equals:", "opts": ["Unemployed ÷ labor force × 100.", "Unemployed ÷ total population × 100.", "Labor force ÷ working-age × 100.", "Employed ÷ labor force × 100."], "correct": 0, "exp": "Unemployment = unemployed ÷ <b>labor force</b> (employed + unemployed). Don't divide by total population."}, {"q": "In long-run competitive equilibrium, price equals:", "opts": ["Minimum average total cost (P = ATC), with zero economic profit.", "Average variable cost.", "Marginal revenue only.", "Fixed cost."], "correct": 0, "exp": "Free entry/exit → P = minimum ATC, economic profit zero."}];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 let score=0;
 QUIZ.forEach((item,qi)=>{

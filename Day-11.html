@@ -22,10 +22,13 @@
   .panel{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(40,20,90,.04);}
   .panel h3{margin:0 0 4px; font-size:17px; display:flex; align-items:center; gap:8px;}
   .panel .note{color:var(--muted); font-size:14px; margin:0 0 14px;}
+  .datalab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin:2px 0 8px;}
   .scorechip{margin-left:auto; font-size:13px; color:var(--muted); font-weight:600;}
-  audio{width:100%; margin-top:6px;}
-  .takeaway{font-size:14.5px; background:#fbfaff; border:1px dashed var(--line); border-radius:11px; padding:13px 16px; margin-top:14px;}
-  .takeaway b{color:var(--brand);}
+  .dtable{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0 8px;}
+  .dtable th,.dtable td{border:1px solid var(--line);padding:6px 7px;text-align:center;}
+  .dtable th{background:var(--brand-soft);color:var(--brand-d);font-weight:700;}
+  .dtable td.lab{text-align:left;font-weight:600;}
+  .given{color:var(--muted);font-size:13px;margin:2px 0 4px;}
   .qblock{padding:16px 0; border-top:1px solid var(--line);}
   .qblock:first-of-type{border-top:none; padding-top:4px;}
   .qnum{color:var(--brand); font-weight:700; font-size:12px; letter-spacing:.04em; text-transform:uppercase;}
@@ -41,41 +44,107 @@
   .exp.show{display:block;} .exp b{color:var(--brand);}
   .formula{background:#fbfaff; border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:14px; margin:16px 0;}
   .formula code{background:var(--brand-soft); color:var(--brand-d); padding:1px 6px; border-radius:5px; font-size:13px;}
-  .timer{background:var(--brand); color:#fff; border-radius:12px; padding:10px 16px; font-weight:700; font-size:16px; display:inline-flex; align-items:center; gap:10px;}
-  .timer button{background:rgba(255,255,255,.2); border:none; color:#fff; border-radius:8px; padding:4px 10px; cursor:pointer; font-weight:600;}
+  .fgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px 20px; margin-top:10px;}
+  .fcat{font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--brand-d); margin:0 0 4px;}
+  .fline{margin:3px 0; line-height:1.5;}
   .navrow{display:flex; justify-content:space-between; margin-top:22px; gap:10px;}
   .navbtn{text-decoration:none; font-weight:600; font-size:14px; padding:10px 16px; border-radius:11px; border:1px solid var(--line); color:var(--ink); background:#fff;}
-  .navbtn.dim{color:var(--muted); pointer-events:none; opacity:.45;}
   .navbtn.primary{background:var(--brand); color:#fff; border-color:var(--brand);}
   .navbtn:hover{border-color:var(--brand);}
+  @media (max-width:560px){.dtable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="Economics-Exam-Prep.html">&larr; All days</a>
+  <a class="back" href="index.html">&larr; All 14 days</a>
   <div class="crumb">Day 11 of 14 &middot; Practice</div>
   <h1>Calculation Drill Day</h1>
-  <p class="lede">Every formula type in one place. Work each with the formula sheet, then check.</p>
+  <p class="lede">Every calculation type, each shown with the full exam-style data table — read the table, work it on paper, then tap to check the steps.</p>
 
-  
-  
   <div class="formula">
-  <b>Formula sheet (given on the exam):</b><br>
-  GDP = <code>C + I + G + NX</code> &middot; Real GDP per capita = <code>Real GDP / population</code><br>
-  CPI = <code>(basket this year / basket base year) &times; 100</code> &middot; Inflation = <code>(CPI2 - CPI1) / CPI1 &times; 100</code><br>
-  Elasticity = <code>%&Delta;Q / %&Delta;P</code> &middot; %&Delta;Q = <code>elasticity &times; %&Delta;P</code><br>
-  Labor force = <code>employed + unemployed</code> &middot; Participation = <code>LF / working-age &times; 100</code> &middot; Unemployment = <code>unemployed / LF &times; 100</code><br>
-  Profit = <code>TR - TC = P&middot;Q - TC</code> &middot; TC = <code>FC + VC</code> &middot; ATC = <code>TC/Q</code> &middot; AVC = <code>VC/Q</code><br>
-  Shutdown (short run): produce if <code>P &ge; AVC</code> &middot; Exit (long run): stay if <code>P &ge; ATC</code>
+  <b>Formula sheet (given on the exam):</b>
+  <div class="fgrid">
+    <div>
+      <div class="fcat">GDP</div>
+      <div class="fline">Nominal GDP = <code>&Sigma; (this-year price &times; qty)</code></div>
+      <div class="fline">Real GDP = <code>&Sigma; (base-year price &times; this-year qty)</code></div>
+      <div class="fline">Real GDP per capita = <code>Real GDP / population</code></div>
+    </div>
+    <div>
+      <div class="fcat">Prices</div>
+      <div class="fline">CPI = <code>(basket this year / basket base year) &times; 100</code></div>
+      <div class="fline">Inflation = <code>(CPI2 &minus; CPI1) / CPI1 &times; 100</code></div>
+    </div>
+    <div>
+      <div class="fcat">Elasticity</div>
+      <div class="fline">Elasticity = <code>%&Delta;Q / %&Delta;P</code></div>
+      <div class="fline">%&Delta;Q = <code>elasticity &times; %&Delta;P</code></div>
+    </div>
+    <div>
+      <div class="fcat">Jobs</div>
+      <div class="fline">Labour force = <code>employed + unemployed</code></div>
+      <div class="fline">Participation = <code>LF / working-age &times; 100</code></div>
+      <div class="fline">Unemployment = <code>unemployed / LF &times; 100</code></div>
+    </div>
+    <div>
+      <div class="fcat">Costs</div>
+      <div class="fline">TC = <code>FC + VC</code> &middot; MC = <code>&Delta;TC</code></div>
+      <div class="fline">ATC = <code>TC/Q</code> &middot; AVC = <code>VC/Q</code></div>
+      <div class="fline">Profit = <code>TR &minus; TC = P&middot;Q &minus; TC</code></div>
+    </div>
+    <div>
+      <div class="fcat">Firm decisions</div>
+      <div class="fline">Shutdown (short run): produce if <code>P &ge; AVC</code></div>
+      <div class="fline">Exit (long run): stay if <code>P &ge; ATC</code></div>
+      <div class="fline">Market: trade the <b>short side</b></div>
+    </div>
+  </div>
 </div>
 
   <div class="panel">
-    <h3>📝 Calculation set <span class="scorechip" id="scoreChip">0 / 7</span></h3>
-    <p class="note">Pure calculations — do them on paper first, then tap your answer to check the steps.</p>
-    <div id="quizBody"></div>
-  </div>
+    <h3>&#128221; Calculation set <span class="scorechip" id="scoreChip">0 / 14</span></h3>
+    <p class="note">Each block shows its data once, then asks several questions about it — exactly like the exam.</p>
 
-  
+    <p class="datalab">Data A · Country "Crunchville" — production &amp; population</p>
+    <table class="dtable"><thead><tr><th>Good</th><th>2025 P</th><th>2025 Q</th><th>2026 P</th><th>2026 Q</th><th>2027 P</th><th>2027 Q</th></tr></thead><tbody>
+    <tr><td class="lab">Tyres</td><td>180</td><td>100</td><td>185</td><td>120</td><td>190</td><td>110</td></tr>
+    <tr><td class="lab">Brakes</td><td>250</td><td>200</td><td>240</td><td>202</td><td>245</td><td>205</td></tr>
+    <tr><td class="lab">Batteries</td><td>100</td><td>300</td><td>105</td><td>310</td><td>102</td><td>315</td></tr>
+    <tr><td class="lab">Population</td><td colspan="2">10</td><td colspan="2">11</td><td colspan="2">9</td></tr>
+    </tbody></table>
+    <p class="given">CPI basket = 4 tyres + 1 battery. Base year for real GDP and CPI = 2026.</p>
+    <div id="qA"></div>
+
+    <p class="datalab" style="margin-top:22px;">Data B · Ms. H's tea — weekly cost table (NIS)</p>
+    <table class="dtable"><thead><tr><th>Boxes</th><th>FC</th><th>VC</th><th>TC</th><th>MC</th><th>ATC</th><th>AVC</th></tr></thead><tbody>
+    <tr><td>0</td><td>200</td><td>0</td><td>200</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>1</td><td>200</td><td>20</td><td>220</td><td>20</td><td>220</td><td>20</td></tr>
+    <tr><td>2</td><td>200</td><td>30</td><td>230</td><td>10</td><td>115</td><td>15</td></tr>
+    <tr><td>3</td><td>200</td><td>60</td><td>260</td><td>30</td><td>86.7</td><td>20</td></tr>
+    <tr><td>4</td><td>200</td><td>120</td><td>320</td><td>60</td><td>80</td><td>30</td></tr>
+    <tr><td>5</td><td>200</td><td>210</td><td>410</td><td>90</td><td>82</td><td>42</td></tr>
+    </tbody></table>
+    <div id="qB"></div>
+
+    <p class="datalab" style="margin-top:22px;">Data C · Town T chocolate cake — one buyer in each group, one seller</p>
+    <table class="dtable"><thead><tr><th>Price</th><th>A-buyer QD</th><th>B-buyer QD</th><th>One seller QS</th></tr></thead><tbody>
+    <tr><td>175</td><td>80</td><td>50</td><td>336</td></tr>
+    <tr><td>150</td><td>160</td><td>100</td><td>288</td></tr>
+    <tr><td>125</td><td>240</td><td>150</td><td>240</td></tr>
+    <tr><td>100</td><td>320</td><td>200</td><td>192</td></tr>
+    <tr><td>75</td><td>400</td><td>250</td><td>144</td></tr>
+    <tr><td>50</td><td>480</td><td>300</td><td>96</td></tr>
+    </tbody></table>
+    <p class="given">There are 7 buyers in group A, 8 buyers in group B, and 20 sellers.</p>
+    <div id="qC"></div>
+
+    <p class="datalab" style="margin-top:22px;">Data D · Labour market</p>
+    <p class="given">Working-age population = 8. Employed = 5. Unemployed but looking = 1. The rest are not looking for work.</p>
+    <div id="qD"></div>
+
+    <p class="datalab" style="margin-top:22px;">Data E · Elasticity (each question is self-contained)</p>
+    <div id="qE"></div>
+  </div>
 
   <div class="navrow">
     <a class="navbtn" href="Day-10.html">&larr; Day 10</a>
@@ -84,30 +153,62 @@
 </div>
 
 <script>
-const QUIZ = [{"q": "Nominal GDP for 2027: tyres 190×110, brakes 245×205, batteries 102×315. What is 2027 nominal GDP?", "opts": ["103,255", "102,625", "90,000", "103,230"], "correct": 0, "exp": "20,900 + 50,225 + 32,130 = <b>103,255</b> (current prices × current quantities)."}, {"q": "Base year 2026. Real GDP of 2027 = 185×110 + 240×205 + 105×315. What is it?", "opts": ["102,625", "103,255", "120,905", "102,550"], "correct": 0, "exp": "20,350 + 49,200 + 33,075 = <b>102,625</b>. Use base-year (2026) prices with 2027 quantities."}, {"q": "Real GDP fell from 103,230 to 102,625. The percentage change is closest to:", "opts": ["Between 0% and -1%", "Between -1% and -2%", "Between 1% and 2%", "Between 0% and 1%"], "correct": 0, "exp": "(102,625 - 103,230)/103,230 × 100 = -0.59% → <b>between 0% and -1%</b>."}, {"q": "Elasticity is -2.5. Price rises from 10 to 12. A seller of 20 units will now sell:", "opts": ["10 units", "16 units", "15 units", "5 units"], "correct": 0, "exp": "+20% price × -2.5 = -50% quantity → 20 × 0.5 = <b>10 units</b>."}, {"q": "Working-age 10, employed 6, unemployed (looking) 2. Unemployment rate?", "opts": ["25%", "20%", "33%", "12.5%"], "correct": 0, "exp": "Labor force = 6 + 2 = 8. Unemployment = 2/8 = <b>25%</b>."}, {"q": "Price = 75, quantity = 4, total cost = 320. What is profit?", "opts": ["-20", "20", "-40", "300"], "correct": 0, "exp": "Profit = TR - TC = (75×4) - 320 = 300 - 320 = <b>-20</b> (a loss). With P ≥ AVC the firm still produces short run."}, {"q": "Basket costs: base year 820, next year 845. CPI next year (base = 820)?", "opts": ["About 103", "About 97", "About 100", "About 110"], "correct": 0, "exp": "845/820 × 100 = <b>about 103</b> → prices rose about 3%."}];
-const body=document.getElementById('quizBody');
-let score=0;
-QUIZ.forEach((item,qi)=>{
-  const block=document.createElement('div'); block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
-  const exp=document.createElement('div'); exp.className='exp'; exp.innerHTML=item.exp;
-  item.opts.forEach((opt,oi)=>{
-    const btn=document.createElement('button'); btn.className='opt';
-    btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
-    btn.onclick=()=>{
-      if(block.dataset.done) return;
-      block.dataset.done="1";
-      const btns=block.querySelectorAll('.opt'); btns.forEach(x=>x.disabled=true);
-      btns[item.correct].classList.add('correct'); btns[item.correct].querySelector('.mark').textContent='✓';
-      if(oi===item.correct){score++;} else {btn.classList.add('wrong'); btn.querySelector('.mark').textContent='✗';}
-      document.getElementById('scoreChip').textContent=`${score} / ${QUIZ.length}`;
-      exp.classList.add('show');
-    };
-    block.appendChild(btn);
+const GROUPS = {
+qA:[
+{"q":"What is Crunchville's NOMINAL GDP in 2027?","opts":["103,255","102,625","98,000","103,230"],"correct":0,"exp":"Nominal = this-year prices × this-year quantities: 190×110 + 245×205 + 102×315 = 20,900 + 50,225 + 32,130 = <b>103,255</b>."},
+{"q":"With 2026 as the base year, what is REAL GDP in 2027?","opts":["102,625","103,255","120,905","102,550"],"correct":0,"exp":"Real = base-year (2026) prices × 2027 quantities: 185×110 + 240×205 + 105×315 = 20,350 + 49,200 + 33,075 = <b>102,625</b>."},
+{"q":"Real GDP was 103,230 in 2026 and 102,625 in 2027. The percentage change in real GDP is closest to:","opts":["Between 0% and −1%","Between −1% and −2%","Between 1% and 2%","Between 0% and 1%"],"correct":0,"exp":"(102,625 − 103,230) / 103,230 × 100 = −0.59% → <b>between 0% and −1%</b> (output actually fell)."},
+{"q":"Using real GDP per capita (base 2026), in which year is the standard of living highest?","opts":["2027","2026","2025","Cannot be determined"],"correct":0,"exp":"Real GDP ÷ population: 2025 = 98,000/10 = 9,800; 2026 = 103,230/11 ≈ 9,385; 2027 = 102,625/9 ≈ <b>11,403</b>. 2027 is highest."},
+{"q":"With the basket of 4 tyres + 1 battery and base year 2026, the inflation rate in 2027 is:","opts":["Between 2% and 4%, inflation","Between 4% and 6%, deflation","Between 0% and 2%, inflation","Between −2% and 0%, deflation"],"correct":0,"exp":"Basket 2026 = 4×185 + 105 = 845; 2027 = 4×190 + 102 = 862. CPI 2027 = 862/845×100 ≈ 102.0. Inflation = (102.0 − 100)/100 ≈ <b>2.0%</b>, positive → inflation."}
+],
+qB:[
+{"q":"Ms. H sells tea at a price of 75 per box and makes 4 boxes. What is her profit?","opts":["−20 (a loss)","20","−40","300"],"correct":0,"exp":"Profit = TR − TC = (75 × 4) − 320 = 300 − 320 = <b>−20</b>. She loses 20, but since 75 ≥ AVC (30) she still produces in the short run."},
+{"q":"At a price of 75, how many boxes should Ms. H make in the short run and the long run?","opts":["4 boxes short run, none long run","4 boxes in both runs","3 boxes short run, none long run","No boxes in either run"],"correct":0,"exp":"Produce while MC ≤ price: box 4 (MC 60 ≤ 75) yes, box 5 (MC 90 > 75) no → 4 boxes. P 75 ≥ AVC 30 → produce short run. P 75 < ATC 80 → loss → exit long run."},
+{"q":"From the table, what is the marginal cost of the 4th box of tea?","opts":["60","120","30","80"],"correct":0,"exp":"MC = the change in total cost from 3 to 4 boxes = 320 − 260 = <b>60</b>."}
+],
+qC:[
+{"q":"What is the equilibrium (market) price of a chocolate cake in town T?","opts":["100 shekels","125 shekels","150 shekels","75 shekels"],"correct":0,"exp":"Scale up and find where they match. At 100: demand = 7×320 + 8×200 = 3,840; supply = 20×192 = 3,840. Equal → <b>100</b>. (At 125 supply 4,800 > demand 2,880; at 75 demand 4,800 > supply 2,880.)"},
+{"q":"If the mayor sets a maximum price of 50 shekels, how many cakes are actually sold?","opts":["1,920 cakes","5,760 cakes","96 cakes","3,360 cakes"],"correct":0,"exp":"A binding ceiling makes sellers the short side. Quantity sold = supply at 50 = 20 × 96 = <b>1,920</b>. (Buyers want 7×480 + 8×300 = 5,760, but that can't be made.)"}
+],
+qD:[
+{"q":"What are the labour-force participation rate and the unemployment rate?","opts":["Participation 75%, unemployment ≈16.7%","Participation 62.5%, unemployment 20%","Participation 75%, unemployment 12.5%","Participation 60%, unemployment ≈16.7%"],"correct":0,"exp":"Labour force = 5 + 1 = 6. Participation = 6/8 = <b>75%</b>. Unemployment = 1/6 ≈ <b>16.7%</b> (divide by the labour force, not the population)."}
+],
+qE:[
+{"q":"A seller's price elasticity of demand is −2.5. She sells 20 units at a price of 10 and raises the price to 12. How many units will she now sell?","opts":["10 units","16 units","15 units","5 units"],"correct":0,"exp":"Price 10 → 12 is +20%. %ΔQ = −2.5 × 20% = −50%. New quantity = 20 × (1 − 0.50) = <b>10</b>."},
+{"q":"Coffee sells for $4 with 4,000 cups a month; elasticity is −1.5. The price rises to $5. How many cups now?","opts":["2,500 cups","3,000 cups","2,000 cups","3,500 cups"],"correct":0,"exp":"Price 4 → 5 is +25%. %ΔQ = −1.5 × 25% = −37.5%. New quantity = 4,000 × (1 − 0.375) = <b>2,500</b>."},
+{"q":"At a price of 8, buyers want 500 units; at a price of 12, they want 420. Using the midpoint method, the price elasticity of demand is closest to:","opts":["−0.4 (inelastic)","−1.2 (elastic)","−2.3 (elastic)","−0.04 (inelastic)"],"correct":0,"exp":"%ΔQ = (420 − 500) ÷ ((500+420)/2) = −80 ÷ 460 ≈ −17.4%. %ΔP = (12 − 8) ÷ ((8+12)/2) = 4 ÷ 10 = +40%. Elasticity = −17.4 ÷ 40 ≈ <b>−0.4</b> → inelastic."}
+]
+};
+let score=0,total=0,qn=0;
+Object.values(GROUPS).forEach(a=>total+=a.length);
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+Object.values(GROUPS).forEach(a=>a.forEach(shuffleItem));
+function render(id,items){
+  const body=document.getElementById(id);
+  items.forEach(item=>{
+    qn++;
+    const block=document.createElement('div'); block.className='qblock';
+    block.innerHTML=`<div class="qnum">Question ${qn}</div><div class="qtext">${item.q}</div>`;
+    const exp=document.createElement('div'); exp.className='exp'; exp.innerHTML=item.exp;
+    item.opts.forEach((opt,oi)=>{
+      const btn=document.createElement('button'); btn.className='opt';
+      btn.innerHTML=`${String.fromCharCode(65+oi)}. ${opt}<span class="mark"></span>`;
+      btn.onclick=()=>{
+        if(block.dataset.done) return; block.dataset.done="1";
+        block.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+        const btns=block.querySelectorAll('.opt');
+        btns[item.correct].classList.add('correct'); btns[item.correct].querySelector('.mark').textContent='✓';
+        if(oi===item.correct){score++;} else {btn.classList.add('wrong'); btn.querySelector('.mark').textContent='✗';}
+        document.getElementById('scoreChip').textContent=`${score} / ${total}`;
+        exp.classList.add('show');
+      };
+      block.appendChild(btn);
+    });
+    block.appendChild(exp); body.appendChild(block);
   });
-  block.appendChild(exp); body.appendChild(block);
-});
-
+}
+Object.keys(GROUPS).forEach(id=>render(id,GROUPS[id]));
+document.getElementById('scoreChip').textContent=`0 / ${total}`;
 </script>
 </body>
 </html>

@@ -14,15 +14,20 @@ h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
 .panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel h3 .scorechip{margin-left:auto;}
 .panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
 .preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
 .preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
 .preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
 audio{width:100%;margin-top:6px;}
+.secaudio{background:var(--brand-soft);border:1px solid #d9d0fb;border-radius:12px;padding:10px 13px;margin:4px 0 14px;}
+.secaudio .salab{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin-bottom:7px;}
 .takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
 .takeaway b{color:var(--brand);}
 .takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
 .takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.sub{font-size:15px;font-weight:800;color:var(--brand-d);margin:20px 0 6px;}
+.p{font-size:15px;margin:0 0 8px;}
 .partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
 .question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
 .rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
@@ -31,6 +36,13 @@ audio{width:100%;margin-top:6px;}
 .stepbody .lab{font-weight:600;}
 .math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
 .ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.dtable{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+.dtable th,.dtable td{border:1px solid var(--line);padding:6px 8px;text-align:center;}
+.dtable th{background:var(--brand-soft);color:var(--brand-d);font-weight:700;}
+.dtable tr.hl td{background:var(--good-soft);font-weight:700;color:var(--good);}
+.svg-wrap{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0;text-align:center;}
+.svg-wrap svg{width:100%;height:auto;max-width:470px;}
+.cap{color:var(--muted);font-size:13px;margin-top:8px;}
 .tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
 .tryq .q{font-weight:600;margin-bottom:8px;}
 .reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
@@ -38,6 +50,7 @@ audio{width:100%;margin-top:6px;}
 .reveal.show{display:block;}
 .qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
 .qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.examtag{display:inline-block;background:var(--good-soft);color:var(--good);border:1px solid #bfe6cf;border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle;}
 .qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
 .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
 .opt:hover{border-color:var(--brand);background:var(--brand-soft);}
@@ -45,28 +58,91 @@ audio{width:100%;margin-top:6px;}
 .opt .mark{float:right;font-weight:700;}
 .exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
 .exp.show{display:block;} .exp b{color:var(--brand);}
-.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.scorechip{font-size:13px;color:var(--muted);font-weight:600;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+@media (max-width:560px){.dtable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;}}
 </style></head><body><div class="wrap">
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 6 of 14 · Learn</div>
 <h1>Short-Run Supply &amp; the Shutdown Decision</h1>
 <p class="lede">Two different questions: should I produce right now, and should I stay in the market at all.</p>
-<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A food truck is losing money this month. Its pitch fee is already paid, whatever it does. Should it open tomorrow, or stay shut?</p><p class="do">Decide, then press play.</p></div>
-<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-06.mp3"></audio><div class="takeaway"><ul><li><b>Shutdown test (short run)</b> - produce now if price ≥ average variable cost. Fixed costs are already spent, so cover the variable cost and a bit more and it beats closing.</li><li><b>Exit test (long run)</b> - stay in the market only if price ≥ average total cost — in the long run you can escape every cost.</li></ul><p class="tk-gen">Profit (revenue vs total cost) is a separate question. A firm can lose money and still be right to keep producing right now.</p></div></div>
-<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">A firm sells at a price of 75. At its best output, its average variable cost is 60 and its average total cost is 80. What should it do in the short run and in the long run? Then suppose the price rises to 85 (same costs) — now what?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">Short-run shutdown test: produce if price ≥ average variable cost. Long-run exit test: stay only if price ≥ average total cost.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Price 75 — shutdown test.</div>75 ≥ 60 (AVC), so PRODUCE in the short run.</div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Price 75 — exit test.</div>75 &lt; 80 (ATC), so it loses money → EXIT in the long run.</div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Price 85 — shutdown test.</div>85 ≥ 60, so produce.</div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">Price 85 — exit test.</div>85 ≥ 80, so it covers all costs → stay in BOTH runs.</div></div><div class="ans">&#10003; Answer: At 75: produce short run, exit long run. At 85: produce in both runs.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">Price is 50, average variable cost is 55, average total cost is 70. Short run?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Shut down. 50 &lt; 55 (AVC): it can&#x27;t even cover variable cost, so producing loses more than closing.</div></div><div class="tryq"><div class="q">A firm is losing money but price is above its average variable cost. Keep producing short run?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Yes. Losing money (TR &lt; TC) is the profit test; the shutdown test (P vs AVC) says keep going for now.</div></div></div></div>
-<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+
+<div class="preq"><span class="tag">&#9208; Before you listen — guess first</span><p>A food truck is losing money this month. Its pitch fee is already paid, whatever it does. Should it open tomorrow, or stay shut?</p><p class="do">Decide, then press play.</p></div>
+
+<div class="panel"><h3>&#127911; Start here — today's plan <span class="scorechip">~1 min</span></h3><p class="note">A quick map of what you'll learn today. Each section below also has its own short audio you can listen to while you read.</p><audio controls preload="none" src="Day-06-intro.mp3"></audio><div class="takeaway"><ul><li><b>Shutdown test (short run)</b> — produce now if price ≥ average variable cost. Fixed costs are already spent, so covering variable cost beats closing.</li><li><b>Exit test (long run)</b> — stay in the market only if price ≥ average total cost; in the long run you can escape every cost.</li></ul><p class="tk-gen">Profit (revenue vs total cost) is a separate question. A firm can lose money and still be right to keep producing right now.</p></div></div>
+
+<div class="panel"><h3>&#127919; Three decisions, three tests</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-06-tests.mp3"></audio></div>
+<p class="p">A competitive firm faces three separate questions. Keep them apart and the exam questions fall out cleanly.</p>
+<div class="rule">1) How much to make → keep producing each unit while its MC ≤ price; stop when MC passes the price. 2) Produce at all, short run? → yes if price ≥ AVC. 3) Stay in the market, long run? → yes if price ≥ ATC.</div>
+<p class="sub">Why these are the cut-offs</p>
+<p class="p">In the short run, the fixed cost is already spent — sunk. So the only thing to cover by opening is the <b>variable</b> cost. If the price clears AVC, opening loses less (or earns more) than closing. In the long run nothing is sunk; the firm only stays if the price covers <b>every</b> cost — that's ATC.</p>
+<p class="p"><b>The trap Ifat-proofing:</b> "losing money" is the profit test (price vs ATC), and it is <i>not</i> the same as the shutdown test (price vs AVC). A firm can be losing money yet absolutely right to keep producing this month.</p>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 470 295" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cost curves with two reference prices: at the minimum of average variable cost the firm shuts down; at the minimum of average total cost it breaks even.">
+<line x1="60" y1="40" x2="60" y2="255" stroke="#bbb" stroke-width="1.4"/>
+<line x1="60" y1="255" x2="445" y2="255" stroke="#bbb" stroke-width="1.4"/>
+<text x="24" y="48" font-size="12" fill="#6f6886" font-family="Arial">Price</text>
+<text x="385" y="277" font-size="12" fill="#6f6886" font-family="Arial">Quantity</text>
+<line x1="60" y1="182" x2="400" y2="182" stroke="#1f9d63" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="60" y1="205" x2="400" y2="205" stroke="#d2453f" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="300" y="178" font-size="10.5" fill="#1f9d63" font-family="Arial" font-weight="bold">break-even = min ATC</text>
+<text x="300" y="219" font-size="10.5" fill="#d2453f" font-family="Arial" font-weight="bold">shutdown = min AVC</text>
+<path d="M80,150 Q240,255 380,160" fill="none" stroke="#1f9d63" stroke-width="2.6"/>
+<path d="M80,115 Q255,240 385,135" fill="none" stroke="#6b4ef0" stroke-width="2.6"/>
+<polyline points="110,245 235,205 244,182 365,85" fill="none" stroke="#d2453f" stroke-width="2.6"/>
+<circle cx="235" cy="205" r="4.5" fill="#211c33"/>
+<circle cx="244" cy="182" r="4.5" fill="#211c33"/>
+<text x="382" y="162" font-size="12.5" fill="#1f9d63" font-family="Arial" font-weight="bold">AVC</text>
+<text x="386" y="135" font-size="12.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">ATC</text>
+<text x="366" y="80" font-size="12.5" fill="#d2453f" font-family="Arial" font-weight="bold">MC</text>
+</svg>
+<div class="cap">Three price bands: above the green line (P &gt; min ATC) the firm profits and stays in both runs. Between the lines (min AVC ≤ P &lt; min ATC) it loses money but still produces short run, then exits long run. Below the red line (P &lt; min AVC) it shuts down now. The MC curve above AVC is the firm's short-run supply curve.</div>
+</div>
+</div>
+
+<div class="panel"><h3>&#128290; Worked example — Ms. H's tea, straight from a past final</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-06-worked.mp3"></audio></div>
+<p class="p">Here are the three rows that matter from Ms. H's table:</p>
+<table class="dtable"><thead><tr><th>Boxes</th><th>MC</th><th>AVC</th><th>ATC</th></tr></thead><tbody>
+<tr><td>3</td><td>30</td><td>20</td><td>86.7</td></tr>
+<tr class="hl"><td>4</td><td>60</td><td>30</td><td>80</td></tr>
+<tr><td>5</td><td>90</td><td>42</td><td>82</td></tr>
+</tbody></table>
+<p class="partlab" style="margin-top:14px;">The price of tea is 75 per box. How many boxes, short run and long run?</p>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">How many to make? Produce while MC ≤ price.</div>Box 4's MC is 60 (≤ 75) → make it. Box 5's MC is 90 (&gt; 75) → stop. So <b>4 boxes</b>.</div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Short run — is price ≥ AVC at 4?</div>75 ≥ 30 → yes, produce in the short run.</div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Long run — is price ≥ ATC at 4?</div>ATC at 4 is 80, and 75 &lt; 80 → she loses money → exit in the long run.</div></div>
+<div class="ans">&#10003; Answer at price 75: make 4 boxes in the short run, and none in the long run.</div>
+<div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try — reveal only after you work it out</h3>
+<div class="tryq"><div class="q">Same table, but the price rises to 85 per box. How many boxes short run and long run?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">4 boxes in both runs. MC of box 5 is 90 &gt; 85, so still 4 boxes. ATC at 4 is 80, and 85 ≥ 80 → she covers all costs → stays in the long run too.</div></div>
+<div class="tryq"><div class="q">Price 50, AVC at best output 55, ATC 70. Short run?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Shut down. 50 &lt; 55 (AVC): she can't even cover variable cost, so producing loses more than closing.</div></div></div>
+</div>
+
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 5</span></h3><p class="note">Fresh exam-style questions — apply the shutdown and exit tests. (The Ms. H exam questions are drilled on Day 11 and in the Day 13 mock.)</p><div id="quizBody"></div></div>
+
 <div class="navrow"><a class="navbtn" href="Day-05.html">&larr; Back</a><a class="navbtn primary" href="Day-07.html">Next &rarr;</a></div>
 </div>
 <script>
-const QUIZ = [{"q": "In the short run, produce if:", "opts": ["Price ≥ average variable cost.", "Price ≥ average total cost.", "You are making a profit.", "Price is above marginal cost."], "correct": 0, "exp": "Fixed costs are sunk; cover the variable cost."}, {"q": "In the long run, stay only if:", "opts": ["Price ≥ average total cost.", "Price ≥ average variable cost.", "You have any revenue.", "Marginal cost is falling."], "correct": 0, "exp": "All costs are escapable long run."}, {"q": "P=75, AVC=60, ATC=80. The firm should:", "opts": ["Produce short run, exit long run.", "Produce in both.", "Shut down now.", "Exit immediately."], "correct": 0, "exp": "75 ≥ 60 but 75 < 80."}, {"q": "Why are the shutdown and profit tests different?", "opts": ["A firm can lose money yet still rightly produce now.", "They always agree.", "Profit is only about fixed costs.", "Shutdown only matters long run."], "correct": 0, "exp": "Different questions: operate now vs make money."}];
+const QUIZ = [
+{"q":"At a firm's best output the price is 40, average variable cost is 30, and average total cost is 50. What should it do in the short run and the long run?","opts":["Produce in the short run, exit in the long run.","Produce in both the short run and the long run.","Shut down in both runs.","Shut down in the short run, produce in the long run."],"correct":0,"exp":"Price 40 ≥ AVC 30 → produce short run. Price 40 < ATC 50 → it loses money → exit long run. (Losing money short run is fine as long as price covers AVC.)"},
+{"q":"At another firm's best output the price is 60, average variable cost is 35, and average total cost is 50. Short run and long run?","opts":["Produce in both the short run and the long run.","Produce in the short run, exit in the long run.","Shut down in both runs.","Produce in the long run only."],"correct":0,"exp":"Price 60 ≥ AVC 35 → produce short run. Price 60 ≥ ATC 50 → it covers all costs → stay in the long run too."},
+{"q":"In the short run, a competitive firm should keep producing if:","opts":["Price ≥ average variable cost.","Price ≥ average total cost.","It is already making a profit.","Price is below marginal cost."],"correct":0,"exp":"Fixed costs are sunk in the short run, so the firm only needs the price to cover average variable cost."},
+{"q":"In the long run, a firm stays in the market only if:","opts":["Price ≥ average total cost.","Price ≥ average variable cost.","It earns any revenue at all.","Marginal cost is falling."],"correct":0,"exp":"Long run, no cost is sunk, so the price must cover ALL costs — average total cost — or the firm exits."},
+{"q":"A firm is losing money, but the price is still above its average variable cost. In the short run it should:","opts":["Keep producing — losing money is a separate test from shutting down.","Shut down immediately.","Exit the industry today.","Raise its own price."],"correct":0,"exp":"Losing money is the profit test (P vs ATC). The shutdown test (P vs AVC) is passed, so producing now loses less than closing."}
+];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 if(body){
 let score=0;
 QUIZ.forEach((item,qi)=>{
   const block=document.createElement('div');block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const tag=item.src?`<span class="examtag">${item.src}</span>`:'';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}${tag}</div><div class="qtext">${item.q}</div>`;
   const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
   item.opts.forEach((opt,oi)=>{
     const btn=document.createElement('button');btn.className='opt';

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demand &amp; Supply Curves</title>
+<title>Demand, Supply &amp; Equilibrium</title>
 <style>
 :root{--bg:#f5f3fb;--card:#fff;--ink:#211c33;--muted:#6f6886;--brand:#6b4ef0;--brand-d:#5238c4;
 --brand-soft:#ece7fd;--good:#1f9d63;--good-soft:#e4f6ec;--bad:#d2453f;--bad-soft:#fae5e4;--line:#e7e3f2;
@@ -14,23 +14,43 @@ h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
 .panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel h3 .scorechip{margin-left:auto;}
 .panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
 .preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
 .preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
 .preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
 audio{width:100%;margin-top:6px;}
+.secaudio{background:var(--brand-soft);border:1px solid #d9d0fb;border-radius:12px;padding:10px 13px;margin:4px 0 14px;}
+.secaudio .salab{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin-bottom:7px;}
 .takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
 .takeaway b{color:var(--brand);}
 .takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
 .takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
-.partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
-.question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
-.rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
+.sub{font-size:15px;font-weight:800;color:var(--brand-d);margin:20px 0 6px;}
+.sub:first-child{margin-top:4px;}
+.p{font-size:15px;margin:0 0 8px;}
+.rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:16px 0;}
 .step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);} .step:first-of-type{border-top:none;}
 .stepn{flex:0 0 28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px;}
 .stepbody .lab{font-weight:600;}
 .math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
-.ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:14px;font-weight:600;color:var(--good);}
+.dtable{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;}
+.dtable th,.dtable td{border:1px solid var(--line);padding:6px 8px;text-align:center;}
+.dtable th{background:var(--brand-soft);color:var(--brand-d);font-weight:700;}
+.dtable td.lab{text-align:left;}
+.dtable tr.hl td{background:var(--good-soft);font-weight:800;color:var(--good);}
+.svg-wrap{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0;text-align:center;}
+.svg-wrap svg{width:100%;height:auto;max-width:540px;}
+.cap{color:var(--muted);font-size:13px;margin-top:8px;}
+.efftable{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0;}
+.efftable th,.efftable td{border:1px solid var(--line);padding:9px 10px;text-align:center;}
+.efftable th{background:var(--brand-soft);color:var(--brand-d);}
+.efftable td.lab{text-align:left;font-weight:700;}
+.up{color:var(--good);font-weight:800;} .down{color:var(--bad);font-weight:800;}
+.ex{background:#fbfaff;border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin:12px 0;}
+.ex .lens{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand);}
+.ex p{margin:6px 0 0;font-size:15px;}
 .tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
 .tryq .q{font-weight:600;margin-bottom:8px;}
 .reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
@@ -38,6 +58,7 @@ audio{width:100%;margin-top:6px;}
 .reveal.show{display:block;}
 .qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
 .qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.examtag{display:inline-block;background:var(--good-soft);color:var(--good);border:1px solid #bfe6cf;border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle;}
 .qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
 .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
 .opt:hover{border-color:var(--brand);background:var(--brand-soft);}
@@ -45,28 +66,175 @@ audio{width:100%;margin-top:6px;}
 .opt .mark{float:right;font-weight:700;}
 .exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
 .exp.show{display:block;} .exp b{color:var(--brand);}
-.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.scorechip{font-size:13px;color:var(--muted);font-weight:600;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+@media (max-width:560px){.dtable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;}}
 </style></head><body><div class="wrap">
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 2 of 14 · Learn</div>
-<h1>Demand &amp; Supply Curves</h1>
-<p class="lede">How one shopper&#x27;s demand adds up into a whole market — and what makes a curve move.</p>
-<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A coffee shop raises its price by one shekel and sells fewer cups. Did its demand curve move — or did we just slide to a new point on the same curve?</p><p class="do">Guess, then press play.</p></div>
-<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-02.mp3"></audio><div class="takeaway"><ul><li><b>Move ALONG the curve</b> - caused by the good&#x27;s OWN price changing (more expensive → people buy less).</li><li><b>SHIFT the whole curve</b> - caused by something else — income, tastes, the price of related goods, the number of buyers.</li></ul><p class="tk-gen">Market demand (or supply) = add up every buyer&#x27;s (or seller&#x27;s) quantity at each price; equilibrium is where the two meet.</p></div></div>
-<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">In town T there are two groups of buyers. Group A has 7 buyers who each want 80 cakes at a price of 175. Group B has 8 buyers who each want 50 cakes at a price of 175. What is the market quantity demanded at a price of 175?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">Market demand at a price = add up the quantity every buyer wants at that price. With identical groups, multiply each group&#x27;s individual quantity by the number of buyers, then add.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Group A total.</div><span class="math">7 buyers × 80 = 560</span></div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Group B total.</div><span class="math">8 buyers × 50 = 400</span></div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Add the groups.</div><span class="math">560 + 400 = 960 cakes</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">That is market demand at 175.</div>Repeat at every price to trace the whole market demand curve.</div></div><div class="ans">&#10003; Answer: 960 cakes are demanded at a price of 175.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">At a price of 100, each of 7 group-A buyers wants 160 and each of 8 group-B buyers wants 100. Market quantity demanded?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">1,920. Group A: 7 × 160 = 1,120. Group B: 8 × 100 = 800. Total = 1,120 + 800 = 1,920.</div></div><div class="tryq"><div class="q">Buyers&#x27; incomes rise (the good is normal). Does the demand curve shift or do we slide along it?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">It SHIFTS right — income is not the good&#x27;s own price. At every price, people now want more.</div></div></div></div>
-<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+<h1>Demand, Supply &amp; Equilibrium</h1>
+<p class="lede">How one shopper's demand adds up into a whole market, where the market price comes from, and what makes a curve move.</p>
+
+<div class="preq"><span class="tag">&#9208; Before you listen — guess first</span><p>A coffee shop raises its price by one shekel and sells fewer cups. Did its demand curve <i>move</i> — or did we just slide to a new point on the same curve?</p><p class="do">Guess, then press play.</p></div>
+
+<div class="panel"><h3>&#127911; Start here — today's plan <span class="scorechip">~1 min</span></h3><p class="note">A quick map of what you'll learn today. Each section below also has its own short audio you can listen to while you read.</p><audio controls preload="none" src="Day-02-intro.mp3"></audio><div class="takeaway"><ul><li><b>Move ALONG the curve</b> — caused by the good's OWN price changing.</li><li><b>SHIFT the whole curve</b> — caused by something else: income, tastes, related-good prices, number of buyers/sellers.</li></ul><p class="tk-gen">Market demand (or supply) = add up every buyer's (or seller's) quantity at each price. Equilibrium = the one price where the two meet.</p></div></div>
+
+<div class="panel"><h3>&#129523; Why we even build a "market" curve</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-02-why.mp3"></audio></div>
+<p class="p">A town doesn't have one buyer — it has many, and each one wants a different amount. So how does the town land on <i>one</i> price that everybody pays?</p>
+<p class="p">The exam answers this with a table: it gives you what <b>one</b> buyer in each group wants at each price, and what <b>one</b> seller offers. Your job is to scale each up to the whole town, then find the single price where <b>total wanted = total offered</b>. That price is the <b>equilibrium</b> — the market price. That's the whole point of building the curves: to find where the town clears.</p>
+</div>
+
+<div class="panel"><h3>&#128221; From one buyer to the whole market — step by step</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-02-build.mp3"></audio></div>
+<p class="note">A clean small example first (lemonade), so the method is obvious. The exam uses bigger numbers — same steps.</p>
+<p class="p">Town has <b>2 buyers in group A</b>, <b>3 buyers in group B</b>, and <b>4 sellers</b>. Here's what <i>one</i> person in each group does at each price:</p>
+
+<table class="dtable"><thead><tr><th>Price</th><th>One A-buyer wants</th><th>One B-buyer wants</th><th>One seller offers</th></tr></thead><tbody>
+<tr><td>6</td><td>0</td><td>0</td><td>13</td></tr>
+<tr><td>5</td><td>4</td><td>2</td><td>10</td></tr>
+<tr><td>4</td><td>8</td><td>4</td><td>7</td></tr>
+<tr><td>3</td><td>12</td><td>6</td><td>4</td></tr>
+<tr><td>2</td><td>16</td><td>8</td><td>1</td></tr>
+</tbody></table>
+
+<div class="rule">To scale up: multiply each group's individual quantity by how many buyers are in it, then add the groups. Do the same for sellers.</div>
+
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Market demand at price 4.</div><span class="math">2 A-buyers × 8 = 16   +   3 B-buyers × 4 = 12   →   28 wanted</span></div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Market supply at price 4.</div><span class="math">4 sellers × 7 = 28 offered</span></div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Compare every price — find where they're equal.</div>That's the equilibrium.</div></div>
+
+<table class="dtable"><thead><tr><th>Price</th><th>Market demand (2A + 3B)</th><th>Market supply (4 × seller)</th></tr></thead><tbody>
+<tr><td>5</td><td>14</td><td>40</td></tr>
+<tr class="hl"><td>4</td><td>28</td><td>28</td></tr>
+<tr><td>3</td><td>42</td><td>16</td></tr>
+<tr><td>2</td><td>56</td><td>4</td></tr>
+</tbody></table>
+<div class="ans">&#10003; Equilibrium: at price <b>4</b>, the town wants 28 and sellers offer 28. Market price = 4, quantity = 28.</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Demand slopes down, supply slopes up; they cross at the equilibrium price and quantity.">
+<line x1="60" y1="30" x2="60" y2="255" stroke="#bbb" stroke-width="1.5"/>
+<line x1="60" y1="255" x2="395" y2="255" stroke="#bbb" stroke-width="1.5"/>
+<text x="36" y="40" font-size="13" fill="#6f6886" font-family="Arial">Price</text>
+<text x="345" y="280" font-size="13" fill="#6f6886" font-family="Arial">Quantity</text>
+<line x1="75" y1="60" x2="385" y2="245" stroke="#6b4ef0" stroke-width="3"/>
+<line x1="75" y1="245" x2="385" y2="60" stroke="#1f9d63" stroke-width="3"/>
+<text x="388" y="248" font-size="14" fill="#6b4ef0" font-family="Arial" font-weight="bold">D</text>
+<text x="388" y="64" font-size="14" fill="#1f9d63" font-family="Arial" font-weight="bold">S</text>
+<circle cx="230" cy="152" r="6" fill="#211c33"/>
+<line x1="60" y1="152" x2="230" y2="152" stroke="#888" stroke-width="1.3" stroke-dasharray="5 4"/>
+<line x1="230" y1="152" x2="230" y2="255" stroke="#888" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="64" y="146" font-size="12.5" fill="#211c33" font-family="Arial" font-weight="bold">P* = 4</text>
+<text x="196" y="274" font-size="12.5" fill="#211c33" font-family="Arial" font-weight="bold">Q* = 28</text>
+<text x="238" y="148" font-size="12.5" fill="#211c33" font-family="Arial" font-weight="bold">equilibrium</text>
+</svg>
+<div class="cap">Demand slopes down, supply slopes up. They cross once — that single point is the market price and quantity.</div>
+</div>
+</div>
+
+<div class="panel"><h3>&#8596; Move along the curve vs. shift the whole curve</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-02-move-shift.mp3"></audio></div>
+<p class="p">This is the distinction the exam loves. The trick is one question:</p>
+<div class="rule">Ask: did the good's <b>OWN price</b> change?<br>· Yes → <b>move ALONG</b> the same curve (just slide to a new point).<br>· No, something <b>else</b> changed → <b>SHIFT</b> the whole curve.</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: own price change slides along one demand curve. Right: another factor shifts the whole demand curve to the right.">
+<text x="150" y="22" font-size="13.5" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Own price changes → MOVE ALONG</text>
+<line x1="50" y1="45" x2="50" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="50" y1="215" x2="270" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="65" y1="60" x2="255" y2="205" stroke="#6b4ef0" stroke-width="3"/>
+<circle cx="110" cy="94" r="5.5" fill="#211c33"/><circle cx="205" cy="166" r="5.5" fill="#211c33"/>
+<path d="M122 103 Q160 130 196 159" stroke="#d2453f" stroke-width="2.4" fill="none" marker-end="url(#ar1)"/>
+<text x="258" y="208" font-size="13" fill="#6b4ef0" font-family="Arial" font-weight="bold">D</text>
+
+<text x="450" y="22" font-size="13.5" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Something else changes → SHIFT</text>
+<line x1="350" y1="45" x2="350" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="350" y1="215" x2="575" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="362" y1="60" x2="520" y2="205" stroke="#6b4ef0" stroke-width="3"/>
+<line x1="412" y1="60" x2="570" y2="205" stroke="#1f9d63" stroke-width="3" stroke-dasharray="7 4"/>
+<path d="M430 120 L478 120" stroke="#1f9d63" stroke-width="2.6" fill="none" marker-end="url(#ar1)"/>
+<text x="520" y="208" font-size="13" fill="#6b4ef0" font-family="Arial" font-weight="bold">D</text>
+<text x="572" y="208" font-size="13" fill="#1f9d63" font-family="Arial" font-weight="bold">D'</text>
+<defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#444"/></marker></defs>
+</svg>
+<div class="cap">Left: the price rose, so we slide up the <i>same</i> curve — fewer bought. Right: incomes rose, so the <i>whole</i> curve moves out — more bought at every price.</div>
+</div>
+</div>
+
+<div class="panel"><h3>&#10145;&#65039; Which way does it shift — right or left?</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-02-direction.mp3"></audio></div>
+<p class="p">Your memory hook: <b>More → Right, Less → Left.</b> "Right" means the curve moves outward, so there's a bigger quantity at every price.</p>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Demand: more wanted shifts right, less wanted shifts left. Supply: cheaper to make shifts right, costlier shifts left.">
+<text x="150" y="22" font-size="13.5" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">DEMAND</text>
+<line x1="50" y1="45" x2="50" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="50" y1="215" x2="285" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="110" y1="55" x2="230" y2="205" stroke="#211c33" stroke-width="2.6"/>
+<line x1="160" y1="55" x2="280" y2="205" stroke="#1f9d63" stroke-width="2.6" stroke-dasharray="7 4"/>
+<line x1="60" y1="55" x2="180" y2="205" stroke="#d2453f" stroke-width="2.6" stroke-dasharray="7 4"/>
+<text x="246" y="92" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold">MORE</text>
+<text x="246" y="106" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold">→ RIGHT</text>
+<text x="58" y="92" font-size="11.5" fill="#d2453f" font-family="Arial" font-weight="bold">LESS</text>
+<text x="58" y="106" font-size="11.5" fill="#d2453f" font-family="Arial" font-weight="bold">← LEFT</text>
+
+<text x="450" y="22" font-size="13.5" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">SUPPLY</text>
+<line x1="350" y1="45" x2="350" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="350" y1="215" x2="585" y2="215" stroke="#bbb" stroke-width="1.4"/>
+<line x1="410" y1="205" x2="530" y2="55" stroke="#211c33" stroke-width="2.6"/>
+<line x1="460" y1="205" x2="580" y2="55" stroke="#1f9d63" stroke-width="2.6" stroke-dasharray="7 4"/>
+<line x1="360" y1="205" x2="480" y2="55" stroke="#d2453f" stroke-width="2.6" stroke-dasharray="7 4"/>
+<text x="548" y="150" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold">CHEAPER</text>
+<text x="548" y="164" font-size="11.5" fill="#1f9d63" font-family="Arial" font-weight="bold">→ RIGHT</text>
+<text x="356" y="150" font-size="11.5" fill="#d2453f" font-family="Arial" font-weight="bold">COSTLIER</text>
+<text x="356" y="164" font-size="11.5" fill="#d2453f" font-family="Arial" font-weight="bold">← LEFT</text>
+</svg>
+<div class="cap">Same logic both sides: more demand / easier-cheaper supply pushes the curve right; less demand / harder-costlier supply pulls it left.</div>
+</div>
+
+<p class="sub">What pushes DEMAND right (people want more at every price)</p>
+<p class="p">Income rises (for a normal good) · the good gets more popular / stronger taste · more buyers · a substitute gets pricier · a complement gets cheaper. The opposite of any of these pushes demand <b>left</b>.</p>
+<p class="sub">What pushes SUPPLY right (sellers offer more at every price)</p>
+<p class="p">Input costs fall · better technology · more sellers. The opposite — input costs rise, fewer sellers — pushes supply <b>left</b>.</p>
+
+<p class="sub">Then read the effect on price &amp; quantity</p>
+<table class="efftable"><thead><tr><th>What shifts</th><th>Price</th><th>Quantity</th></tr></thead><tbody>
+<tr><td class="lab">Demand → right</td><td><span class="up">↑ up</span></td><td><span class="up">↑ up</span></td></tr>
+<tr><td class="lab">Demand → left</td><td><span class="down">↓ down</span></td><td><span class="down">↓ down</span></td></tr>
+<tr><td class="lab">Supply → right</td><td><span class="down">↓ down</span></td><td><span class="up">↑ up</span></td></tr>
+<tr><td class="lab">Supply → left</td><td><span class="up">↑ up</span></td><td><span class="down">↓ down</span></td></tr>
+</tbody></table>
+<p class="p" style="color:var(--muted);font-size:13.5px;">Pattern: demand shifts move price and quantity the <i>same</i> way. Supply shifts move them <i>opposite</i> ways.</p>
+
+<div class="ex"><span class="lens">&#128295; Worked shift — a new factor</span><p>Bakers in a town adopt a faster oven that <b>lowers their cost</b> to make cakes. What happens?</p><p style="margin-top:8px;">Cost fell → it's easier/cheaper to produce → <b>supply shifts right</b>. From the table: price <span class="down">↓ down</span>, quantity <span class="up">↑ up</span>. More cakes are sold, and they're cheaper.</p></div>
+
+<div class="tryq"><div class="q">Now you try: buyers' incomes rise and cake is a normal good. Which curve shifts, which way, and what happens to price and quantity? (Reveal only after you answer.)</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Income is not the good's own price → it SHIFTS the curve. Higher income → people want more → <b>demand shifts right</b> → price ↑ up, quantity ↑ up.</div></div>
+</div>
+
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 5</span></h3><p class="note">First three are real past-final questions. The last two are new — same skills, fresh wording, different from the examples above.</p><div id="quizBody"></div></div>
+
 <div class="navrow"><a class="navbtn" href="Day-01.html">&larr; Back</a><a class="navbtn primary" href="Day-03.html">Next &rarr;</a></div>
 </div>
 <script>
-const QUIZ = [{"q": "How do you build the market demand curve from individual buyers?", "opts": ["Add up the quantity each buyer wants at each price.", "Average the prices buyers will pay.", "Take the highest individual demand.", "Multiply price by the number of buyers."], "correct": 0, "exp": "Market demand is the horizontal sum at each price."}, {"q": "If a good's own price rises, the quantity demanded:", "opts": ["Falls — a move along the curve.", "Rises.", "Shifts the whole curve left.", "Does not change."], "correct": 0, "exp": "Own-price change = movement along, not a shift."}, {"q": "Which SHIFTS the demand curve?", "opts": ["A rise in buyers' income.", "A change in the good's own price.", "Reaching equilibrium.", "A change in quantity supplied."], "correct": 0, "exp": "Income, tastes, related prices, number of buyers shift it."}, {"q": "Equilibrium is the price where:", "opts": ["Quantity demanded equals quantity supplied.", "Demand is highest.", "Sellers make the most profit.", "The government sets the price."], "correct": 0, "exp": "Qd = Qs; the market clears."}];
+const QUIZ = [
+{"src":"From a past final","q":"The market for chocolate cake in town T is competitive. Group A has 7 consumers with identical demand; group B has 8 consumers with identical demand; there are 20 stores. The table shows one consumer in each group and one seller. What will be the market price of a chocolate cake?<table class='dtable' style='font-weight:400;margin-top:10px'><thead><tr><th>Price</th><th>One A-buyer</th><th>One B-buyer</th><th>One seller</th></tr></thead><tbody><tr><td>175</td><td>80</td><td>50</td><td>336</td></tr><tr><td>150</td><td>160</td><td>100</td><td>288</td></tr><tr><td>125</td><td>240</td><td>150</td><td>240</td></tr><tr><td>100</td><td>320</td><td>200</td><td>192</td></tr><tr><td>75</td><td>400</td><td>250</td><td>144</td></tr></tbody></table>","opts":["100 shekels.","125 shekels.","150 shekels.","75 shekels."],"correct":0,"exp":"Scale each side up and find where they're equal. At price 100: demand = 7×320 + 8×200 = 2240 + 1600 = 3840. Supply = 20×192 = 3840. They match, so equilibrium price = 100. (At 125 supply 4800 > demand 2880; at 75 demand 4800 > supply 2880.)"},
+{"src":"From a past final","q":"In town T's competitive market for chocolate cake, the price of cocoa powder rises. What happens to the price and quantity of chocolate cakes sold?","opts":["Price increases and quantity decreases.","Price decreases and quantity decreases.","Price decreases and quantity increases.","Price increases and quantity increases."],"correct":0,"exp":"Cocoa powder is an input. Costlier input → harder/costlier to produce → SUPPLY shifts LEFT. Supply-left → price ↑ up, quantity ↓ down."},
+{"src":"From a past final","q":"In town T's competitive market for chocolate cake, the council penalizes traffic violators by making them eat two chocolate cakes in one sitting. What happens to the price and quantity sold?","opts":["Price increases and quantity increases.","Price increases and quantity decreases.","Price decreases and quantity decreases.","Price decreases and quantity increases."],"correct":0,"exp":"This forces more cake to be bought — it's not the cake's own price, so DEMAND shifts RIGHT. Demand-right → price ↑ up, quantity ↑ up."},
+{"q":"A town has 3 buyers in group A who each want 20 units, and 4 buyers in group B who each want 15 units, all at a price of 9. What is the market quantity demanded at a price of 9?","opts":["120 units.","35 units.","105 units.","60 units."],"correct":0,"exp":"Add up everyone at that price: group A = 3 × 20 = 60; group B = 4 × 15 = 60; market demand = 60 + 60 = 120. (Market demand is the horizontal sum across all buyers.)"},
+{"q":"A café raises the price of its own coffee. On the demand diagram, this is best described as:","opts":["A movement along the demand curve.","A rightward shift of the demand curve.","A leftward shift of the demand curve.","A shift of the supply curve."],"correct":0,"exp":"The good's OWN price changed → we slide to a new point on the same curve (move along). Only a non-price factor — income, tastes, number of buyers, related prices — would shift the whole curve."}
+];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 if(body){
 let score=0;
 QUIZ.forEach((item,qi)=>{
   const block=document.createElement('div');block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const tag=item.src?`<span class="examtag">${item.src}</span>`:'';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}${tag}</div><div class="qtext">${item.q}</div>`;
   const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
   item.opts.forEach((opt,oi)=>{
     const btn=document.createElement('button');btn.className='opt';

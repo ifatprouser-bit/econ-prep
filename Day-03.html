@@ -14,15 +14,20 @@ h1{font-size:28px;margin:8px 0 4px;letter-spacing:-.02em;}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px;}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(40,20,90,.04);}
 .panel h3{margin:0 0 6px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.panel h3 .scorechip{margin-left:auto;}
 .panel .note{color:var(--muted);font-size:14px;margin:0 0 14px;}
 .preq{background:var(--amber-soft);border:1px solid #f0deb8;border-radius:16px;padding:18px 20px;margin:18px 0;}
 .preq .tag{color:var(--amber);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
 .preq p{margin:8px 0 0;font-size:16px;} .preq .do{margin-top:10px;font-weight:600;color:var(--amber);}
 audio{width:100%;margin-top:6px;}
+.secaudio{background:var(--brand-soft);border:1px solid #d9d0fb;border-radius:12px;padding:10px 13px;margin:4px 0 14px;}
+.secaudio .salab{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--brand-d);margin-bottom:7px;}
 .takeaway{font-size:14.5px;background:#fbfaff;border:1px dashed var(--line);border-radius:11px;padding:13px 16px;margin-top:14px;}
 .takeaway b{color:var(--brand);}
 .takeaway ul{margin:2px 0 0;padding-left:20px;} .takeaway li{margin:5px 0;}
 .takeaway .tk-gen{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);}
+.sub{font-size:15px;font-weight:800;color:var(--brand-d);margin:20px 0 6px;}
+.p{font-size:15px;margin:0 0 8px;}
 .partlab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0 0 6px;}
 .question{background:#f6f4fc;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:14px 16px;font-size:15.5px;}
 .rule{background:var(--brand-soft);border-radius:11px;padding:12px 16px;font-weight:600;color:var(--brand-d);margin:18px 0 16px;}
@@ -31,6 +36,9 @@ audio{width:100%;margin-top:6px;}
 .stepbody .lab{font-weight:600;}
 .math{font-family:"SF Mono",Menlo,Consolas,monospace;background:#f6f4fc;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:6px;font-size:14.5px;display:inline-block;}
 .ans{background:var(--good-soft);border:1px solid #bfe6cf;border-radius:11px;padding:12px 16px;margin-top:16px;font-weight:600;color:var(--good);}
+.svg-wrap{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0;text-align:center;}
+.svg-wrap svg{width:100%;height:auto;max-width:560px;}
+.cap{color:var(--muted);font-size:13px;margin-top:8px;}
 .tryq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
 .tryq .q{font-weight:600;margin-bottom:8px;}
 .reveal-btn{background:var(--brand);color:#fff;border:none;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;font-size:14px;}
@@ -38,6 +46,7 @@ audio{width:100%;margin-top:6px;}
 .reveal.show{display:block;}
 .qblock{padding:16px 0;border-top:1px solid var(--line);} .qblock:first-of-type{border-top:none;padding-top:4px;}
 .qnum{color:var(--brand);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+.examtag{display:inline-block;background:var(--good-soft);color:var(--good);border:1px solid #bfe6cf;border-radius:999px;padding:2px 9px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:8px;vertical-align:middle;}
 .qtext{font-weight:600;margin:6px 0 12px;font-size:16px;}
 .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;margin:7px 0;font-size:15px;cursor:pointer;transition:.14s;color:var(--ink);}
 .opt:hover{border-color:var(--brand);background:var(--brand-soft);}
@@ -45,28 +54,109 @@ audio{width:100%;margin-top:6px;}
 .opt .mark{float:right;font-weight:700;}
 .exp{margin-top:11px;padding:13px 15px;border-radius:11px;background:#faf9fe;border:1px dashed var(--line);font-size:14px;display:none;}
 .exp.show{display:block;} .exp b{color:var(--brand);}
-.scorechip{margin-left:auto;font-size:13px;color:var(--muted);font-weight:600;}
+.scorechip{font-size:13px;color:var(--muted);font-weight:600;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
 </style></head><body><div class="wrap">
+<a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 3 of 14 · Learn</div>
 <h1>Price Ceilings &amp; Floors</h1>
 <p class="lede">What happens when the government freezes a price — and who gains, who loses.</p>
-<div class="preq"><span class="tag">&#9208; Before you listen - guess first</span><p>A city rules that no store may sell Bamba above a very low price — lower than the normal price. What happens to the Bamba on the shelves?</p><p class="do">Take 20 seconds. Picture the shelf. Guess — then press play.</p></div>
-<div class="panel"><h3>&#127911; Listen <span class="scorechip">~5 min</span></h3><p class="note">Play the episode, then work through the question below.</p><audio controls preload="none" src="Day-03.mp3"></audio><div class="takeaway"><ul><li><b>Shortage</b> - buyers want more than is supplied. Caused by a price ceiling set BELOW the normal price (empty shelves).</li><li><b>Surplus</b> - more is supplied than buyers want. Caused by a price floor set ABOVE the normal price (overflowing shelves).</li></ul><p class="tk-gen">The amount actually traded is always the short side — the side that gives way — because the market balances itself there.</p></div></div>
-<div class="panel"><h3>&#128290; Worked example</h3><p class="partlab">Part 1 &middot; The question</p><div class="question">In town T the market for chocolate cake is competitive. There are 20 sellers. The mayor sets a maximum price (a ceiling) of 50 shekels per cake — below the normal market price. At a price of 50, each seller is willing to supply 96 cakes, while buyers want far more. How many cakes are actually sold?</div><p class="partlab" style="margin-top:18px;">Part 2 &middot; Solve it step by step</p><div class="rule">When a ceiling is below the normal price there is a shortage, so the amount sold is the short side = the quantity supplied at the capped price.</div><div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Per-seller supply at the capped price.</div>Each seller supplies 96 cakes.</div></div><div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Count the sellers.</div>There are 20 sellers.</div></div><div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Multiply.</div><span class="math">96 × 20 = 1,920 cakes</span></div></div><div class="step"><div class="stepn">4</div><div class="stepbody"><div class="lab">That is the answer, because sellers are the short side.</div>Buyers want more, but only what sellers make can be sold.</div></div><div class="ans">&#10003; Answer: 1,920 cakes are sold.</div><div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try - reveal only after you work it out</h3><div class="tryq"><div class="q">A market has 15 sellers. Under a binding ceiling each seller supplies 40 units, and buyers want far more. How many units are sold?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">600 units. Short side = 40 × 15 = 600.</div></div><div class="tryq"><div class="q">The mayor sets a ceiling ABOVE the normal price. Before the rule, 500 units sold. How many sell now?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">500 — no change. A ceiling above the normal price is not binding.</div></div></div></div>
-<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 4</span></h3><p class="note">Recalling beats re-reading. Pick an answer for instant feedback.</p><div id="quizBody"></div></div>
+
+<div class="preq"><span class="tag">&#9208; Before you listen — guess first</span><p>A city rules that no store may sell Bamba above a very low price — lower than the normal price. What happens to the Bamba on the shelves?</p><p class="do">Take 20 seconds. Picture the shelf. Guess — then press play.</p></div>
+
+<div class="panel"><h3>&#127911; Start here — today's plan <span class="scorechip">~1 min</span></h3><p class="note">A quick map of what you'll learn today. Each section below also has its own short audio you can listen to while you read.</p><audio controls preload="none" src="Day-03-intro.mp3"></audio><div class="takeaway"><ul><li><b>Ceiling</b> — a legal MAX price. Bites only when set BELOW the normal price → a <b>shortage</b> (empty shelves).</li><li><b>Floor</b> — a legal MIN price. Bites only when set ABOVE the normal price → a <b>surplus</b> (overflowing shelves).</li></ul><p class="tk-gen">The amount actually traded is always the <b>short side</b> — the smaller of what buyers want and what sellers offer at the controlled price.</p></div></div>
+
+<div class="panel"><h3>&#127981; How a price control bends the market</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-03-controls.mp3"></audio></div>
+<p class="p">A price control is the government pinning the price at a level the market wouldn't choose. There are two kinds, and the trick is the same for both: compare the controlled price to the normal (equilibrium) price, then read the gap.</p>
+
+<p class="sub">Look at the two diagrams</p>
+<div class="svg-wrap">
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: a ceiling below equilibrium leaves quantity supplied short of quantity demanded — a shortage. Right: a floor above equilibrium leaves quantity supplied above quantity demanded — a surplus.">
+<text x="170" y="20" font-size="13.5" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Ceiling BELOW → shortage</text>
+<line x1="60" y1="40" x2="60" y2="210" stroke="#bbb" stroke-width="1.4"/>
+<line x1="60" y1="210" x2="285" y2="210" stroke="#bbb" stroke-width="1.4"/>
+<text x="34" y="48" font-size="11.5" fill="#6f6886" font-family="Arial">Price</text>
+<line x1="75" y1="55" x2="265" y2="200" stroke="#6b4ef0" stroke-width="2.6"/>
+<line x1="75" y1="200" x2="265" y2="55" stroke="#1f9d63" stroke-width="2.6"/>
+<text x="268" y="200" font-size="12.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">D</text>
+<text x="268" y="60" font-size="12.5" fill="#1f9d63" font-family="Arial" font-weight="bold">S</text>
+<circle cx="170" cy="127" r="4" fill="#888"/>
+<line x1="60" y1="165" x2="219" y2="165" stroke="#d2453f" stroke-width="2.4" stroke-dasharray="6 4"/>
+<text x="63" y="160" font-size="11" fill="#d2453f" font-family="Arial" font-weight="bold">ceiling</text>
+<line x1="121" y1="165" x2="121" y2="210" stroke="#888" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="219" y1="165" x2="219" y2="210" stroke="#888" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="108" y="223" font-size="11" fill="#1f9d63" font-family="Arial">Qs</text>
+<text x="212" y="223" font-size="11" fill="#6b4ef0" font-family="Arial">Qd</text>
+<line x1="125" y1="180" x2="215" y2="180" stroke="#d2453f" stroke-width="1.5" marker-start="url(#a3)" marker-end="url(#a3)"/>
+<text x="170" y="176" font-size="10.5" fill="#d2453f" font-family="Arial" font-weight="bold" text-anchor="middle">shortage</text>
+
+<text x="470" y="20" font-size="13.5" fill="#211c33" font-family="Arial" font-weight="bold" text-anchor="middle">Floor ABOVE → surplus</text>
+<line x1="360" y1="40" x2="360" y2="210" stroke="#bbb" stroke-width="1.4"/>
+<line x1="360" y1="210" x2="585" y2="210" stroke="#bbb" stroke-width="1.4"/>
+<line x1="375" y1="55" x2="565" y2="200" stroke="#6b4ef0" stroke-width="2.6"/>
+<line x1="375" y1="200" x2="565" y2="55" stroke="#1f9d63" stroke-width="2.6"/>
+<text x="568" y="200" font-size="12.5" fill="#6b4ef0" font-family="Arial" font-weight="bold">D</text>
+<text x="568" y="60" font-size="12.5" fill="#1f9d63" font-family="Arial" font-weight="bold">S</text>
+<circle cx="470" cy="127" r="4" fill="#888"/>
+<line x1="360" y1="90" x2="519" y2="90" stroke="#b6791f" stroke-width="2.4" stroke-dasharray="6 4"/>
+<text x="363" y="85" font-size="11" fill="#b6791f" font-family="Arial" font-weight="bold">floor</text>
+<line x1="421" y1="90" x2="421" y2="210" stroke="#888" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="519" y1="90" x2="519" y2="210" stroke="#888" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="410" y="223" font-size="11" fill="#6b4ef0" font-family="Arial">Qd</text>
+<text x="512" y="223" font-size="11" fill="#1f9d63" font-family="Arial">Qs</text>
+<line x1="425" y1="105" x2="515" y2="105" stroke="#b6791f" stroke-width="1.5" marker-start="url(#a3)" marker-end="url(#a3)"/>
+<text x="470" y="101" font-size="10.5" fill="#b6791f" font-family="Arial" font-weight="bold" text-anchor="middle">surplus</text>
+<defs><marker id="a3" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#888"/></marker></defs>
+</svg>
+<div class="cap">Left: the ceiling sits below the crossing, so sellers offer little (Qs) but buyers want lots (Qd) — the gap is a shortage. Right: the floor sits above the crossing, so sellers offer lots (Qs) but buyers want little (Qd) — the gap is a surplus.</div>
+</div>
+
+<p class="sub">The short-side rule (this is what they ask)</p>
+<div class="rule">Only the smaller side can actually trade. Under a binding ceiling, sellers are the short side → quantity sold = quantity supplied at the capped price. Under a binding floor, buyers are the short side → quantity sold = quantity demanded at the propped-up price.</div>
+
+<p class="sub">Who gains and who loses</p>
+<p class="p">Under a ceiling below the normal price: <b>some</b> consumers gain — the lucky ones who grab the good at the low price — but others find empty shelves, and <b>all</b> sellers lose (lower price and lower quantity). That exact phrasing — "some consumers benefit, all sellers lose" — is a repeat exam answer.</p>
+<p class="p">A control that doesn't cross the market does nothing: a ceiling <i>above</i> the normal price, or a floor <i>below</i> it, is <b>not binding</b> — price and quantity don't change.</p>
+</div>
+
+<div class="panel"><h3>&#128290; Worked example — straight from a past final</h3>
+<div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-03-worked.mp3"></audio></div>
+<p class="partlab">Part 1 · The question</p><div class="question">In town T the chocolate-cake market is competitive with 20 sellers. The mayor sets a maximum price (ceiling) of 50 shekels — below the normal price. At 50, each seller supplies 96 cakes, while buyers want far more. How many cakes are actually sold?</div>
+<p class="partlab" style="margin-top:18px;">Part 2 · Solve it step by step</p>
+<div class="rule">Ceiling below the normal price → shortage → the amount sold is the short side = total quantity supplied at the capped price.</div>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Per-seller supply at the capped price.</div>Each seller supplies 96 cakes.</div></div>
+<div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Count the sellers.</div>There are 20 sellers.</div></div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Multiply — sellers are the short side.</div><span class="math">96 × 20 = 1,920 cakes</span></div></div>
+<div class="ans">&#10003; Answer: 1,920 cakes are sold. Buyers want more, but only what sellers make can change hands.</div>
+<div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try — reveal only after you work it out</h3>
+<div class="tryq"><div class="q">A market has 15 sellers. Under a binding ceiling each supplies 40 units, and buyers want far more. How many units are sold?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">600 units. Short side = 40 × 15 = 600.</div></div>
+<div class="tryq"><div class="q">The mayor sets a ceiling ABOVE the normal price. Before the rule, 500 units sold. How many sell now?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">500 — no change. A ceiling above the normal price is not binding.</div></div></div>
+</div>
+
+<div class="panel"><h3>&#128221; Quiz yourself <span class="scorechip" id="scoreChip">0 / 5</span></h3><p class="note">Fresh exam-style questions — same skills as the worked example, new scenarios. (The exact past-final cake questions are in the Day 13 mock.)</p><div id="quizBody"></div></div>
+
 <div class="navrow"><a class="navbtn" href="Day-02.html">&larr; Back</a><a class="navbtn primary" href="Day-04.html">Next &rarr;</a></div>
 </div>
 <script>
-const QUIZ = [{"q": "A ceiling set BELOW the normal price causes:", "opts": ["A shortage.", "A surplus.", "No change.", "Price above normal."], "correct": 0, "exp": "Buyers want more, sellers make less → empty shelves."}, {"q": "Under that ceiling, who gains and loses?", "opts": ["Some consumers gain (lucky early buyers); all sellers lose.", "All consumers gain; all sellers lose.", "All sellers gain.", "No one is affected."], "correct": 0, "exp": "Some, not all: late buyers find empty shelves; sellers earn less."}, {"q": "A floor set ABOVE the normal price causes:", "opts": ["A surplus.", "A shortage.", "No change.", "More units sold."], "correct": 0, "exp": "Sellers make lots, buyers want little → overflow."}, {"q": "20 sellers, each supplies 96 under a binding ceiling. Cakes sold?", "opts": ["1,920", "96", "3,360", "480"], "correct": 0, "exp": "Short side = 96 × 20 = 1,920."}];
+const QUIZ = [
+{"q":"A town has 25 fishmongers. A binding price ceiling is set below the normal price, where each fishmonger supplies 60 kg of fish and buyers want far more. How many kg of fish are sold?","opts":["1,500 kg.","60 kg.","3,000 kg.","85 kg."],"correct":0,"exp":"A binding ceiling makes sellers the short side. Quantity sold = quantity supplied at the cap = 25 × 60 = 1,500 kg. (Buyers want more, but that extra can't be supplied.)"},
+{"q":"A city caps the price of bread below its normal level. Who benefits and who loses?","opts":["Some consumers benefit, and all bakers lose.","All consumers benefit, and all bakers lose.","Some consumers benefit, and some bakers benefit.","All consumers benefit, and some bakers benefit."],"correct":0,"exp":"Only SOME consumers win — the lucky ones who get bread at the low price; the rest face empty shelves. Every baker loses, because both the price and the quantity they sell fall."},
+{"q":"A council sets a minimum price for milk above its normal level. What happens to the quantity of milk sold?","opts":["The quantity sold decreases.","The quantity sold increases.","No change in the quantity sold.","All dairies will be happy."],"correct":0,"exp":"A floor above the normal price props the price up, so buyers want less. Buyers are now the short side, so fewer litres are sold than before."},
+{"q":"A city sets a price ceiling ABOVE the current market price of milk. What happens?","opts":["Nothing — the ceiling is not binding.","A shortage appears immediately.","A surplus appears immediately.","The price rises to the ceiling."],"correct":0,"exp":"A ceiling only bites if it's below the normal price. Set above it, the market never reaches the ceiling, so price and quantity are unchanged."},
+{"q":"Under a binding price floor, the market has a surplus. The quantity actually traded equals:","opts":["The quantity demanded at the floor price.","The quantity supplied at the floor price.","The average of the two.","Zero."],"correct":0,"exp":"Trade is limited by the short side. With a floor, the propped-up price makes buyers scarce, so quantity demanded is the smaller side — that's what trades."}
+];
+function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
+QUIZ.forEach(shuffleItem);
 const body=document.getElementById('quizBody');
 if(body){
 let score=0;
 QUIZ.forEach((item,qi)=>{
   const block=document.createElement('div');block.className='qblock';
-  block.innerHTML=`<div class="qnum">Question ${qi+1}</div><div class="qtext">${item.q}</div>`;
+  const tag=item.src?`<span class="examtag">${item.src}</span>`:'';
+  block.innerHTML=`<div class="qnum">Question ${qi+1}${tag}</div><div class="qtext">${item.q}</div>`;
   const exp=document.createElement('div');exp.className='exp';exp.innerHTML=item.exp;
   item.opts.forEach((opt,oi)=>{
     const btn=document.createElement('button');btn.className='opt';
