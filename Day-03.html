@@ -58,6 +58,11 @@ audio{width:100%;margin-top:6px;}
 .navrow{display:flex;justify-content:space-between;margin-top:22px;gap:10px;}
 .navbtn{text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:#fff;}
 .navbtn.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+.dtable{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0;}
+.dtable th,.dtable td{border:1px solid var(--line);padding:6px 8px;text-align:center;}
+.dtable th{background:var(--brand-soft);color:var(--brand-d);font-weight:700;}
+.dtable tr.hl td{background:var(--good-soft);font-weight:700;color:var(--good);}
+@media(max-width:640px){.dtable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}}
 </style></head><body><div class="wrap">
 <a href="index.html" style="display:inline-block;margin:0 0 12px;color:#6b4ef0;font-weight:700;font-size:13px;text-decoration:none;">&larr; All 14 days</a>
 <div class="crumb">Day 3 of 14 · Learn</div>
@@ -124,15 +129,21 @@ audio{width:100%;margin-top:6px;}
 
 <div class="panel"><h3>&#128290; Worked example — straight from a past final</h3>
 <div class="secaudio"><span class="salab">&#127911; Listen to this section</span><audio controls preload="none" src="Day-03-worked.mp3"></audio></div>
-<p class="partlab">Part 1 · The question</p><div class="question">In town T the chocolate-cake market is competitive with 20 sellers. The mayor sets a maximum price (ceiling) of 50 shekels — below the normal price. At 50, each seller supplies 96 cakes, while buyers want far more. How many cakes are actually sold?</div>
+<p class="partlab">Part 1 · The question</p><div class="question">In town T the chocolate-cake market is competitive with 20 identical sellers. The mayor sets a maximum price of 50 shekels — below the normal price. The table gives one seller's supply per month (shekels). How many cakes are actually sold?</div>
+<table class="dtable"><thead><tr><th>Price</th><th>One seller's supply (QS)</th></tr></thead><tbody>
+<tr><td>25</td><td>48</td></tr>
+<tr class="hl"><td>50 (the cap)</td><td>96</td></tr>
+<tr><td>75</td><td>144</td></tr>
+<tr><td>100</td><td>192</td></tr>
+</tbody></table>
 <p class="partlab" style="margin-top:18px;">Part 2 · Solve it step by step</p>
-<div class="rule">Ceiling below the normal price → shortage → the amount sold is the short side = total quantity supplied at the capped price.</div>
-<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Per-seller supply at the capped price.</div>Each seller supplies 96 cakes.</div></div>
+<div class="rule">A ceiling below the normal price causes a shortage → sellers are the short side → amount sold = total quantity supplied at the capped price.</div>
+<div class="step"><div class="stepn">1</div><div class="stepbody"><div class="lab">Read one seller's supply at the 50 cap.</div>From the table, each seller supplies 96 cakes.</div></div>
 <div class="step"><div class="stepn">2</div><div class="stepbody"><div class="lab">Count the sellers.</div>There are 20 sellers.</div></div>
-<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Multiply — sellers are the short side.</div><span class="math">96 × 20 = 1,920 cakes</span></div></div>
-<div class="ans">&#10003; Answer: 1,920 cakes are sold. Buyers want more, but only what sellers make can change hands.</div>
+<div class="step"><div class="stepn">3</div><div class="stepbody"><div class="lab">Multiply — sellers are the short side.</div><span class="math">96 × 20 = 1,920 cakes.</span></div></div>
+<div class="ans">&#10003; Answer: 1,920 cakes. Buyers want more, but only what sellers make at the cap can change hands.</div>
 <div class="tryit"><h3 style="font-size:15px;margin:22px 0 4px;">Now you try — reveal only after you work it out</h3>
-<div class="tryq"><div class="q">A market has 15 sellers. Under a binding ceiling each supplies 40 units, and buyers want far more. How many units are sold?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">600 units. Short side = 40 × 15 = 600.</div></div>
+<div class="tryq"><div class="q">A market has 10 sellers and 15 buyers. The table gives one seller's supply and one buyer's demand. A minimum price (floor) of 15 is set. How many units are sold?<table class="dtable" style="margin-top:10px"><thead><tr><th>Price</th><th>One seller (QS)</th><th>One buyer (QD)</th></tr></thead><tbody><tr><td>5</td><td>12</td><td>20</td></tr><tr><td>10</td><td>18</td><td>12</td></tr><tr><td>15</td><td>24</td><td>8</td></tr></tbody></table></div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">Normal price is 10 (supply 18×10 = 180 = demand 12×15 = 180). The 15 floor is above 10 → binding → buyers are the short side. Sold = demand at 15 = 8 × 15 = 120 units.</div></div>
 <div class="tryq"><div class="q">The mayor sets a ceiling ABOVE the normal price. Before the rule, 500 units sold. How many sell now?</div><button class="reveal-btn" onclick="this.nextElementSibling.classList.add('show');this.disabled=true;">Reveal answer</button><div class="reveal">500 — no change. A ceiling above the normal price is not binding.</div></div></div>
 </div>
 
@@ -142,11 +153,11 @@ audio{width:100%;margin-top:6px;}
 </div>
 <script>
 const QUIZ = [
-{"q":"A town has 25 fishmongers. A binding price ceiling is set below the normal price, where each fishmonger supplies 60 kg of fish and buyers want far more. How many kg of fish are sold?","opts":["1,500 kg.","60 kg.","3,000 kg.","85 kg."],"correct":0,"exp":"A binding ceiling makes sellers the short side. Quantity sold = quantity supplied at the cap = 25 × 60 = 1,500 kg. (Buyers want more, but that extra can't be supplied.)"},
+{"q":"A fish market has 20 sellers and 30 buyers. The table gives one seller's supply and one buyer's demand (kg). A maximum price of 30 is set. How many kg are sold?<table class='dtable' style='font-weight:400;margin-top:10px'><thead><tr><th>Price</th><th>One seller (QS)</th><th>One buyer (QD)</th></tr></thead><tbody><tr><td>30</td><td>40</td><td>100</td></tr><tr><td>60</td><td>60</td><td>40</td></tr><tr><td>90</td><td>80</td><td>20</td></tr></tbody></table>","opts":["800 kg.","1,200 kg.","3,000 kg.","40 kg."],"correct":0,"exp":"Normal price = 60 (supply 60×20 = 1,200 = demand 40×30 = 1,200). The 30 cap is below 60 → binding → sellers are the short side. Sold = supply at 30 = 40 × 20 = 800 kg. (Demand at 30 is 3,000 — far more — but that can't be supplied.)"},
 {"q":"A city caps the price of bread below its normal level. Who benefits and who loses?","opts":["Some consumers benefit, and all bakers lose.","All consumers benefit, and all bakers lose.","Some consumers benefit, and some bakers benefit.","All consumers benefit, and some bakers benefit."],"correct":0,"exp":"Only SOME consumers win — the lucky ones who get bread at the low price; the rest face empty shelves. Every baker loses, because both the price and the quantity they sell fall."},
 {"q":"A council sets a minimum price for milk above its normal level. What happens to the quantity of milk sold?","opts":["The quantity sold decreases.","The quantity sold increases.","No change in the quantity sold.","All dairies will be happy."],"correct":0,"exp":"A floor above the normal price props the price up, so buyers want less. Buyers are now the short side, so fewer litres are sold than before."},
 {"q":"A city sets a price ceiling ABOVE the current market price of milk. What happens?","opts":["Nothing — the ceiling is not binding.","A shortage appears immediately.","A surplus appears immediately.","The price rises to the ceiling."],"correct":0,"exp":"A ceiling only bites if it's below the normal price. Set above it, the market never reaches the ceiling, so price and quantity are unchanged."},
-{"q":"Under a binding price floor, the market has a surplus. The quantity actually traded equals:","opts":["The quantity demanded at the floor price.","The quantity supplied at the floor price.","The average of the two.","Zero."],"correct":0,"exp":"Trade is limited by the short side. With a floor, the propped-up price makes buyers scarce, so quantity demanded is the smaller side — that's what trades."}
+{"q":"A binding price floor is set above the equilibrium price. The quantity actually traded equals:","opts":["The quantity demanded at the floor price.","The quantity supplied at the floor price.","The average of the two.","Zero."],"correct":0,"exp":"A floor above equilibrium props the price up → buyers become the short side (a surplus forms). Trade is limited by the short side, so quantity demanded is what trades."}
 ];
 function shuffleItem(it){var c=it.opts[it.correct];for(var i=it.opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=it.opts[i];it.opts[i]=it.opts[j];it.opts[j]=t;}it.correct=it.opts.indexOf(c);}
 QUIZ.forEach(shuffleItem);
